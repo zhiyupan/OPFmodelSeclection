@@ -1,0 +1,25 @@
+# Pinned top-level dependencies for OntologyOPF.
+# Tested with Python 3.12.10 on Windows 11.
+# Install with: python -m pip install -r requirements.txt
+
+# GUI and core workflows
+streamlit==1.58.0
+openai==2.31.0
+pandas==2.3.3
+numpy==2.3.5
+tiktoken==0.14.0
+
+# Ontology and PDF processing
+owlready2==0.50
+PyMuPDF==1.27.2.3
+pdfplumber==0.11.9
+Pillow==12.2.0
+pytesseract==0.3.13
+
+# Semantic validation
+sentence-transformers==5.5.1
+
+# Notebook support
+jupyter==1.1.1
+
+# Scanned-PDF OCR also requires the separate Tesseract OCR application on PATH.

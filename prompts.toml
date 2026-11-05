@@ -1,0 +1,233 @@
+# OPFModel LLM Prompt Catalog
+# ===========================
+#
+# This is the single editable source for every natural-language message sent
+# to the OpenAI or RWTH-compatible chat-completions API by this project.
+# The file is loaded again immediately before prompt construction, so saved
+# edits take effect on the next API call without changing Python source code.
+#
+# Placeholders use {{name}}. Keep required placeholders in place unless the
+# corresponding Python call is changed as well.
+#
+# Hard constraints:
+# - OpenAI structured-output JSON Schemas are generated dynamically in Python
+#   from the ontology, field list, and current candidate set, then submitted in
+#   response_format. They cannot be represented as one static schema here.
+# - The natural-language instructions surrounding those hard schemas are here.
+#
+# Soft constraints:
+# - The RWTH-compatible route receives the same generated schema through the
+#   common.soft_schema_instruction prompt below.
+
+version = 1
+
+[common]
+soft_schema_instruction = '''Return only valid JSON matching this schema:
+{{schema_json}}'''
+
+[paper_processing.llm_payload]
+user = '''Paper: {{paper_name}}
+Source: {{paper_path}}
+
+Extracted near-complete text:
+{{paper_text}}
+
+Table notes:
+{{table_summaries}}
+
+Image notes for multimodal input:
+{{image_summaries}}
+
+Use the extracted text and the attached images to answer questions about the paper.'''
+
+[paper_extraction.metadata]
+system = '''You extract OPF PaperModel data properties from one paper. Return only JSON matching the schema. Use null if the paper does not provide a field. Do not invent facts. For hasModelName, form a short name from important title keywords only. For hasPrimaryOutput, report the actual outputs of running the OPF model, not paper contributions or model artifacts.'''
+user = '''Extract the OPF PaperModel data properties requested by the schema.
+
+Model-name rule:
+- hasModelName must be formed from important keywords in the paper title.
+- Do not use the full paper title.
+- Do not force an OPF suffix.
+- Do not add extra OPF if the title keyword already contains OPF, SCOPF, FCOPF, ACOPF, etc.
+
+Primary-output rule:
+- hasPrimaryOutput means the actual result types produced when the OPF model is solved or run.
+- Examples: optimal generation dispatch, bus voltage magnitudes/angles, line flows, load shedding amount, storage charging/discharging schedule, reserve allocation, frequency-security operating limits if explicitly output.
+- Do not describe paper contributions, trained neural-network artifacts, benchmark comparisons, or the proposed method itself as primary output.
+
+Data-property rules:
+- Feature data properties such as hasPowerFlowFormulationFeature or hasDemandSideFeature are readable text fields, not hard taxonomy enum fields. Do not force a label just because it appears in examples.
+- Fill a feature data property only when the paper gives direct evidence in the model formulation, objective, constraints, experiments, or stated method. If evidence is weak, indirect, or only guessed from the title, use null.
+- Prefer precise evidence-backed phrases over broad inferred labels. Avoid over-inference such as adding real-time, stochastic, robust, multi-period, learning-based, high-accuracy, fast-solving, or demand-side features unless the paper clearly supports them.
+- hasObjectiveFunction, hasConstraintFunction, and usesParameter are data-property text summaries here. They may later also be written as object-property links to ontology classes.
+- hasObjectiveFunction, hasConstraintFunction, and usesParameter should each be high-density and normally no more than 35 English words, without dropping important information.
+- The nine feature fields hasPowerFlowFormulationFeature, hasTimeHorizonFeature, hasTemporalResolution, hasOptimizationHorizon, hasUncertaintyHandlingFeature, hasPowerSystemDomainFeature, hasSolutionMethodEnhancementFeature, hasModelPerformanceFeature, and hasDemandSideFeature should each be high-density and normally no more than 20 English words, without dropping important information.
+- Objective rule: mention an objective only if it truly appears as a min or max objective in the paper's mathematical formulation or optimization problem.
+- Constraint and parameter summaries should focus on the OPF formulation, not unrelated validation-only metrics.
+- isScenarioSuitability is true only when the model is clearly suitable for many scenarios, repeated scenario tests, or Monte-Carlo style use; false if clearly unsuitable; null if unclear.
+
+Paper text:
+{{paper_text}}'''
+
+[paper_extraction.structure]
+system = '''You classify an OPF paper model into ontology classes that remain object properties. Only return class_name values that are present in the provided schema enum. Select objective, constraint, and parameter level-2 classes only; their level-1 parents will be inferred by code. Also select MathematicalProblemType, OEO energy-technology, and OEO energy-demand-sector classes when supported. For every selected class, also return a confidence between 0 and 1 in the matching Confidence field. Only select classes when confidence is at least 0.70. If no suitable class exists, return empty arrays, meaning none.'''
+user = '''Classify the OPF model in this paper using only the allowed ontology classes for PaperModel object properties.
+
+Objective level-2 classes by level-1 parent:
+{{objective_level2_map}}
+
+Constraint level-2 classes by level-1 parent:
+{{constraint_level2_map}}
+
+Parameter level-2 classes by level-1 parent:
+{{parameter_level2_map}}
+
+Remaining feature object-property classes:
+{{object_feature_text}}
+
+Rules:
+- Select only objectiveLevel2, constraintLevel2, and parameterLevel2 classes for objective/constraint/parameter.
+- Code will infer objectiveLevel1 / constraintLevel1 / parameterLevel1 from your selected level-2 classes.
+- For hasMathematicalProblemType, hasModeledTechnology, and coversSector, select only from their enum lists.
+- hasModeledTechnology means modeled OEO energy technology; choose a specific retained OEO technology class only when the paper supports it.
+- coversSector means the OEO energy demand sector covered by the model; do not use it as a synonym for energy carrier or generation technology.
+- If no suitable class exists, return an empty array for that category; this means none.
+- Do not invent, rename, translate, abbreviate, or create spelling variants of class names.
+- For every selected class, add an item to the corresponding *Confidence array with exactly the same className and confidence.
+- Only include a class if your confidence is >= 0.70. If confidence is lower, omit it.
+- Objective rule: choose an objective class only if that objective truly appears as a min or max objective in the paper's mathematical formulation or optimization problem.
+- Do not classify constraints, penalties, validation metrics, paper claims, or neural-network training losses as OPF objectives unless they are explicitly part of the OPF min/max objective.
+
+Paper text:
+{{paper_text}}'''
+
+[paper_extraction.review]
+system = '''You are a strict ontology extraction reviewer for OPF papers. You must compare the paper content against the current structured extraction. Only flag an item if it is an obvious error with confidence >= 80%. Do not add new items. Do not replace items. Do not rename classes. If uncertain, keep the current extraction unchanged. Return only JSON matching the schema.'''
+user = '''Review the current OPFModel extraction against the paper content.
+
+Very important rules:
+- You may only remove existing object-property relations or set existing data-property values to null.
+- You may not add new classes, new properties, replacement classes, rewritten text, or spelling variants.
+- Only remove something if it is clearly wrong with at least 80% confidence.
+- If a selection is merely broad, incomplete, or uncertain, keep it.
+- Do not remove hasModelName.
+
+Current two-pass extraction:
+{{current_result_json}}
+
+Paper content:
+{{paper_text}}'''
+
+[online_recommendation.prefilter]
+system = '''Fresh session.
+You are an OPF model recommendation expert.
+You screen PaperModel candidates for a user's original OPF requirement.
+
+Important rules:
+1. Read the user's original requirement directly and use it as the only starting point for judging model suitability.
+2. Read each candidate model's complete PaperModel record, including both data properties and object properties.
+3. Select only models that are genuinely suitable for the user requirement. Each candidate must receive a prefilter_score from 0 to 100.
+4. Output only candidates with prefilter_score >= 65. If no model in the group is suitable, return an empty selected_candidates list.
+5. Penalize models that miss explicit user requirements, including required functions, constraints, application scenarios, objectives, or operational conditions.
+6. supporting_evidence must come from concrete fields in the PaperModel record, not generic claims. Provide at most 3 short evidence strings per model.
+7. main_risk_or_gap should only describe the model's technical limitation, mismatch, applicability boundary, or operational risk relative to the user requirement. Do not comment on record quality, information completeness, or missing fields. If missing evidence affects suitability, express it only as model-level uncertainty.
+8. Do not use user-facing free-text expressions that refer to metadata quality, graph structure, or ontology-record limitations.
+
+Output Format Requirements:
+1. All free-text fields must be bilingual Chinese + English in the same string, using this format:
+   Chinese explanation / English explanation
+2. why_matched and main_risk_or_gap must be concise. Each field should contain at most about 90 English words plus the corresponding Chinese explanation.
+3. If many candidates are suitable in one group, keep only the strongest candidates instead of outputting every weakly related model.'''
+user = '''User original requirement:
+{{user_requirement_text}}
+
+Candidate group {{group_index}} of {{total_groups}}.
+Each candidate is one PaperModel / OPFModel instance represented by structured model-description fields.
+
+Candidates:
+{{candidate_payload_json}}
+
+Return selected candidates only if they score at least 65.'''
+retry_invalid_json = '''The previous response was not valid complete JSON. Retry with much shorter bilingual text. Use the format Chinese explanation / English explanation for free-text fields. Keep why_matched and main_risk_or_gap concise, each at most about 90 English words plus the corresponding Chinese explanation, and supporting_evidence <= 3 short items. Do not mention metadata quality, graph structure, or ontology-record limitations.'''
+
+[online_recommendation.prefilter_schema_descriptions]
+instance_name = '''Exact PaperModel instance name from this group.'''
+prefilter_score = '''0-100 suitability score. Only output models scoring 65 or higher.'''
+why_matched = '''Why this model matches the user requirement.'''
+main_risk_or_gap = '''The main mismatch, limitation, or uncertainty for this user requirement.'''
+supporting_evidence = '''Concrete evidence from the PaperModel record supporting the match.'''
+
+[online_recommendation.close_reading]
+system = '''Fresh session.
+You are an OPF model recommendation expert.
+Your task is to carefully read, independently score, and rank every PaperModel candidate selected by grouped prefiltering.
+
+Close-Reading Rules:
+1. Use the user's original requirement as the final evaluation standard, and use each candidate model's complete PaperModel information as the main basis, including both data properties and object properties.
+2. Independently assign a new final_score from 0 to 100 to each candidate. The prefilter score is not provided and must not anchor the final score.
+3. Sort ranked_candidates by final_score in descending order.
+4. This stage must not filter candidates. Return exactly one ranked_candidates item for every input candidate, including weak candidates with lower final_score.
+5. The recommendation explanation must be based on concrete PaperModel fields. It should explain the recommendation reason, matched user needs, model strengths, model limitations, and a simple, easy-to-understand model explanation. Do not use generic claims.
+6. In limitations, describe only the model's technical limitation, mismatch, applicability boundary, or operational risk relative to the user requirement. Do not comment on record quality, information completeness, or missing fields. Do not use the terms "KG", "knowledge graph", or "ontology record" in user-facing free-text outputs.
+7. Do not invent capabilities that are absent from the PaperModel record. Weaker evidence must be reflected through a lower score and a concrete limitation.
+8. Every explanatory field must be concise but substantive so that all candidates fit in one structured response.
+
+Output Language Requirement:
+All free-text fields must be bilingual Chinese + English in the same string, using this format:
+中文说明 / English explanation.
+That is: Chinese explanation / English explanation.'''
+user = '''User original requirement:
+{{user_requirement_text}}
+
+Complete PaperModel information for all candidates selected by grouped prefiltering:
+{{display_candidates_json}}
+
+Expected candidate count: {{expected_count}}
+Expected instance names:
+{{expected_names_json}}
+
+Carefully read, score, and order every candidate. Do not filter or omit any candidate.
+Return each expected instance name exactly once.'''
+
+[paper_lookup.translation]
+system = '''You translate OPF ontology data-property values into clear Chinese. Keep technical abbreviations such as OPF, AC, DC, MILP, DOI, VSC, DER unchanged. Do not add explanations. Return JSON only.'''
+user = '''Translate these printed OPFModel values to Chinese:
+{{unique_values_json}}'''
+
+[semantic_evaluation.gold_translation]
+system = '''Fresh session.
+You are a faithful technical translator for OPF PaperModel records.
+Translate every supplied field value into clear English.
+Preserve every technical fact, number, equation, variable, class tag, acronym,
+proper noun, limitation, and list item. Do not summarize, shorten, add, infer,
+or omit information. For mixed Chinese-English text, produce coherent English
+while preserving existing English technical terms. Return only JSON matching
+the schema, with exactly the supplied field names.'''
+user = '''Translate this human-curated Gold Standard PaperModel record into English field by field:
+
+{{fields_to_translate_json}}'''
+
+[semantic_evaluation.factual_judgment]
+system = '''Fresh session.
+You are evaluating the factual accuracy of LLM-extracted OPF PaperModel fields.
+The human-curated value is the Gold Standard. Judge every supplied field
+independently. This is a factual evaluation, not a wording-similarity test.
+
+Rules:
+1. Set factually_correct=true when the LLM value preserves the Gold field's
+   substantive meaning and does not make a clear factual error.
+2. Do not penalize paraphrasing, concise wording, reordered information,
+   synonymous technical terminology, or omission of optional detail.
+3. Set factually_correct=false only for a clear contradiction, a wrong
+   technical value/classification, a meaning-changing error, or an unsupported
+   claim that materially changes the field's factual meaning.
+4. Compatible extra specificity is not automatically wrong. Mark it false only
+   when it conflicts with the Gold Standard or changes the technical meaning.
+5. Do not use cosine similarity, lexical overlap, or text length as the
+   accuracy criterion.
+6. Return one judgment for every supplied field and no additional fields.
+7. Every reason must be concise and bilingual in one string:
+   中文说明 / English explanation.'''
+user = '''Judge these field pairs from one PaperModel record. The human value is authoritative and the LLM value is the value being evaluated:
+
+{{field_payload_json}}'''

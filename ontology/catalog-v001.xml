@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="OPF ontology" name="http://www.semanticweb.org/bochengxu/OPF_Ontology" uri="OPF_Ontology2.0.owl"/>
+    <uri id="OPF integrated knowledge graph" name="http://www.semanticweb.org/bochengxu/OPF_Ontology/knowledge-graph" uri="../data/01_paper_ingestion_workflow/03_output/OPF_Knowledge_Graph2.0.owl"/>
+    <uri id="OEO local ontology" name="https://openenergyplatform.org/ontology/oeo/releases/2.11.0/oeo.omn" uri="oeo-2.11.0/oeo.owl"/>
+    <uri id="OEO local ontology owl" name="https://openenergyplatform.org/ontology/oeo/releases/2.11.0/oeo.owl" uri="oeo-2.11.0/oeo.owl"/>
+    <uri id="OEO local base ontology" name="https://openenergyplatform.org/ontology/oeo/" uri="oeo-2.11.0/oeo.owl"/>
+    <uri id="CIM local ontology" name="http://www.iec.ch/TC57/CIM#" uri="IEC-CIM-Ontology-main/IEC-CIM-Ontology-main/TheCimOntology.owl"/>
+    <uri id="CIM local ontology no hash" name="http://www.iec.ch/TC57/CIM" uri="IEC-CIM-Ontology-main/IEC-CIM-Ontology-main/TheCimOntology.owl"/>
+</catalog>

@@ -1,0 +1,3828 @@
+{
+  "version": 1,
+  "prompt_hash": "9369b5d195f43171d90abd5df413ffb9241a545d4606352d9882d8e622e6be2a",
+  "model": "gpt-5.4-mini",
+  "records": {
+    "Frequency_Constrained_Dispatch": {
+      "source_hash": "a6f640f91ee0cf16b2996e954d6d0335bdedba94b87e3bae5cafaaf13bbea966",
+      "paper_title": "A Deep Neural Network-based Frequency Predictor for Frequency-Constrained Optimal Power Flow",
+      "instance_name": "Frequency_Constrained_Dispatch",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Publication year matches exactly."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Authors match exactly."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Institutions match exactly."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致 / Same main purpose: FCOPF with DNN-based RoCoF and nadir constraints."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致 / Same motivation: accurate frequency constraints are hard to compute but needed for real-time FCOPF."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题表述一致 / Same problem: traditional or linearized FCOPF is insufficiently accurate for frequency security."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致 / Same question about training a DNN predictor and embedding it into FCOPF."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出含义一致 / Same outputs: dispatch plus RoCoF and frequency nadir values."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "模型特征一致 / Correctly identifies FCOPF with DNN-based frequency prediction and MILP-style encoding."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "电力潮流形式一致 / Correctly characterizes the model as DC-like linearized power flow, not full AC-OPF."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "时间范围一致 / Single-period real-time dispatch matches the gold standard."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "时间分辨率一致 / About 5-minute real-time OPF description is preserved; no conflicting claim."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "优化视野一致 / Single operating snapshot with no multi-period horizon is correct."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "不确定性处理一致 / Scenario-based data variation is mentioned without claiming stochastic or robust OPF."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域特征一致 / Low-inertia frequency-security-constrained transmission OPF is correctly captured."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "求解增强一致 / DNN linearization with mixed-integer constraints and Gurobi is correct."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能特征一致 / Comparing solve time and frequency accuracy against baselines matches the gold summary."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "需求侧特征一致 / Load variation as scenarios without demand response or control is correct."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数一致 / Minimizing quadratic generation cost is correctly stated."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致 / Includes power balance, DC flow, limits, and RoCoF/nadir constraints as in gold."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数一致 / Listed parameters match the gold standard substantively, with equivalent notation."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解流程一致 / PSCAD/EMTDC data, DNN training, MILP embedding, Python 3.9, and Gurobi are all correct."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证设置一致 / Modified IEEE 9-bus validation with PSCAD/EMTDC and normal/high-load cases is correct."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论一致 / Same finding: DNN-FCOPF is more accurate than linear FCOPF with modest extra cost/time."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优缺点一致 / Captures the key strengths and limitations, including added complexity and training-data dependence."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "内容偏离 / This adds evaluation details about multiple load profiles and OOD cases, while the gold emphasizes DNN replacing only frequency calculation inside OPF."
+        }
+      }
+    },
+    "Security_Constrained_Optimal_Power_Flow": {
+      "source_hash": "91ab7b57c120ae4dcb6688a0aafbf25a7ed7d4645a90bcdbde981b76d7d6b79d",
+      "paper_title": "A Hybrid Data-Driven Method for Fast Solution of Security-Constrained Optimal Power Flow",
+      "instance_name": "Security_Constrained_Optimal_Power_Flow",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Publication year matches exactly."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Authors match exactly."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Institution matches exactly."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：快速求解预防性SCOPF / Same core purpose: fast solution of preventive SCOPF."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：传统SCOPF在线求解慢且难满足约束 / Same motivation: conventional SCOPF is slow for online use under contingencies."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题本质一致：预防性SCOPF及N-1/故障约束场景 / Same problem class: preventive SCOPF with contingency constraints."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致：能否用混合DRL快速且满足约束地求解SCOPF / Same research question about hybrid DRL solving SCOPF rapidly while respecting constraints."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出一致：基态调度变量如Pg和Vg，并满足故障后可行性 / Same output: base-case dispatch variables such as Pg and Vg with contingency feasibility."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "特征一致：混合数据驱动、模型辅助的DRL/Primal-dual DDPG / Same model features: hybrid data-driven, model-assisted DRL with primal-dual DDPG."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "AC潮流表述一致，且稀疏Jacobian/Hessian是实现细节而非冲突 / AC power-flow formulation matches; sparse Jacobian/Hessian are compatible details."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "单时段/静态求解一致，多故障场景不改变时间尺度 / Single operating point/static horizon is preserved despite multiple contingencies."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "单周期预防性调度一致，包含基态与故障情景但非多时段 / Single-period preventive dispatch with contingencies, not multi-period."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "一致：主要是确定性SCOPF，Monte Carlo仅用于训练数据 / Matches: deterministic SCOPF; Monte Carlo is only for training data generation."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "一致：输电网安全约束OPF / Matches transmission-network security-constrained OPF domain."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "一致：KKT、稀疏矩阵、内点法等方法增强 / Matches method enhancements via KKT, sparse matrices, and interior-point updates."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "一致：在线实时、可行性高、适合大系统 / Matches performance claims of real-time inference and feasible solutions."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标一致：最小化总发电成本，二次成本函数 / Same objective: minimize total generation cost with quadratic generator costs."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束一致：功率平衡、机组/电压/线路限值 / Same constraints: power balance, generator, voltage, and line-flow limits."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数集合基本一致，包含状态、控制、乘子和学习相关量 / Parameter set is consistent, including states, controls, multipliers, and learning variables."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解流程一致：离线训练、KKT/内点法、稀疏导数、在线直接输出 / Same solution flow: offline training, KKT/interior-point, sparse derivatives, direct online output."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证系统与训练场景一致，虽略少细节但不冲突 / Validation systems and Monte Carlo/contingency setup match; just less detailed."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论一致：接近最优、约束更好、速度远快于IPOPT / Conclusions match: near-optimal cost, better constraint satisfaction, much faster than IPOPT."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优缺点一致，虽概括更简略但未改变含义 / Strengths and limitations are consistent, just more concise."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "核心特征一致：混合数据驱动、模型引导DRL / Core property matches: hybrid data-driven, model-guided DRL."
+        }
+      }
+    },
+    "Second_Order_Cone_Programming_Cyclic_Constraints": {
+      "source_hash": "ca7152074db25a8425834cb27e22dbd46a8f19797d9a66a516a2caa082987b31",
+      "paper_title": "A Second-Order Cone Programming (SOCP) Based Optimal Power Flow (OPF) Model With Cyclic Constraints for Power Transmission Systems",
+      "instance_name": "Second_Order_Cone_Programming_Cyclic_Constraints",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅换行格式不同 / Same title, only line-break formatting differs."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Same publication year."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / Same DOI."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Same authors."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Same institutions."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：用SOCP松弛和循环角约束求解输电网OPF / Same core purpose: solve transmission OPF with SOCP relaxation and cyclic angle constraints."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：现有SOCP-OPF在网状网络中会违反循环角约束 / Same motivation: existing SOCP-OPF can violate cyclic angle constraints in meshed networks."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "所解问题一致：网状输电网中SOCP角松弛不满足环路一致性 / Same solved problem: SOCP angle relaxation in meshed networks lacks loop consistency."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致，保留了循环约束、可扩展性和精确性 / Same research question, preserving cyclic constraints, scalability, and exactness."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容一致，虽未逐项列出但涵盖发电、母线电压和潮流结果 / Same outputs; less detailed but includes generation, bus voltages, and branch flows."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "特征一致：SOCP松弛、角差凸包络、网状环路提取都属于模型特征 / Same features: SOCP relaxation, convex envelope for angle differences, and mesh-cycle extraction."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "表述等价：都是基于branch flow的SOCP/凸松弛建模 / Equivalent formulation: branch-flow-based SOCP/convex relaxation."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "单时段/静态OPF一致 / Same single-period, static OPF."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "单运行点、单时段一致 / Same single operating point and single period."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "均为确定性建模，无不确定性处理 / Both are deterministic with no uncertainty handling."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致：网状输电网络；补充的径向支路不改变主领域 / Same domain: meshed transmission networks; extra radial-branch note does not change the main domain."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法增强一致：凸包络与环路信息/图论提取用于循环约束嵌入 / Same enhancement: convex envelope plus cycle information/graph-theory extraction for cyclic constraints."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能结论一致：高效、可扩展，并优于NLP/SDP的求解时间 / Same performance claim: efficient, scalable, and faster than NLP/SDP."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "均为固定负荷，无需求响应 / Both indicate fixed loads with no demand response."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数一致：可做网损最小或二次发电成本最小 / Same objectives: loss minimization or quadratic generation-cost minimization."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，包含功率平衡、SOCP松弛、循环角约束和各类上下限 / Same constraint set: power balance, SOCP relaxation, cyclic angle constraints, and bounds."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数一致，虽更概括但包含阻抗、成本系数、限值和环路信息 / Same parameters, though summarized more broadly: impedance, cost coefficients, limits, and cycle info."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "实现细节一致：MATLAB、MOSEK、测试系统和对比对象都匹配 / Same implementation details: MATLAB, MOSEK, test systems, and benchmarks match."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证结论一致：与基准解接近、误差小、满足循环约束 / Same validation conclusion: close to benchmarks, small errors, cyclic constraints satisfied."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "主要发现一致：加循环约束后更紧、更快，且适用于凸目标 / Same findings: tighter and faster with cyclic constraints, suitable for convex objectives."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点和限制都基本一致，虽更简略但未冲突 / Strengths and limitations are consistent, though more concise and not conflicting."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "与原文不符：原文强调图论提取环路并嵌入循环约束，不是未来工作扩展 / Contradiction: the paper emphasizes graph-theory cycle extraction and embedded cyclic constraints, not future-work extensions."
+        }
+      }
+    },
+    "Stochastic_Voltage_Stability_Constrained_EMS": {
+      "source_hash": "a4a94fb388663ce7afef37c86d7da060cf7abf9288810c7a90a840ed471878ee",
+      "paper_title": "A Stochastic Voltage Stability Constrained EMS for Isolated Microgrids in the Presence of PEVs Using a Coordinated UC-OPF Framework",
+      "instance_name": "Stochastic_Voltage_Stability_Constrained_EMS",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅换行/空格差异 / Title matches; only line-break/spacing difference."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Authors match."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Institutions match."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：孤岛微网EMS下的随机电压稳定约束协调UC-OPF / Same core purpose: EMS for isolated microgrids under stochastic voltage-stability-constrained coordinated UC-OPF."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机保留了风电不确定性、PEV接入与电压稳定/安全运行的关系 / Motivation preserves wind uncertainty, PEV integration, and voltage-stability/security concerns."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题本质一致：孤岛微网中随机风电、电压稳定、UC-OPF与PEV调度的联合建模 / Same problem: joint modeling of stochastic wind, voltage stability, UC-OPF, and PEV scheduling in isolated microgrids."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题含义一致，都是询问在风电不确定和PEV下如何构建并优化该EMS / Same meaning: asks how to build and optimize the EMS under wind uncertainty and PEVs."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": false,
+          "reason": "遗漏/弱化了关键输出如L-index、总成本、PEV停车场容量等，且“loading margin”不是原列出的主要输出 / Omits key outputs like L-index, total cost, and parking-lot capacity; loading margin is not listed as a main output."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "模型特征一致，都是随机场景化、含电压稳定约束的UC-OPF EMS / Same model feature: stochastic scenario-based UC-OPF EMS with voltage-stability constraints."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "保留了AC潮流/功率平衡与电压、线路约束的本质 / Preserves the essence of AC power flow with voltage and branch constraints."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "多时段、24小时调度一致 / Multi-period 24-hour scheduling matches."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "时间分辨率一致为1小时 / Temporal resolution matches at 1 hour."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "优化时域一致为24小时 / Optimization horizon matches at 24 hours."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "一致地表达了基于场景的随机风电不确定性及Weibull生成 / Correctly captures scenario-based stochastic wind uncertainty and Weibull-derived scenarios."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致：孤岛微网，含柴油机、风机、PV、ESS和PEV / Same domain: isolated microgrid with diesel generators, wind, PV, ESS, and PEVs."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法一致：GAMS中的MINLP，DICOPT并用松弛初值 / Same method: MINLP in GAMS solved with DICOPT and relaxed warm start."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": false,
+          "reason": "验证平台和求解器效率不是模型性能特征本身，且未体现原文强调的电压稳定/安全调度效果 / Validation platform and solver efficiency are not the model-performance feature itself; it misses the paper’s emphasis on voltage-stability/security benefits."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "PEV停车场及充放电约束属于需求侧/EV负荷建模 / PEV parking-lot and charge/discharge constraints are a valid demand-side feature."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标仍是最小化总运行成本，包含发电、启停成本；“over all time intervals and scenarios”与原意一致 / Objective remains minimizing total operating cost with generation and start/stop costs; over time intervals and scenarios is consistent."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合与原文一致，虽表述更简略但未改变技术含义 / Constraint set is consistent; wording is shorter but technically equivalent."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "保留了主要参数类别：成本、备用、电压、线路、L-index、风电场景、PEV/ESS效率与容量、爬坡和最小开停机时间 / Preserves the main parameter categories: costs, reserve, voltage, branch, L-index, wind scenarios, PEV/ESS efficiencies and capacities, ramp rates, and min up/down times."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解细节一致：GAMS中的随机MINLP，DICOPT，CONOPT松弛初值 / Solution details match: stochastic MINLP in GAMS, DICOPT, and CONOPT relaxed initial point."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证对象、5个风电场景以及有/无PEV和电压稳定约束的对比都一致 / Validation on modified CIGRE with five wind scenarios and comparisons with/without PEV and voltage-stability constraints are consistent."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论一致：PEV提升稳定裕度，风电不确定性影响裕度，随机建模优于确定性风电 / Conclusions match: PEV improves stability margin, wind uncertainty affects it, and stochastic modeling outperforms deterministic wind."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点与局限都保留了核心含义，虽更简略但不冲突 / Preserves the core strengths and limitations, though more concise, without contradiction."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "保留了“加载裕度随场景变化”的关键特征 / Preserves the key feature that loading margin is scenario-dependent."
+        }
+      }
+    },
+    "Adversarially_Robust_Learning_Security_Constrained_Optimal_Power_Flow": {
+      "source_hash": "cc1bf76c9e13700c2696523236798c7289eb640fd55867c22c48d743133189b6",
+      "paper_title": "Adversarially Robust Learning for Security-Constrained Optimal Power Flow",
+      "instance_name": "Adversarially_Robust_Learning_Security_Constrained_Optimal_Power_Flow",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者名单一致，仅格式不同 / Author list matches; only formatting differs."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Institution matches exactly."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机保留了组合故障导致计算爆炸、N-k SCOPF困难的核心含义 / Preserves the core meaning: combinatorial contingency explosion makes N-k SCOPF expensive."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "保留了输电网、SCOPF、N-k安全约束和线路/机组故障的核心领域特征 / Preserves the key domain features: transmission grids, SCOPF, N-k security, and line/generator outages."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "虽更抽象，但仍表达了鲁棒安全下的低成本/成本最小化目标 / More abstract, but still captures low-cost dispatch robust to worst-case contingencies."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "列出的约束与原文主约束同类，未改变技术含义 / Listed constraints are of the same types as the gold constraints and do not change the technical meaning."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数集合虽重组，但包含了核心变量与参数，如x、y、z、s、k、线路/机组限制等 / Parameter set is reorganized but includes the core variables and parameters such as x, y, z, s, k, and line/generator limits."
+        }
+      }
+    },
+    "Chance_Constrained_Distributed_Confidentiality_Preserving": {
+      "source_hash": "034ae5ef45e2ce4a70df507dbd5a0924146f682bfbf9022acd55f62b6cb3a3f1",
+      "paper_title": "Chance-Constrained OPF: A Distributed Method With Confidentiality Preservation",
+      "instance_name": "Chance_Constrained_Distributed_Confidentiality_Preserving",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "2023与金标准的期刊发表年份一致；2022在线发表不冲突 / 2023 matches the journal issue year; 2022 online publication is compatible."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI完全一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者名单一致，仅分隔符不同 / Author list matches; only formatting differs."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构对应正确，虽省略院系细节但不改变实质 / Institutions are correct; omitted department details do not change meaning."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：分布式且保密地求解多区域CC-OPF / Core purpose matches: distributed confidentiality-preserving solution of multi-regional CC-OPF."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "抓住了保密数据共享困难这一主要动机，虽省略风电不确定性等细节 / Captures the main motivation of confidential data sharing barriers, though omits wind-uncertainty details."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题本质一致：多区域机密数据下求全局CC-OPF / Same substantive problem: global CC-OPF with confidential regional data."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致：能否分布式精确求解且不泄露机密数据 / Same question: exact distributed solution without revealing confidential data."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": false,
+          "reason": "输出被改成了电压/潮流约束满足，金标准强调的是各区域最优调度、加解密变量和目标值等 / It adds voltage/flow satisfaction and omits key outputs like regional schedules, encrypted/decrypted variables, and objective values."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "包含了分布式、保密和变换加密等核心特征 / Includes the core distributed, confidentiality-preserving, and transformation-based encryption features."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "DLPF/解耦线性化潮流特征一致，表述更具体但不冲突 / Matches the decoupled linearized power-flow feature; more specific wording is compatible."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "多时段/多时间槽与金标准一致 / Multi-time-slot, multi-period horizon matches."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "24个时间槽与案例研究一致；“time slots”表述不冲突 / 24 time slots matches the case study; wording is compatible."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "有限的24时间槽优化时域与金标准一致 / Finite 24-slot optimization horizon matches."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "机会约束与风电不确定性、GMM建模一致 / Chance constraints with wind uncertainty and GMM modeling match."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "多区域互联系统、发电机、风电、负荷、节点电压和潮流均符合 / Multi-regional grid with generators, wind, loads, voltages, and flows is consistent."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": false,
+          "reason": "把AAC误写成privacy-preserving average consensus，金标准是accelerated average consensus和PP-AAC / It misstates AAC as privacy-preserving average consensus; gold specifies accelerated average consensus and PP-AAC."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "精确恢复全局最优、无参数调节、收敛稳健等与金标准一致 / Exact optimality recovery, no tuning, and robust convergence are consistent."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "固定负荷与金标准一致，补充“忽略负荷不确定性”不冲突 / Fixed load matches; noting load uncertainty is ignored does not conflict."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "总发电成本最小化且含二次/线性成本，与金标准一致 / Total generation-cost minimization with quadratic and linear costs matches."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "涵盖容量、爬坡、供需机会约束和状态/潮流约束，实质一致 / Covers capacity, ramp-rate, supply-demand chance, and state/flow constraints; substantively matches."
+        },
+        "usesParameter": {
+          "factually_correct": false,
+          "reason": "遗漏了大量关键参数与集合，且加入了金标准未列出的line admittance/topology data / Omits many key sets/variables and adds line admittance/topology data not listed in the gold."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "流程一致：转QP、加密、分布式求解、局部解密 / Workflow matches: transform to QP, encrypt, distributed solve, local decryption."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": false,
+          "reason": "遗漏了具体测试系统、负荷水平、风险参数和软件环境等关键验证信息 / Omits key validation details such as specific test systems, load levels, risk settings, and software environment."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "总体结论一致：高精度、可扩展、优于对比方法 / Overall findings match: high accuracy, scalability, and better than comparison methods."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点和限制与金标准一致，包括线性化潮流限制和单机单时段特殊限制 / Strengths and limitations match, including linearized-power-flow limitation and the single-generator single-period case."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "提到可扩展到AGC和联合机会约束，与金标准一致 / Mentions extension to AGC-aware and joint-chance-constrained OPF, matching the gold."
+        }
+      }
+    },
+    "ConvOPF_DOP": {
+      "source_hash": "a8773361c14a0a794a69744c4f04dc4edec7de5bcfb1dac6dead118694f9df25",
+      "paper_title": "ConvOPF-DOP: A Data-Driven Method for Solving AC-OPF Based on CNN Considering Different Operation Patterns",
+      "instance_name": "ConvOPF_DOP",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题含义一致，仅换行被去掉 / Same title meaning; line break removed."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI完全一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者列表一致 / Author list matches."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构核心信息一致，补充了城市国家不冲突 / Core institution matches; added location is compatible."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "主旨一致：用CNN数据驱动求解不同运行模式下的AC-OPF / Same purpose: CNN-based data-driven AC-OPF across operation patterns."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：现有方法依赖固定运行模式，拓扑变化需重建 / Same motivation: existing methods are tied to fixed patterns and need rebuilding when topology changes."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题表述一致：面向多拓扑/多运行模式的AC-OPF / Same solved problem: AC-OPF across multiple topologies/operation patterns."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题含义一致，只是更简洁 / Same research question, more concise wording."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出一致：先预测电压，再通过潮流恢复发电量等 / Outputs match: voltages predicted first, then generator outputs recovered via power flow."
+        },
+        "hasModelFeature": {
+          "factually_correct": false,
+          "reason": "加入了Bayesian hyperparameter optimization作为模型特征，Gold未包含且更像方法增强 / Adds Bayesian hyperparameter optimization as a model feature, which is not in Gold and changes the feature set."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "都指向AC潮流/ACOPF公式用于后处理或建模 / Both refer to AC power-flow/AC-OPF formulation used in the model or post-processing."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": false,
+          "reason": "提到可再生能源不确定性，Gold明确说明未建立随机/鲁棒/机会约束OPF / Mentions renewable uncertainty, but Gold says no stochastic/robust/chance-constrained OPF is formulated."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "都属于输电网AC-OPF场景 / Both are transmission-network AC-OPF settings."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "Bayesian优化和聚类识别拓扑标签都与Gold一致 / Bayesian optimization and clustering-based topology labels match Gold."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "350倍加速且高精度与Gold一致 / 350× speedup with high accuracy matches Gold."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "负荷作为输入，且无需求响应建模，符合FixedLoad / Loads are inputs with no demand-response modeling, consistent with FixedLoad."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数为二次发电成本最小化，含义一致 / Objective is quadratic generation-cost minimization, same meaning."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束类型一致：功率平衡、机组限值、电压和线路限额 / Constraint types match: power balance, generator limits, voltage bounds, and branch limits."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "列出的参数与Gold中的主要参数一致，虽不全但不冲突 / Listed parameters match the main Gold parameters; incomplete but not conflicting."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "流程一致：聚类标注、CNN预测Vi和θi、PF恢复PG/QG / Workflow matches: clustering labels, CNN predicts Vi and θi, PF recovers PG/QG."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "30-bus、四种运行模式、8000样本、4:1划分都一致 / 30-bus, four operation patterns, 8000 samples, and 4:1 split all match."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论一致：拓扑标签提升精度且运行时间显著降低 / Conclusions match: topology labels improve accuracy and runtime drops significantly."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点和局限都与Gold一致，表述更简洁 / Strengths and limitations are consistent with Gold, just more concise."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "Gold强调的是将operation pattern/topology label作为输入特征，不是未来工作动态OPF / Gold emphasizes topology-label input feature, not future dynamic OPF work."
+        }
+      }
+    },
+    "Data_driven_ACOPF_Physics_informed_Learning_Calibration": {
+      "source_hash": "98b155eb62fded80e0a89ac84a926d78b88ce5689cb87a7219c45a1887164887",
+      "paper_title": "Data-driven AC Optimal Power Flow with Physics-informed Learning and Calibrations",
+      "instance_name": "Data_driven_ACOPF_Physics_informed_Learning_Calibration",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅换行差异 / Title matches; only line-break formatting differs."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Authors match."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构信息不冲突，York University包含该院系 / Institution is compatible; York University includes the department."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：用物理信息学习和校准快速可靠求解ACOPF / Same core purpose: fast, reliable ACOPF via physics-informed learning and calibration."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：ACOPF非凸、NP-hard且求解慢，需要更高效可靠方法 / Same motivation: ACOPF is nonconvex, NP-hard, and slow to solve."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": false,
+          "reason": "把问题误写成测试系统名称，未表达所解决的功率平衡违约问题 / It incorrectly states benchmark systems instead of the solved power-balance violation problem."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题本质一致：能否在保持低最优性差距下提升可行性 / Same substantive question: improve feasibility while keeping low optimality gap."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容一致，包含电压、发电机出力和可行ACOPF解 / Outputs match: voltages, generator dispatch, and feasible ACOPF solutions."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "两阶段物理信息DNN+可行性校准与金标准一致 / Two-stage physics-informed DNN plus feasibility calibration matches the gold standard."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "AC潮流与Y-bus网络模型属于同一技术表述 / AC power-flow equations and Y-bus network model are compatible technical descriptions."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "所述约束特征属于输电网ACOPF领域，未改变领域含义 / Described constraints fit transmission-network ACOPF and preserve the domain meaning."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "物理损失、校准和Gauss-Seidel式修正都与金标准一致，warm start为兼容补充 / Physics loss, calibration, and Gauss-Seidel-style correction match; warm starts are compatible extra detail."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "给出的数值结果与金标准一致，属于性能特征 / The reported numerical results match the gold standard and are performance features."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "输入使用各母线有功/无功负荷，与固定负荷设定不矛盾 / Using bus active/reactive demand is consistent with a fixed-load setting."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "原始目标为最小化发电成本，且二次成本函数表述正确 / Original objective is minimizing generation cost with a quadratic cost function."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致：机组上下限、电压/相角边界、潮流平衡和线路容量 / Constraint set matches: generator limits, voltage/angle bounds, power balance, and line limits."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "列出的参数与金标准一致，虽未逐项穷尽但无冲突 / Listed parameters match the gold standard; not exhaustive but non-conflicting."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": false,
+          "reason": "把DNN误写成CNN，改变了模型结构 / It wrongly says CNN instead of DNN, changing the model architecture."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "训练/测试数据、系统和对比方法与金标准一致 / Training/testing data, systems, and baselines match the gold standard."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论方向一致：可行性误差更低、最优性差距更小、收敛性较强 / Same findings: lower feasibility error, smaller optimality gaps, and strong convergence."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点和局限与金标准一致，虽更简略但不冲突 / Strengths and limitation are consistent, though more concise."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "把未来工作误写成无监督/半监督学习，偏离金标准的核心特征“预测+校准” / It misstates future work and misses the gold standard’s key property of prediction plus calibration."
+        }
+      }
+    },
+    "Data_Driven_Physics_Informed_SELM_OPF": {
+      "source_hash": "5a322d66ed6571a4dafcff1a30b83c8bd603b370d26acc8fef37ea647da32452",
+      "paper_title": "Data-Driven Optimal Power Flow: A Physics-Informed Machine Learning Approach",
+      "instance_name": "Data_Driven_Physics_Informed_SELM_OPF",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅换行被去除 / Same title; line break removed."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Same publication year."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI完全一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者列表一致 / Author list matches."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构信息一致，仅空格/换行差异 / Institution matches; only spacing/newline differs."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：用物理信息数据驱动方法快速近似OPF / Same purpose: fast OPF approximation via physics-informed data-driven learning."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致，都是为降低重复求解OPF的计算负担 / Same motivation: reduce computational burden of repeated OPF solves."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": false,
+          "reason": "偏离了原文重点，加入了大规模系统与不确定性表述；原文强调复杂映射、训练困难和泛化不足 / Shifts focus and adds large-scale/uncertainty framing; original emphasizes complex mapping, training difficulty, and poor generalization."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题本质一致，都是问能否用物理分解和样本分类快速准确预测OPF / Same core question: whether physics-based decomposition and sample classification can speed accurate OPF prediction."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出变量一致，均为发电、母线电压、支路潮流和目标值 / Outputs match: generator dispatch, bus voltages, branch flows, and objective value."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "保留了三阶段SELM、特征分解和主动约束分类等核心特征 / Preserves core features: three-stage SELM, feature decomposition, and active-constraint classification."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "都指向交流OPF/交流潮流及物理约束建模 / Both indicate AC OPF / AC power-flow physics-informed formulation."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "训练样本由随机波动/蒙特卡洛生成这一点一致；方法本身仍是确定性OPF / Consistent that samples are Monte Carlo-like with fluctuations; method itself remains deterministic OPF."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "测试系统与可再生能源并网场景一致，属于输电网大规模OPF / Same benchmark systems and renewable-integration setting; fits transmission large-scale OPF."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "都包含特征分解、强化模式SELM和主动约束样本聚类 / Includes feature decomposition, reinforcement-mode SELM, and active-constraint clustering."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "都强调训练/测试快、精度高、优于原SELM和深度学习 / Both emphasize fast training/testing and improved accuracy over original SELM and deep learning."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": false,
+          "reason": "Gold是固定负荷；LLM把需求写成输入并提到可再生作为负负荷，改变了需求侧特征 / Gold is fixed load; LLM adds demand inputs and negative-load renewables, changing the demand-side characterization."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标都是最小化发电运行/成本函数，二次成本形式一致 / Objective is minimizing generation operating cost with quadratic cost functions."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，均为功率平衡、潮流、机组出力、电压和支路限值 / Constraint set matches: power balance, flow equations, generator, voltage, and branch limits."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "包含的关键参数与原文一致，虽未列全但无冲突 / Includes key parameters consistent with the paper; incomplete but not conflicting."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "三阶段SELM、强化模式和样本分类的求解流程一致；仅补充了样本生成细节 / Same three-stage SELM, reinforcement, and classification workflow; adds sample-generation detail."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证系统和对比对象一致，概括正确 / Validation systems and comparison baselines match; summary is correct."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论一致：原SELM较差，分解和分类提升精度且更快 / Conclusions match: original SELM is weak; decomposition and classification improve accuracy and speed."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": false,
+          "reason": "遗漏了关键局限，如依赖监督数据、非严格可行性、非随机OPF等；还把未来工作改成了场景验证 / Omits key limitations such as dependence on supervised data, feasibility not guaranteed, and non-stochastic OPF; also changes future work to field-data validation."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "核心特征一致：三阶段物理特征分解加主动约束预分类 / Core special feature matches: three-stage physical decomposition plus active-constraint pre-classification."
+        }
+      }
+    },
+    "Day_Ahead_Real_Time_OPF": {
+      "source_hash": "0f35b1f232e79c609dae490676ee22e1ad2717bbf7dbd0d8d77ad7afb166a898",
+      "paper_title": "Day-Ahead and Real Time Optimal Power Flow considering Renewable Energy Resources",
+      "instance_name": "Day_Ahead_Real_Time_OPF",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅空格/换行差异 / Title matches; only spacing/newline differs."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致，缩写空格差异不影响含义 / Authors match; spacing in initials does not change meaning."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Institutions match."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：经济调度并兼顾安全性与可再生波动 / Same core purpose: economic scheduling with security under renewable variability."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：传统方法忽略调度间隔内波动 / Same motivation: conventional methods ignore intra-interval variability."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": false,
+          "reason": "加入了未在金标准中强调的具体约束细节，且偏离“忽略间隔内波动并用PF避免维度增加”的核心问题 / Adds unsupported specific constraints and shifts away from the core problem of intra-interval variability handled via PFs."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题本质一致：一次评估PF能否捕捉间隔内波动且不增维 / Same question: can one-time PFs capture intra-interval variability without increasing dimensionality?"
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容一致，均为调度结果、成本/利润和稳定性指标 / Outputs align: dispatch, cost/profit, and stability indices."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "特征一致，都是基于最佳匹配参与因子的单次优化 / Same feature: single optimization using best-fit participation factors."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "AC潮流及电压/无功/线路约束与金标准一致 / AC power flow with voltage, reactive power, and line constraints matches."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "时间尺度一致：日前与实时、多时段/滚动调度 / Time horizon matches: day-ahead and real-time multi-period/rolling scheduling."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "与金标准一致：RT为10分钟案例、内部1分钟；DA为1小时内15分钟子间隔 / Matches gold: RT 10-min case with 1-min internal sub-intervals; DA 15-min sub-intervals within 1 h."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "RT 60分钟、DA 24小时一致 / RT 60 min and DA 24 h match."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "一致：基于预测的波动处理，不是随机/鲁棒/机会约束 / Matches: forecast-based variability handling, not stochastic/robust/chance-constrained."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致：含火电、风电、光伏的输电网OPF / Domain matches: transmission OPF with thermal, wind, and solar PV."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法增强一致：一次求解并用最佳匹配PF避免逐子间隔优化 / Same enhancement: solve once and use best-fit PFs to avoid per-subinterval optimization."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能结论一致：成本更低、稳定性更好 / Performance claim matches: lower cost and better voltage stability."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": false,
+          "reason": "金标准是固定负荷；LLM说负荷在子间隔变化，改变了需求侧特征 / Gold is fixed load; LLM says load varies within sub-intervals, changing the demand-side feature."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标一致：RT最小化总成本，DA最大化利润 / Objective matches: minimize RT cost and maximize DA profit."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，包含潮流、机组、爬坡、可再生、母线电压和线路约束 / Constraint set matches: power balance, generator, ramp, renewable, voltage, and line limits."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数覆盖一致，虽未逐项列出但包含主要成本、价格、网络、爬坡、限值和预测量 / Parameters are substantively covered, though not exhaustively listed."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": false,
+          "reason": "只给出软件和算例信息，遗漏了关键求解流程与PF方法细节 / Gives only software and test system info, omitting key solution workflow and PF details."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证平台与时域设置一致：IEEE 30节点、RT 60分钟、DA 24小时 / Validation setup matches: IEEE 30-bus, RT 60 min, DA 24 h."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "主要发现一致：RT成本下降、DA利润上升、稳定性改善 / Main findings match: RT cost decreases, DA profit increases, stability improves."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点与限制与金标准一致，虽更简略但不冲突 / Strengths and limitations are consistent, just more concise."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "金标准强调核心特殊机制是最佳匹配参与因子折叠子间隔波动；LLM改成稳定性指标，偏离该属性 / Gold emphasizes the core mechanism of folding sub-interval variability via best-fit PFs; LLM instead states a stability metric, which is a different property."
+        }
+      }
+    },
+    "Distributed_System_Level_Control_MTDC_Grids": {
+      "source_hash": "6c1c6cb5e82b29ee3fa09f5e00766b3002a341c11d574e602955b1973daf4b20",
+      "paper_title": "Distributed OPF Algorithm for System-Level Control of Active Multi-Terminal DC Distribution Grids",
+      "instance_name": "Distributed_System_Level_Control_MTDC_Grids",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅换行被去除 / Same title, line break removed."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Authors match."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构信息一致，补充了城市国家不冲突 / Institution matches; added city/country without conflict."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：分布式OPF用于MTDC系统级控制与DER协调 / Same core purpose: distributed OPF for system-level MTDC control and DER coordination."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致，概括了快速、可扩展、隐私保护等需求 / Motivation preserved: fast, scalable, privacy-preserving control need."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题本质一致：用ADMM分布式求解MTDC的OPF-for-ANM / Same problem: distributed ADMM solution of MTDC OPF-for-ANM."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题含义一致，都是问能否构建无中心控制器的分布式OPF并快速给出设定值 / Same question about a distributed no-central-controller OPF providing fast set-points."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出一致，均指节点电压设定值和DER调度结果；补充仿真报告不冲突 / Outputs match; extra simulation reporting does not conflict."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "特征一致：分布式、节点化、ADMM协调、局部凸化子问题 / Same features: distributed nodal formulation, ADMM coordination, local convexified subproblems."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "电力潮流建模一致，都是MTDC节点式DC潮流/OPF并含线性化处理 / Same formulation: nodal DC OPF for MTDC with linearization."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "时间尺度一致，都是每个控制周期重复求解的单期实时控制 / Same horizon: repeated each control period, single-period real-time control."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "都表示按控制周期更新，未给固定数值步长 / Both indicate control-period updates without a fixed numeric step."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "都是单控制周期优化，不是多期优化 / Both are single-control-period optimization."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "一致为确定性处理，没有显式随机/鲁棒不确定性模型 / Consistent deterministic treatment with no explicit stochastic or robust uncertainty model."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致：MTDC配电网及其DER/ESS/负荷 / Same domain: MTDC distribution grids with DER, ESS, and loads."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法增强一致：ADMM、顺序凸化/线性化及初始化改进 / Same enhancements: ADMM, sequential convex approximation/linearization, and initialization improvement."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能关注一致：收敛、并行时间、通信时间、可扩展性、在线执行 / Same performance aspects: convergence, parallel time, communication time, scalability, online execution."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "需求侧特征一致：可控负荷削减 / Same demand-side feature: controllable load curtailment."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数含义一致：DER成本、ADMM一致性项及ANM下的RES/ESS/负荷项 / Same objective structure: DER cost, ADMM penalty, and ANM terms for RES/ESS/load."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，均包含节点/线路/电压/储能/负荷等主要约束 / Same constraint set including nodal, line, voltage, ESS, and load constraints."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数基本一致，补充了容差等未列于Gold的参数但不冲突 / Parameters match; added tolerances not listed in Gold but non-conflicting."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解流程一致：分解为节点子问题、ADMM协调、Taylor线性化、quadprog求解、初始化增强 / Same solution flow: nodal decomposition, ADMM coordination, Taylor linearization, quadprog, enhanced initialization."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证对象一致：改造的IEEE 14/30/57/118节点系统和HPC分布式实现 / Same validation on modified IEEE 14/30/57/118 systems and HPC distributed implementation."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论一致：可扩展、收敛、可调度多类DER、与集中式结果接近 / Same findings: scalable, convergent, dispatches diverse DER, close to centralized results."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优缺点基本一致：分布式、模块化、可扩展；线性化、通信假设、单周期等限制 / Strengths and limitations preserved: distributed/modular/scalable; linearization, communication assumptions, single-period limits."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "新增了“适用于等效AC-grid”这一Gold未提及且可能改变适用范围 / Adds equivalent AC-grid applicability, which is not in Gold and changes scope."
+        }
+      }
+    },
+    "Distribution_Grid_D_OPF_Benchmarking": {
+      "source_hash": "0c691577b02f491c1083c0f51f59f13393984f849014c426aab3cea35c5e7065",
+      "paper_title": "Distribution Grid Optimal Power Flow (D-OPF): Modeling, Analysis, and Benchmarking",
+      "instance_name": "Distribution_Grid_D_OPF_Benchmarking",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅格式换行差异 / Same title, only formatting differs."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI完全一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者名单一致，仅排版差异 / Author list matches, only formatting differs."
+        },
+        "hasInstitution": {
+          "factually_correct": false,
+          "reason": "遗漏了Pacific Northwest National Laboratory且机构集合不完整 / Missing Pacific Northwest National Laboratory and the institution set is incomplete."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：比较D-OPF建模/形式并评估可行性、最优性和可扩展性 / Same core purpose: compare D-OPF formulations and assess feasibility, optimality, and scalability."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：D-OPF非凸且不同松弛/近似可能不可行或不精确 / Same motivation: D-OPF is nonconvex and relaxations/approximations may be infeasible or inexact."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": false,
+          "reason": "过于简化，未体现“缺乏系统评估”及具体比较的多种模型/目标函数 / Too simplified; it omits the lack of systematic evaluation and the specific multi-model, multi-objective comparison."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致，只是更概括 / Same research question, just more concise."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": false,
+          "reason": "输出被误写成调度结果；原文是基准测试结果与模型推荐 / It is not a dispatch solution; the paper outputs benchmarking results and model recommendations."
+        },
+        "hasModelFeature": {
+          "factually_correct": false,
+          "reason": "“single-period”与“benchmarking”可接受，但“deterministic, continuous”不是该字段的核心特征且遗漏关键比较/评估属性 / 'Single-period' is fine, but 'deterministic, continuous' is not the key feature here and misses the benchmarking/evaluation nature."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "所列形式与Gold标准一致，术语为同义表达 / The listed formulations match the gold standard, with synonymous terminology."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "单时段含义一致 / Single-period meaning matches."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "单时段优化一致 / Single-period optimization matches."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "均表示确定性、未建模随机不确定性 / Both indicate deterministic modeling without stochastic uncertainty."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "描述的是配电网及其典型设备，未改变领域含义 / Describes distribution feeders and typical devices without changing the domain meaning."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "强调基准比较与可视化，属于该论文的方法增强/分析特征 / Emphasizes benchmarking and visualization, which fits the paper's methodological enhancement features."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "都在表达可行性、精确性/最优性、求解时间和可扩展性评估 / Both express feasibility, exactness/optimality, solve time, and scalability assessment."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "固定负荷含义一致，没有需求响应 / Constant-load meaning matches; no demand response."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "三类目标一致：损耗最小、PV接入能力最大、电压偏差最小 / The three objectives match: loss minimization, PV hosting maximization, and voltage deviation minimization."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "列出的约束与原文主约束一致，虽更概括但不冲突 / The listed constraints are consistent with the main constraints, though more generalized."
+        },
+        "usesParameter": {
+          "factually_correct": false,
+          "reason": "遗漏大量关键参数且加入了未在Gold中明确列出的Vsub，参数集合不一致 / Many key parameters are omitted and Vsub is added without being in the gold list, so the parameter set does not match."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": false,
+          "reason": "加入了MATPOWER且把求解器/测试系统表述得过于具体，超出Gold且不完全一致 / Adds MATPOWER and over-specifies solvers/test systems beyond the gold standard, so it is not fully consistent."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": false,
+          "reason": "验证对象被改成与OpenDSS/MATPOWER对比，未准确反映三种测试系统、DG渗透率和小型可视化案例 / It shifts validation to OpenDSS/MATPOWER comparison and misses the three test systems, DG penetration levels, and visualization cases."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "主要结论基本一致：SOCP/SDP在损耗最小化下常精确，PV接入和电压偏差下可能不精确，NLP-BIM更可扩展，LinDistFlow可能失真 / Main findings match: SOCP/SDP are often exact for loss minimization, can be inexact for PV/voltage objectives, NLP-BIM scales better, and LinDistFlow may misestimate."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": false,
+          "reason": "“balanced single-phase”与Gold不符；原文强调正序等值、确定性、单时段及非完整三相不平衡覆盖 / 'Balanced single-phase' conflicts with the gold; the paper emphasizes positive-sequence equivalents, deterministic single-period scope, and incomplete three-phase unbalanced coverage."
+        }
+      }
+    },
+    "Efficient_Distribution_System": {
+      "source_hash": "595c21cd55d7ec8c7fdaeafee5158c28f090d562eb1d0cedbabe1c7fae7d28c4",
+      "paper_title": "Efficient Distribution System Optimal Power Flow With Discrete Control of Load Tap Changers",
+      "instance_name": "Efficient_Distribution_System",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题仅去掉了换行，含义一致 / Line break removed only; same title meaning."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Same publication year."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI完全一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Authors match exactly."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Institutions match exactly."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "保留了核心动机：离散控制舍入可能失可行且MINLP计算困难 / Preserves the core motivation: rounding discrete controls can be infeasible and MINLP is computationally hard."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": false,
+          "reason": "Gold是配电网OPF/径向配电网OPF/电压控制OPF；LLM加入了PV削减测试，且未明确对应这些域特征 / Gold is distribution-network OPF/radial distribution OPF/voltage-control OPF; LLM adds PV curtailment tests and does not clearly state those domain features."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": false,
+          "reason": "Gold包含分支潮流、SOCP、LTC整数约束等具体约束；LLM给的是更泛化且不同的约束分类，遗漏关键LTC/SOCP内容 / Gold includes specific branch-flow, SOCP, and LTC integer constraints; LLM gives broader different categories and misses key LTC/SOCP content."
+        },
+        "usesParameter": {
+          "factually_correct": false,
+          "reason": "Gold参数含P/Q/S/V、LTC档位、McCormick界、SBTA参数等；LLM列的是通用参数类名，未保留这些具体技术参数 / Gold parameters include P/Q/S/V, LTC taps, McCormick bounds, SBTA parameters, etc.; LLM lists generic parameter classes and does not preserve these specific technical parameters."
+        }
+      }
+    },
+    "Distributed_Variable_Estimation_ADMM": {
+      "source_hash": "0613311a831a7dba7a292f4ddd5089b04f308b1af4ebcea2d91e9dffe386d224",
+      "paper_title": "Estimating Global Variables in Multi-agent Distributed OPF with Unreliable Communication",
+      "instance_name": "Distributed_Variable_Estimation_ADMM",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅换行被去除 / Same title, only line break removed."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Authors match."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Institutions match."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：在通信不可靠时用估计全局变量继续分布式OPF / Same purpose: estimate global variables to keep distributed OPF running under unreliable communication."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：通信中断会破坏一致性交换并影响收敛与可行性 / Same motivation: link disruptions hinder consensus exchange and hurt convergence/feasibility."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题描述一致：多区域分布式OPF中的通信中断导致全局变量缺失 / Same problem: missing global variables due to interrupted communication in multi-region distributed OPF."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题含义一致：能否用预测估计缺失消息以保持ADMM收敛 / Same question: can prediction of missing messages preserve ADMM convergence."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容一致，均涉及区域电压、全局变量平均和D-OPF收敛结果 / Outputs align: regional voltages, global-variable averages, and D-OPF convergence results."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "特征一致：多智能体分布式OPF并用预测估计缺失交换量 / Same feature: multi-agent distributed OPF with prediction of missing exchanged variables."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "表述一致：基于区域、联络线电压一致性和潮流方程的分布式OPF / Same formulation: region-based OPF with tie-line voltage consensus and power-flow equations."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "含义一致：这是迭代式单时段/静态OPF框架 / Meaning matches: iterative static/single-period OPF framework."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "不确定性类型一致：处理的是通信不可靠导致的消息缺失 / Same uncertainty type: communication unreliability causing missing messages."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致：IEEE 14节点输电网分区、含PV和BESS / Same domain: IEEE 14-bus transmission network partitioned with PV and BESS."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法增强一致：ADMM结合浅层前馈神经网络估计缺失消息 / Same enhancement: ADMM plus shallow feedforward neural-network estimator."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能结论一致：提升收敛速度并增强通信中断下的可行性 / Same performance claim: faster convergence and better feasibility under communication loss."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数一致：最小化各区域总发电成本 / Same objective: minimize total generation cost in each region."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束含义一致：区域约束、边界母线一致性和潮流更新 / Same constraints: regional constraints, boundary-bus consensus, and flow updates."
+        },
+        "usesParameter": {
+          "factually_correct": false,
+          "reason": "加入了PV units和BESS size等非参数性描述，且遗漏了部分Gold中的关键符号 / Adds non-parameter descriptions like PV units/BESS size and misses some key Gold symbols."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解流程一致：三分区IEEE 14节点、ADMM、DFNN估计缺失电压、平均交换量并更新潮流 / Same solution flow: three-region IEEE 14-bus, ADMM, DFNN estimation, averaging, and flow updates."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证设置一致：IEEE 14节点、三种场景、bus 5通信中断与估计补偿 / Same validation setup: IEEE 14-bus, three scenarios, bus-5 communication loss and estimation compensation."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论一致：DFNN估计使中断场景更接近全局电压并改善收敛 / Same finding: DFNN estimation brings interrupted cases closer to global voltages and improves convergence."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": false,
+          "reason": "只保留了部分优缺点，遗漏了小规模测试、简单网络结构、单一故障类型等重要限制 / Only partial strengths/limitations; misses key limits like small test system, simple network, and single failure type."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "Gold强调通信不确定性与缺失全局变量，LLM却写成90%–100%负荷场景训练，含义不符 / Gold is about communication uncertainty and missing global variables; LLM instead claims training on 90%–100% loading scenarios."
+        }
+      }
+    },
+    "Feeder_Reconfiguration_Convex_Relaxation": {
+      "source_hash": "1451d7525426136ee6b7e63f4f0cce7848425a10687ccfee2fabccb76390c8f7",
+      "paper_title": "Feeder Reconfiguration in Distribution Networks Based on Convex Relaxation of OPF",
+      "instance_name": "Feeder_Reconfiguration_Convex_Relaxation",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题含义一致，仅换行被去除 / Same title meaning; line break removed."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches exactly."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Authors match exactly."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Institution matches exactly."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：配电网馈线重构、损耗/负荷平衡、径向约束 / Same core purpose: feeder reconfiguration with loss/load-balancing under radial constraints."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：问题难解，采用凸松弛提高效率 / Same motivation: hard MINLP, convex relaxation for efficiency."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": false,
+          "reason": "过于泛化且把方法说成直接求解完整问题；原文强调先SOCP松弛再选开断线 / Too generic and implies directly solving the full problem; paper uses SOCP-relaxed OPF plus line-opening selection."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致：能否用凸松弛高效近似最优求解馈线重构 / Same question: efficient near-optimal feeder reconfiguration via convex relaxation."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容一致，包含最优配置、开断线、潮流、电压等 / Outputs match: configuration, opened lines, flows, voltages, etc."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "模型特征一致：基于分支潮流/Branch Flow 与SOCP松弛的馈线重构 / Same model features: branch-flow and SOCP-relaxed feeder reconfiguration."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "潮流建模特征一致：Branch flow + SOCP松弛 / Same power-flow formulation: branch flow with SOCP relaxation."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "时间尺度一致：单时段静态问题 / Same horizon: single-period static formulation."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "优化范围一致：单个运行状态/单次重构 / Same optimization horizon: one operating snapshot."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致：径向配电网、开关、变电站、负荷、PV / Same domain: radial distribution network with switches, substations, loads, PV."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法增强一致：凸松弛、分支潮流、启发式开线 / Same enhancements: convex relaxation, branch-flow structure, heuristic line opening."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能特征一致：高效、可扩展、少参数调节；补充了算法复杂度 / Same performance traits: efficient, scalable, low tuning; added complexity details are compatible."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "需求侧特征一致：固定负荷；负荷平衡是目标不是需求响应 / Fixed-load setting is preserved; load balancing is an objective, not demand response."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数一致：线损最小、变电站注入最小或负荷平衡 / Same objectives: loss minimization, substation injection minimization, or load balancing."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束一致：径向性、潮流平衡、电压/功率界、无环等 / Same constraints: radiality, power balance, voltage/power limits, acyclicity."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数一致，补充了PV容量等测试参数但不冲突 / Parameters match; added PV capacities are extra test parameters and do not conflict."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解流程一致：全闭合求SOCP-OPF，再选最小支路潮流并开线迭代 / Same solution flow: solve SOCP-OPF with all lines closed, then open minimum-flow lines iteratively."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证结论一致：四个实际配电网测试，算法3最优，算法4有小损失 / Same validation: four real networks, Algorithm 3 optimal, Algorithm 4 small gap."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "主要发现一致：算法3在测试系统上最优，算法4计算快且损失很小 / Same findings: Algorithm 3 optimal on tests, Algorithm 4 fast with small loss."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优缺点概括一致，未引入冲突性结论 / Strengths and limitations are consistent; no conflicting claim."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "把“全篇都假设SOCP精确”说得过强；原文是依赖松弛精确性且仅在特定条件下可证明 / Too strong to say exact throughout; paper relies on exactness and proves it only under specific conditions."
+        }
+      }
+    },
+    "GridFM_v0": {
+      "source_hash": "2d84a0396cd332d8e1eb9f983d895c5d9800df905aa46e1e7895519c39e97d66",
+      "paper_title": "Foundation models for the electric power grid",
+      "instance_name": "GridFM_v0",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Publication year matches exactly."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者名单基本一致，仅有音译/重音差异，不改变作者身份 / Author list matches substantively; only transliteration/diacritic differences."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构信息总体一致，补充了别名与细化机构，不构成冲突 / Institutions are substantively the same with aliases and added specificity, no conflict."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的相符：提出电网基础模型及其应用路线 / Core purpose matches: proposing grid foundation models and their applications."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致，概括了电网复杂性与不确定性上升 / Motivation matches, summarizing rising grid complexity and uncertainty."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "所解决问题一致：可复用性差、跨任务/拓扑迁移困难 / Problem matches: poor reuse and transfer across tasks/topologies."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致，都是问能否构建电网基础模型并泛化到下游任务 / Research question matches: whether a grid foundation model can generalize to downstream tasks."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": false,
+          "reason": "把“输出”说成了生成调度/目标值，偏离了主要输出是预训练模型与重构结果 / It shifts the main output toward dispatch/objective values, while the gold says pretrained model and reconstruction outputs."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "模型特征一致：图神经网络+掩码自编码器+基础模型 / Model features match: GNN plus masked autoencoder foundation model."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "都指向交流潮流及其图节点变量重构 / Both refer to AC power flow and graph-based reconstruction of bus variables."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "一致：近端单时刻，未来可扩展到多时刻 / Matches: near-term single time step, extendable to multiple time steps."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "未固定具体时间分辨率，且提到PMU高分辨率扩展 / No fixed temporal resolution; PMU high-resolution extension is consistent."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": false,
+          "reason": "引入了场景树和随机规划，超出了金标准中“可生成场景/支持不确定性分析”的表述 / Adds scenario trees and stochastic programming, which go beyond the gold's scenario generation and uncertainty support."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "覆盖输电/配电及多类电网任务，含OPF等 / Covers transmission/distribution and multiple grid tasks including OPF."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "自监督掩码图自编码与物理约束、加速计算都一致 / Self-supervised masked graph autoencoding with physics-informed loss and acceleration matches."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": false,
+          "reason": "给出具体3–4个数量级和<1%误差的数值，金标准只要求快速、可扩展、可泛化等，不支持这些精确性能断言 / It adds specific 3–4 orders-of-magnitude and <1% error claims not required by the gold and not safely supported here."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": false,
+          "reason": "加入需求响应/负荷预测等更广泛需求侧含义，金标准仅表示输入含负荷但不是需求响应模型 / It broadens to demand-response/forecasting, while the gold only says loads are inputs and it is not a demand-response model."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": false,
+          "reason": "把目标函数说成发电成本最小化，偏离金标准中预训练损失为重构损失+潮流物理损失 / It misstates the objective as generation-cost minimization instead of the pretraining reconstruction plus physics loss."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "强调满足潮流方程和容量约束，与金标准一致 / Requiring power-flow equations and capacity bounds is consistent."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "列出的变量与参数与金标准中的潮流状态量和拓扑信息一致 / Listed variables and parameters are consistent with the gold's state variables and topology information."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "总体流程一致：多拓扑潮流数据、图建模、掩码自编码预训练、下游微调 / Overall workflow matches: multi-topology power-flow data, graph modeling, masked autoencoder pretraining, downstream fine-tuning."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "与金标准一致：没有直接验证结果，验证被作为未来计划 / Matches the gold: no direct validation results, validation is proposed for future work."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "核心结论一致：基础模型可泛化并加速电力系统分析 / Core conclusion matches: foundation models can generalize and accelerate power-system analysis."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点和局限都与金标准同向，虽更简略但不冲突 / Strengths and limitations align with the gold, though more concise."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "强调这是路线图/愿景而非完整OPF求解器，与金标准一致 / Emphasizes a roadmap/vision rather than a completed OPF solver, matching the gold."
+        }
+      }
+    },
+    "Heuristic_GWO_Stochastic_Renewable_OPF": {
+      "source_hash": "487c906ffced18fdfcf3f8708235f4d8bd268bfdf38488567f121064a92e7bf2",
+      "paper_title": "Heuristic Algorithm Based Optimal Power Flow Model Incorporating Stochastic Renewable Energy Sources",
+      "instance_name": "Heuristic_GWO_Stochastic_Renewable_OPF",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Publication year matches exactly."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Author list matches exactly."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Institutions match exactly."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：都是在随机风光不确定性下求解OPF并降低成本 / Same core purpose: solve OPF under stochastic wind/solar uncertainty and minimize cost."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：OPF非凸且可再生能源不确定性增加难度 / Same motivation: OPF is non-convex and renewable intermittency adds uncertainty."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题范围一致，均为含风光不确定性的OPF求解 / Same problem scope: OPF with uncertain wind and solar integration."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致：GWO是否能更高效求解随机可再生OPF并优于基准算法 / Same question: whether GWO can efficiently solve stochastic renewable OPF and outperform benchmarks."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容一致，均为最优调度、母线电压、潮流、成本等结果 / Outputs align: dispatch, voltages, flows, and cost-related results."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "模型特征一致：随机可再生、备用/惩罚成本、碳税 / Same model features: stochastic renewables, reserve/penalty costs, carbon tax."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "ACOPF含义一致：都有有功/无功平衡等AC潮流约束 / Same ACOPF meaning: active/reactive balance and AC constraints."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "均表示单期静态OPF / Both indicate single-period static OPF."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "均为单一运行工况/单次调度，不是多时段 / Both describe a single operating condition, not multi-period."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "不确定性处理一致：Weibull风电、lognormal光伏及备用/惩罚成本 / Same uncertainty handling: Weibull wind, lognormal solar, reserve and penalty costs."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致：输电网中的可再生能源并网OPF / Same domain: transmission-network OPF with renewable integration."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法一致：GWO元启发式，并与其他启发式比较 / Same method: GWO metaheuristic compared with other heuristics."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能结论一致：更快收敛、较低成本 / Same performance claim: faster convergence and lower cost."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数一致：热机燃料成本、风光直接/备用/惩罚成本，并可加碳排成本 / Same objective: thermal fuel cost, wind/solar direct-reserve-penalty costs, optionally carbon cost."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致：功率平衡、机组限值、电压限值、线路容量等 / Same constraint set: power balance, generator limits, voltage limits, line limits."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数一致，涵盖成本系数、分布参数、碳税和电压/线路参数 / Parameters match: cost coefficients, distribution parameters, carbon tax, voltage and line terms."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解细节一致：GWO、MATPOWER、IEEE-30/57、与多种算法比较 / Same solution details: GWO, MATPOWER, IEEE-30/57, and benchmark comparisons."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证场景一致：IEEE-30和IEEE-57及碳税/不确定性案例 / Same validation: IEEE-30 and IEEE-57 with carbon-tax and uncertainty cases."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "主要发现一致：GWO表现较好，且碳税/备用/惩罚成本影响调度 / Main findings align: GWO performs well and carbon/reserve/penalty costs affect dispatch."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优缺点一致：适合非凸随机OPF，但仅案例验证且无全局最优保证 / Same strengths and limitations: suitable for non-convex stochastic OPF, but case-study based and no global-optimum guarantee."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "与金标准不符：金标准强调将RES不确定性直接转化为备用/惩罚成本，不是Monte-Carlo场景分析 / Mismatch: gold standard emphasizes converting RES uncertainty into reserve/penalty costs, not Monte-Carlo scenario analysis."
+        }
+      }
+    },
+    "Hybrid_UC_OPF_Renewable_Integrated_Power_Systems": {
+      "source_hash": "6f2feaf25f082650a7290f9db02b84eb126b4d1f5c0c191bf9bea9289a436c71",
+      "paper_title": "Hybrid UC–OPF Optimization for Renewable-Integrated Power Systems",
+      "instance_name": "Hybrid_UC_OPF_Renewable_Integrated_Power_Systems",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches exactly."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致，仅分隔符不同 / Authors match; only separators differ."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Institution matches exactly."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": false,
+          "reason": "目的被改写且遗漏关键流程 / Purpose is altered and misses the two-stage UC→NR→PSO OPF refinement workflow."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致，表述更简略 / Motivation is substantively the same, just shorter."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题范围一致，补充了系统细节 / Same problem domain; added system details are compatible."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题含义一致 / Research question preserves the same meaning."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容一致，属概括性表述 / Outputs are the same in summarized form."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "模型特征一致 / Model features are consistent with the gold standard."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "AC潮流与电压/线路约束一致 / AC power-flow formulation is correctly captured."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "24小时日前多时段规划一致 / 24-hour day-ahead multi-period horizon is correct."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "1小时分辨率一致 / Hourly resolution matches 1 h."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "24小时优化时域一致 / 24-hour optimization horizon matches."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "确定性处理一致，说明无显式随机模型 / Deterministic treatment is correct; no explicit stochastic model."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "系统域一致，细节补充不冲突 / Domain matches; added bus details do not conflict."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "SCIP、NR、PSO修复流程一致 / SCIP, NR, and PSO repair workflow are correctly described."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能结论一致，数值为支持性细节 / Performance claim matches; numbers are compatible supporting detail."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "固定负荷、无需求响应一致 / Fixed load with no demand response is correct."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标为成本最小化，罚项最小化被概括进成本中 / Cost minimization with penalties is preserved in the summary."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，属压缩概括 / Constraint set is correctly summarized."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数含义一致，属概括性列举 / Parameters are consistent, just summarized."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "两阶段求解流程一致 / Two-stage solve process is accurately summarized."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证系统与数据类型一致，细节被概括 / Validation setup matches; details are summarized."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "主要发现一致，保留了成本-可行性权衡 / Main findings match, including the cost-feasibility tradeoff."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点与局限一致 / Strengths and limitations are consistent."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "PHS作为平衡/备用资源一致 / PHS as a balancing/backup resource matches."
+        }
+      }
+    },
+    "Convex_DistFlow_Loss_Reduction": {
+      "source_hash": "b7f01797da7a5206b78164e81cce0d89c6592912da68812ad30afe279d8528c3",
+      "paper_title": "Loss reduction in a windfarm participating in primary voltage control using an extension of the Convex DistFlow OPF",
+      "instance_name": "Convex_DistFlow_Loss_Reduction",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "大小写与标点差异，不改变标题含义 / Case and capitalization differences only; meaning unchanged."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者名单完全一致 / Author list matches exactly."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构名称与缩写一致，仅分隔符不同 / Institutions and abbreviations match; only punctuation differs."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "都表示在风电场一次电压控制下优化无功分配并降低集电网损耗 / Both state optimizing reactive dispatch and reducing collector-grid losses under primary voltage control."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "都指出现有无功分配方案次优并导致额外损耗 / Both say the current dispatch is suboptimal and causes extra losses."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "都描述了风电场集电网的最优无功调度及相关设备建模 / Both describe OPF for wind-farm reactive dispatch with relevant network components."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "核心问题一致：扩展Convex DistFlow以高效准确求解OLTC与无功调度 / Same core question: extend Convex DistFlow to solve OLTC and reactive dispatch accurately and efficiently."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出项基本一致，均包含OLTC、无功分配、电压和损耗 / Outputs align: OLTC, reactive dispatch, voltages, and losses."
+        },
+        "hasModelFeature": {
+          "factually_correct": false,
+          "reason": "LLM写的是求解/松弛方法，不是模型名称本身 / LLM gives solution formulation details, not the model names listed in gold."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "都在描述Convex DistFlow及其SOCP/线性化扩展特征 / Both describe Convex DistFlow with SOCP/linearized extensions."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "都表示静态、单时段问题 / Both indicate a static single-period problem."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "都说明数据是10分钟分辨率且模型按单工况求解 / Both state 10-minute data and static per-case solving."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "都明确是单工况/单时段优化 / Both explicitly indicate single-period optimization."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "都属于风电场集电网/配电网无功调度场景 / Both are wind-farm collector-grid reactive dispatch domain."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "都体现了线性外逼近、MISOCP/MILP等求解增强 / Both capture linear outer approximation and MISOCP/MILP enhancement."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "都涉及与Matpower比较、精度与计算时间表现 / Both mention comparison with Matpower and accuracy/runtime performance."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "都表示最小化PCC有功交换并惩罚无功偏差 / Both minimize PCC active exchange with a penalty on reactive mismatch."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，包含节点平衡、电压、热稳、OLTC和电容/电抗器状态等 / Constraint set matches: balances, voltages, thermal limits, OLTC, and bank states."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "列出的参数与金标准同类且一致，虽未逐项穷尽 / Parameters are consistent with the gold standard, though not exhaustive."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "都描述了MISOCP到MILP的BTN线性外逼近求解流程 / Both describe the MISOCP-to-MILP BTN outer-approximation workflow."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "都提到6个极端工况、Matpower验证和聚类工况测试 / Both mention six extreme cases, Matpower validation, and clustered operating points."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论方向一致：无功失配小时更准确、可优于Matpower、较高阶次可能更慢 / Conclusions match: accurate when mismatch is small, can beat Matpower, higher order may be slower."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点与局限与金标准一致，尤其是设备建模和失配时精度下降 / Strengths and limitation align, especially practical device modeling and degraded accuracy under mismatch."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "LLM给出的是具体规模参数，不是金标准强调的论文核心价值 / LLM states specific size parameters, not the paper’s core value emphasized in gold."
+        }
+      }
+    },
+    "Machine_Learning_Aided_SCOPF": {
+      "source_hash": "ca44a93e693ff65d81af0d1145b1bcf3b3f185cada8358c8a6c0be1bf539adec",
+      "paper_title": "Machine Learning-Aided Security Constrained Optimal Power Flow",
+      "instance_name": "Machine_Learning_Aided_SCOPF",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Publication year matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致，仅分隔符不同 / Authors match; only delimiter formatting differs."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构核心名称一致，省略了地点信息 / Institution name matches; location detail omitted."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "主旨一致：用机器学习辅助求解SCOPF并提高效率 / Same purpose: machine-learning-aided SCOPF for faster solving."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致，均强调AC OPF非线性、非凸和大规模求解困难 / Same motivation: nonlinear, nonconvex AC OPF is hard for large-scale solving."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": false,
+          "reason": "偏离了核心问题，加入了“switched shunt security constraints”这一特定表述且未体现原文重点的“提高速度并避免约束违背” / Changes the problem focus by adding a specific switched-shunt framing and missing the main speed/violation issue."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题本质一致：预测关键变量并在保持可行性的同时加速求解 / Same research question in substance: predict key variables and preserve feasibility while speeding up solving."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出一致，均包含电压、注入、机组出力和支路潮流；省略/合并了部分细节不影响含义 / Outputs match in substance; minor detail compression does not change meaning."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "特征一致，均指随机森林+物理方程的混合/辅助OPF / Same feature: random-forest-based hybrid with physics equations."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "都指向AC网络方程/潮流公式及其物理计算 / Both refer to AC network equations/power-flow formulation."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "单时段、静态求解含义一致 / Single-period static horizon meaning is preserved."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "单个运行快照一致 / Single operating snapshot matches."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "一致地表示确定性方法，仅用采样负荷测试而非随机/鲁棒建模 / Consistently deterministic; sampled loads only, not stochastic/robust modeling."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致：输电网、SCOPF、大规模网络 / Same domain: transmission network, SCOPF, large-scale system."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法增强一致：多输入多输出随机森林预测后用网络方程恢复变量 / Same enhancement: MIMO random forest plus network-equation recovery."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能结论一致：零约束违背且比MIPS快很多 / Same performance claim: zero violations and much faster than MIPS."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "都表示负荷为固定输入，没有需求响应建模 / Both indicate fixed load inputs with no demand-response model."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标一致：最小化发电成本，且使用分段线性成本 / Same objective: minimize generation cost with piecewise-linear costs."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，包含电压、机组、无功补偿、潮流和功率平衡等 / Constraint set matches: voltage, generator, shunt, flow, and power-balance constraints."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数基本一致，均包含电压、机组、负荷、支路、Y矩阵和成本等关键量 / Parameters match in substance: voltages, generators, loads, branches, Y matrix, and costs."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": false,
+          "reason": "加入了“case II predicts all OPF variables directly”这一与金标准相反的内容 / Adds a direct-all-variables case that contradicts the gold summary."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证数据集、500-bus网络、8760样本及与MIPS/纯ML对比都一致 / Validation setup matches: 500-bus network, 8,760 samples, and comparisons with MIPS and pure ML."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "核心结果一致：接近MIPS、满足约束并显著缩短时间 / Core findings match: close to MIPS, feasible, and much faster."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": false,
+          "reason": "遗漏了关键限制与优势细节，且把限制点错误聚焦到纯ML违反等式约束而非该方法自身局限 / Omits key strengths/limitations and misfocuses the limitation on pure ML rather than this method's own constraints."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "保留了后续分析适用性这一核心附加性质 / Preserves the key extra property of suitability for post-contingency analysis."
+        }
+      }
+    },
+    "Multi_Period_Hybrid_AC_DC_OPF": {
+      "source_hash": "45f8a674ecd0b9cbeddd88829c359bf6d397fe689df92b30bdbe799a85a1822a",
+      "paper_title": "Multi-Period Hybrid AC/DC-OPF Model for Flexibility Market Clearing With Seamless TSO-DSO Coordination",
+      "instance_name": "Multi_Period_Hybrid_AC_DC_OPF",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Publication year matches exactly."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致，仅分隔符不同 / Authors match; only separators differ."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构核心信息一致，缩写与省略不改变含义 / Institutions match in substance; abbreviation and omission do not change meaning."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "目的一致，均指多期混合AC/DC-OPF用于灵活性市场清算与TSO-DSO协调 / Same purpose: multi-period hybrid AC/DC-OPF for flexibility market clearing and TSO-DSO coordination."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致，均强调灵活性与协调以应对拥塞、电压和平衡问题 / Same motivation: flexibility and coordination to address congestion, voltage, and balancing issues."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "解决的问题一致，都是在满足配电与输电约束下激活分布式灵活性 / Same solved problem: activate distributed flexibility while respecting distribution and transmission constraints."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致，均问该多期混合AC/DC-OPF能否支持灵活性清算与TSO-DSO协调 / Same research question about whether the model can support flexibility clearing and TSO-DSO coordination."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容基本一致，LLM为更概括表述但未改变核心结果 / Outputs are substantively the same; LLM is a concise summary."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "模型特征一致，均为混合AC/DC、多期、并含连接约束 / Same model features: hybrid AC/DC, multi-period, and coupling constraint."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "公式特征一致，SOC-ACOPF与DC-OPF及凸松弛均被保留 / Formulation features preserved: SOC-ACOPF, DC-OPF, and convex relaxation."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "时间范围一致，均为多期、日前与滚动/运行时段 / Time-horizon meaning preserved: multi-period, day-ahead, and rolling/operational periods."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "时间分辨率一致，均为1小时和15分钟 / Temporal resolution matches: hourly and 15-minute intervals."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "优化时域一致，均为24小时并含四分之一小时子时段 / Optimization horizon matches: 24 hours with quarter-hour subperiods."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "不确定性处理一致，均表示有场景能力但非完整随机优化 / Same uncertainty handling: scenario-capable but not full stochastic optimization."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致，均为TSO-DSO协调下的输电与配电灵活性市场 / Same domain: transmission and distribution coordination in a local flexibility market."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "求解实现一致，Pyomo+Gurobi且为两阶段日前/灵活性清算 / Same implementation: Pyomo with Gurobi and two-stage day-ahead/flexibility clearing."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能表述一致，均强调测试验证、准确性和适用性 / Performance meaning preserved: validated on test grids with accuracy and applicability."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "需求侧特征一致，均包含灵活负荷、移峰、削减等 / Demand-side features preserved: flexible loads, shifting, and shedding."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数一致，都是最小化总运行成本并包含灵活性、电池和弃负荷成本 / Objective preserved: minimize total operating cost including flexibility, battery, and load shedding costs."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，LLM为压缩概述但未改变关键约束类型 / Constraint set preserved; LLM is a compressed summary without changing key constraint types."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数核心一致，均涉及成本、网络参数、负荷/发电限值、电池参数等 / Core parameters match: costs, network data, limits, and battery parameters."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": false,
+          "reason": "遗漏了关键求解细节，如混合AC/DC建模、耦合方式、灵活性扩展与小时/15分钟设置 / Missing key solution details such as hybrid AC/DC modeling, coupling, flexibility extension, and hourly/15-minute setup."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证结论一致，均为基准模型对比并测试灵活性、电压和拥塞场景 / Validation meaning preserved: benchmark comparisons and flexibility/voltage/congestion tests."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "主要发现一致，均指出成本下降、电压改善、输电功率与损耗降低、拥塞缓解 / Main findings preserved: lower costs, better voltages, reduced imported power and losses, and congestion relief."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点与局限总体一致，均强调统一TSO-DSO优化及多DSO计算复杂度问题 / Strengths and limitations are substantively aligned, including unified TSO-DSO optimization and multi-DSO complexity."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "加入了“无功灵活性交换”这一未被金标准支持的额外主张 / Adds unsupported claim of reactive power flexibility exchange."
+        }
+      }
+    },
+    "Neural_Networks_Encoding_Dynamic_Security_Constrained_AC_OPF": {
+      "source_hash": "e8478dea8c64613ec5ef904643fc600157e1807b32a8596dfa474419fba431d3",
+      "paper_title": "Neural Networks for Encoding Dynamic Security-Constrained Optimal Power Flow",
+      "instance_name": "Neural_Networks_Encoding_Dynamic_Security_Constrained_AC_OPF",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅换行/空格差异 / Same title, only whitespace/newline differences."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者列表一致 / Author list matches."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构更具体但不冲突 / More specific institution wording, no conflict."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：把动态安全约束编码进可解优化模型 / Same core purpose: encode dynamic security constraints into a tractable optimization model."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：直接加入动态约束会使AC-OPF难解，需要可扩展替代方案 / Same motivation: direct dynamic constraints make AC-OPF intractable, so a scalable alternative is needed."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题表述一致，包含N-1与小信号稳定性 / Same problem, including N-1 and small-signal stability."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致：用神经网络编码可行域并转成MILP求解 / Same question: use NN to encode feasible space and solve as MILP."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": false,
+          "reason": "遗漏并改变了主要输出重点；金标准强调发电设定值、可行调度、成本、分类结果和状态恢复，不只是电压/潮流 / Misses and shifts the main outputs; gold emphasizes setpoints, feasible dispatch, cost, classification, and restored state, not just voltages/flows."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "特征一致：分类NN、可行域编码、ReLU的精确MILP重构 / Same features: classification NN, feasible-region encoding, exact MILP reformulation of ReLU."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "都指向ACOPF及其安全约束扩展 / Both refer to AC-OPF and its security-constrained extension."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "一致为单时段/静态运行点 / Consistent with single-period/static operating point."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "一致为单个运行状态 / Consistent with a single operating condition."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "一致：确定性安全约束优化，不是随机/机会约束 / Consistent: deterministic security-constrained optimization, not stochastic/chance-constrained."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "IEEE 14-bus上的输电网与动态安全评估场景一致 / Matches transmission-network and dynamic-security-assessment setting on IEEE 14-bus."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "都包含神经网络编码、MILP重构和线性化求解增强 / Both include NN encoding, MILP reformulation, and linearization-based solving."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "与金标准的可扩展、可行性导向、动态安全适用、成本近似优化一致 / Consistent with scalable, feasibility-oriented, dynamic-security-suitable, cost-approximation performance."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标都是最小化发电成本 / Objective is to minimize generation cost."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "列出的主要约束与金标准一致，虽未逐项列全但无冲突 / Main constraints match the gold standard, though not exhaustive."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "包含了关键参数集合，未与金标准冲突 / Includes key parameters and does not conflict with the gold standard."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解流程一致：训练ReLU分类网络、精确MILP化、迭代线性化损耗 / Same workflow: train ReLU classifier, exact MILP reformulation, iterative loss linearization."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证平台与样本规模一致，补充的99%准确率和对比也符合 / Validation system and sample size match; added accuracy/comparison are consistent."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论方向一致：可行性提升、ε提高可行率且代价小幅增加 / Same findings direction: feasibility improves, epsilon raises feasibility with small cost increase."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点和局限与金标准一致，虽更简略 / Strengths and limitations are consistent, though more concise."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "强调学习可行域而非直接预测最优解，与金标准一致 / Emphasizes learning the feasible region rather than directly predicting the optimal OPF solution, matching the gold standard."
+        }
+      }
+    },
+    "Online_Optimization_in_Power_Systems": {
+      "source_hash": "479b8b1e35937bd37f24183eef1525e8bf77292ffb31c519e9f42ce20cb94b7c",
+      "paper_title": "Online Optimization in Power Systems With High Penetration of Renewable Generation: Advances and Prospects",
+      "instance_name": "Online_Optimization_in_Power_Systems",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅空格/换行差异 / Same title; only spacing/newline differences."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者名单一致，顺序与内容相同 / Author list matches in content and order."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构信息一致，括号写法不影响含义 / Institutions match; parenthetical formatting does not change meaning."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：综述并比较高渗透可再生场景下的在线优化方法 / Same core purpose: review and compare online optimization methods under high renewable penetration."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：可再生波动使离线优化不再可靠 / Same motivation: renewable variability makes offline optimization less reliable."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "都在讲对在线优化方法的分类与适用场景 / Both describe classifying online optimization methods and their applicability."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致：不同时间尺度和场景下应选哪类在线优化方法 / Same question: which online optimization paradigm fits different time scales and settings."
+        },
+        "hasModelFeature": {
+          "factually_correct": false,
+          "reason": "偏离金标准的模型特征集合；金标准是在线优化/实时/高渗透等属性，而非具体方法列表 / Deviates from the gold feature set; gold is about online/realtime/high-renewable attributes, not a list of methods."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": false,
+          "reason": "金标准强调AC/DC/Branch Flow/线性化BFM；LLM加入了Bus-injection、DistFlow和“linearized DC”表述，技术对应不完全一致 / Gold emphasizes AC/DC/Branch Flow/linearized BFM; LLM adds bus-injection, DistFlow, and linearized DC wording that does not exactly match."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "都表达了单期、多期和动态控制时间尺度 / Both express single-period, multi-period, and dynamic-control horizons."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "时间尺度一致，秒到分钟及单期/多期 / Time scales match: seconds to minutes plus single-/multi-period settings."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "都说明优化视角不固定，包含单期与多期/长期 / Both indicate the horizon is not fixed and includes single- and multi-period/long-term cases."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "都强调在线决策、无需依赖预测或历史分布来应对不确定性 / Both emphasize online decisions without relying on forecasts or historical distributions."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": false,
+          "reason": "金标准是输电/配电/微电网/DC网/混合ACDC网；LLM改成了控制与市场应用，域范围发生变化 / Gold is transmission/distribution/microgrid/DC/hybrid AC-DC grids; LLM shifts to control and market applications, changing the domain scope."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法类别基本一致，附加异步变体不冲突 / Method categories match; added asynchronous variants are compatible."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "都在表达快速、实时跟踪、低计算负担 / Both convey fast response, real-time tracking, and low computational burden."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "都包含可控负荷、需求响应和电动汽车负荷 / Both include controllable loads, demand response, and EV demand."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "与金标准列举的多种目标一致，虽更简略但未改变含义 / Consistent with the gold’s multiple objectives; shorter but meaning-preserving."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束类型与金标准一致，表述更概括 / Constraint types match the gold standard, just more concise."
+        },
+        "usesParameter": {
+          "factually_correct": false,
+          "reason": "加入了金标准未列出的参数如Lyapunov权重ρ、步长η、控制增益，且遗漏部分关键参数；作为参数集合不完全对应 / Adds parameters not in the gold set (e.g., Lyapunov weight ρ, stepsize η, control gains) and omits some key ones; the parameter set does not fully correspond."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "总结与金标准一致：综述性论文，分动态控制、单期和多期优化 / Summary matches: a review paper divided into dynamic control, single-period, and multi-period optimization."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "一致：没有新模型验证，主要依赖文献综述与已有研究 / Matches: no new model validation, mainly literature review and prior studies."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "核心结论一致：在线优化适合波动系统，且反馈优化、Lyapunov、OCO各有适用场景 / Core findings match: online optimization suits volatile systems, with distinct roles for feedback optimization, Lyapunov, and OCO."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优缺点与金标准一致，虽更概括但不冲突 / Strengths and limitations are consistent with the gold standard, though more general."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "与金标准一致：这是电力系统在线优化方法的综述/分类 / Matches the gold: a survey/taxonomy of online optimization methods in power systems."
+        }
+      }
+    },
+    "Hybrid_AC_DC_Network_VSC_MTDC_Renewables": {
+      "source_hash": "620c123c733ad2a86e8dd7db0c3c92c639c278da776121e2553e7933452d5e47",
+      "paper_title": "Optimal Power Flow for Hybrid AC/DC Electrical Networks Configured With VSC-MTDC Transmission Lines and Renewable Energy Sources",
+      "instance_name": "Hybrid_AC_DC_Network_VSC_MTDC_Renewables",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题含义一致，仅换行被去除 / Same title meaning; line break removed."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者名单一致 / Author list matches."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致，仅格式不同 / Institutions match; formatting differs only."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：建立并求解含VSC-MTDC与可再生能源的单目标OPF / Same core purpose: formulate and solve a single-objective OPF with VSC-MTDC and renewables."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：可再生能源接入与VSC-MTDC研究不足 / Same motivation: renewable integration and limited prior VSC-MTDC OPF work."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题本质一致：含VSC-MTDC与可再生能源的单目标OPF，且为修改IEEE 30节点系统 / Same problem class; modified IEEE 30-bus detail is compatible."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容一致，LLM只是概括了主要结果 / Outputs are consistent; LLM summarized the main reported outputs."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "模型特征一致：混合AC/DC、VSC-MTDC、可再生能源 / Same model features: hybrid AC/DC, VSC-MTDC, renewables."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "功率流表述一致，均涉及AC/DC平衡与VSC约束 / Power-flow formulation matches: AC/DC balances and VSC constraints."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "均表示静态单期 / Both indicate static single-period."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "均为单运行点/单时段优化 / Both are single operating-point / single-period optimization."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "不确定性处理一致：随机分布建模并含备用/惩罚成本 / Same uncertainty handling: probabilistic modeling with reserve and penalty costs."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致：输电级混合AC/DC含可再生能源系统 / Same domain: transmission-level hybrid AC/DC renewable-integrated system."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法一致：FDB-SFS及其改进 / Same method: FDB-SFS and its enhancement."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能结论一致：最佳结果与鲁棒收敛 / Same performance claim: best results and robust convergence."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "均未体现需求侧响应，固定负荷一致 / No demand-side response is reported; fixed load is consistent."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数五种情形一致，表述为概括性总结 / The five objective cases match; LLM gives a concise summary."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，LLM仅省略了部分可再生出力上下限细节 / Constraint set matches; LLM omitted some renewable-specific bounds."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数类型一致，LLM概括了系数、分布参数和边界 / Parameter types match; LLM summarized coefficients, distribution parameters, and bounds."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解细节一致：算法、迭代次数、试验次数和MATACDC / Same solution details: algorithms, iterations, trials, and MATACDC."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证方式一致：约束检查与Wilcoxon/Friedman统计检验 / Validation matches: constraint checking and Wilcoxon/Friedman tests."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "主要结论一致：FDB-SFS在五种情形下最好 / Main finding matches: FDB-SFS best in all five cases."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优缺点一致，LLM仅概括了未来工作 / Strengths and limitations match; LLM only summarized future work."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "与金标准不符：金标准是RES分布与组合发电建模，不是未来工作 / Mismatch: gold standard is about RES distribution and combined generation modeling, not future work."
+        }
+      }
+    },
+    "Graph_Neural_Networks_ACOPF": {
+      "source_hash": "7fb6cdf998e7274e62e461dcdad42eb2b8dd938359a8940685b012b9988904a4",
+      "paper_title": "Optimal Power Flow Using Graph Neural Networks",
+      "instance_name": "Graph_Neural_Networks_ACOPF",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Authors match exactly."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构含义一致，仅顺序不同 / Same institution, only word order differs."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：用GNN近似ACOPF最优解并提升速度与可扩展性 / Same purpose: use GNN to approximate ACOPF solutions faster and more scalably."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：ACOPF难解且现有近似方法扩展性差 / Same motivation: ACOPF is hard and existing approximations scale poorly."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": false,
+          "reason": "偏离问题陈述，变成了数据集/测试案例描述而非所解决的问题 / Changes from the solved problem to dataset/test-case description."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致，都是评估GNN能否准确高效地模仿ACOPF / Same research question about whether GNN can imitate ACOPF accurately and efficiently."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出一致：预测发电机有功出力并与IPOPT解比较 / Same output: predicted generator active power compared with IPOPT."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "特征一致，都是GNN、局部消息传递、可扩展和模仿学习 / Same features: GNN, local message passing, scalability, imitation learning."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "AC潮流表述一致，非线性有功/无功平衡符合原文 / AC formulation matches the original nonlinear active/reactive power balance."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "一致：负荷随机采样只是数据生成方式，不是随机/鲁棒OPF / Correct: random load sampling is data generation, not stochastic/robust OPF."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致，IEEE测试系统上的输电网OPF / Same domain: transmission-network OPF on IEEE test systems."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法增强一致：GNN+模仿学习，训练目标来自IPOPT / Same enhancement: GNN with imitation learning using IPOPT targets."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能特征一致：RMSE和比IPOPT快很多 / Same performance emphasis: RMSE and much faster inference than IPOPT."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "负荷作为输入且为固定负荷场景，含义一致 / Loads as inputs in a fixed-load setting is consistent."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数一致：最小化发电成本 / Same objective: minimize generation cost."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束表述一致，包含有功/无功平衡和变量上下界 / Same constraints: active/reactive balance and variable bounds."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "关键参数一致，虽未列全但未改变含义 / Key parameters match; omission of some parameters does not change meaning."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": false,
+          "reason": "过于泛化且遗漏关键细节，未准确概括图结构、边权、输出与局部计算 / Too generic and misses key details about graph structure, edge weights, output, and local computation."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": false,
+          "reason": "遗漏了训练/数据构造的关键验证细节，且加入了未在该字段中体现的比较内容 / Misses key validation details and adds comparison content not captured by the gold summary."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论一致：GNN优于MLP且推理远快于IPOPT / Same findings: GNN beats MLP and is orders of magnitude faster than IPOPT."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": false,
+          "reason": "加入了“稳定性”等金标准未强调的优点，且遗漏了若干重要限制 / Adds stability not emphasized in gold and omits several important limitations."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "K跳邻域聚合与图卷积层符合GNN局部性/可扩展性的进一步性质 / K-hop aggregation via graph convolutions is consistent with the further property."
+        }
+      }
+    },
+    "Demand_Response_AC_OPF_Flexible_Loads": {
+      "source_hash": "99c1a7a0bdcad75677186774f72284d70a1cb1cf8981c4cf733a5b060bc9f2e5",
+      "paper_title": "Optimal Scheduling of Demand Response-Based AC OPF by Smart Power Grid’ Flexible Loads Considering User Convenience, LSTM-Based Load Forecasting, and DERs Uncertainties",
+      "instance_name": "Demand_Response_AC_OPF_Flexible_Loads",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题内容一致，仅标点/连字符差异 / Same title meaning; only punctuation and formatting differ."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Same publication year."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI完全一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者列表一致 / Author list matches."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Institutions match."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：在智能电网中进行基于需求响应的AC OPF调度 / Same core purpose: DR-based AC OPF scheduling in smart grids."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致，都是为同时考虑便利性、可再生不确定性和需求响应不足 / Same motivation: address incomplete prior DR-AC OPF treatment and uncertainty/comfort considerations."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题表述一致，都是联合调度灵活负荷、EV/HVAC、储能和可再生出力 / Same solved problem: joint scheduling of flexible loads, EV/HVAC, storage, and renewables."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题含义一致：如何协调需求响应以降低成本和峰值并满足约束 / Same research question about coordinating DR to reduce cost/peaks under constraints."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出包含最优调度、EV/HVAC计划、潮流/电压等，虽少了部分指标但不冲突 / Outputs are consistent; some listed metrics are omitted but no contradiction."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "模型特征一致，均指DR-AC OPF并含EV/HVAC、储能和可再生 / Same model features: DR-AC OPF with EV/HVAC, storage, and renewables."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "AC潮流/ACOPF本质一致，LLM只是展开了具体方程特征 / AC power flow formulation matches ACOPF; added detail is compatible."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "24小时日内调度一致 / Same 24-hour day-ahead horizon."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "1小时与Hourly等价 / 1 h equals hourly resolution."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "优化时域一致为24小时 / Same 24-hour optimization horizon."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "都体现场景法/概率法处理可再生与预测不确定性，附加正态分布不冲突 / Both use scenario/probabilistic uncertainty handling; extra normal-distribution detail is compatible."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "都属于含DER和灵活负荷的智能电网/输电网OPF / Same domain: smart-grid/transmission OPF with DERs and flexible loads."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "GAMS、CONOPT3和TOPSIS与金标准一致，且MINLP表述兼容 / GAMS, CONOPT3, and TOPSIS match; MINLP is compatible."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能关注点一致，且IEEE 24/118节点验证与成本、峰值、电压、时间等结果不冲突 / Same performance themes; IEEE 24/118 validation and reported metrics are compatible."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "都包含需求响应、灵活负荷及EV/HVAC侧特征 / Same demand-side features: DR, flexible loads, EV/HVAC."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数含义一致：成本、电压偏差、收益、削峰和用户便利性 / Same multi-objective structure: cost, voltage deviation, revenue, peak reduction, convenience."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，LLM只是概括了部分约束 / Constraint set matches; LLM gives a summarized version."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数大体一致，虽有命名简化但未改变技术含义 / Parameters are substantively the same despite simplified names."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解流程一致：LSTM预测、场景法、GAMS、CONOPT3、TOPSIS / Same solution workflow: LSTM forecasting, scenarios, GAMS, CONOPT3, TOPSIS."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证系统与DR步长一致；LLM省略了部分数据集细节但不矛盾 / Validation on IEEE 24/118 and DR steps matches; omitted dataset details are not contradictory."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "主要结论一致：20% DR最优，降成本降峰值且电压受控 / Main findings match: 20% DR optimal, cost/peak reduced, voltages within limits."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点与限制都一致，尤其是聚合器位置未优化 / Strengths and limitation align, especially unoptimized aggregator placement."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "金标准是TOPSIS权重与未来方向；LLM改成了需求响应特征，语义不符 / Gold is TOPSIS weights and future direction; LLM instead states a model feature, changing the meaning."
+        }
+      }
+    },
+    "Physics_Informed_Neural_Networks": {
+      "source_hash": "dcdc6c57ca53acfe2d22dfbddd67f073f2fba79e34ac7f52d0ae063526a3e023",
+      "paper_title": "Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+      "instance_name": "Physics_Informed_Neural_Networks",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅空格/换行差异 / Same title; only spacing/newline differences."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Same publication year."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / Same DOI."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致，仅格式不同 / Same authors; formatting differs only."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Same institutions."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：用PINN求解前向/反问题 / Same core purpose: use PINNs for forward and inverse PDE problems."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：利用物理规律提升小样本学习与可解释性 / Same motivation: encode physics to improve small-data learning and physical consistency."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "所解问题一致：PDE求解与PDE发现 / Same solved problems: PDE solution and discovery."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致，都是将PDE约束加入网络以处理少样本/噪声数据 / Same question: constrain networks with PDE physics under limited/noisy data."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出一致，均为PDE解场与参数识别 / Same outputs: PDE solution fields and parameter identification."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "特征未冲突，连续/离散时间PINN属于该模型特征 / No conflict; continuous-time and discrete-time PINN formulations fit the model feature."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": false,
+          "reason": "金标准为非OPF/不适用；LLM描述的是PDE残差而非电力潮流模型 / Gold says not OPF/not applicable; LLM describes PDE residuals, not power-flow formulations."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "都表示动态模型且含连续/离散时间 / Both indicate dynamic models with continuous and discrete time."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "都在说稀疏观测、collocation点和离散时间大步长 / Same idea: sparse snapshots, collocation points, and large time steps in discrete time."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "未给出具体区间但仍描述在模型时间区间内训练，未改变含义 / No exact intervals, but still refers to training over the modeled time interval."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "与金标准一致：强调噪声鲁棒，但非显式不确定性量化 / Matches gold: noisy-data robustness without explicit uncertainty quantification."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "与金标准一致：通用物理系统而非电力系统专用 / Matches gold: general physical systems, not power-system specific."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法增强一致：物理约束损失、自动微分、隐式Runge-Kutta / Same enhancements: physics-informed loss, automatic differentiation, implicit Runge-Kutta."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能表述一致：准确、低误差、对噪声参数识别稳健 / Same performance meaning: accurate, low error, robust parameter identification under noise."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "均为不适用/无需求侧内容 / Both indicate not applicable; no demand-side content."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数一致：数据误差与PDE残差最小化，离散时间含Runge-Kutta匹配 / Same objective: minimize data mismatch and PDE residuals, with Runge-Kutta matching in discrete time."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束一致：PDE残差、初边值、周期性及Runge-Kutta关系 / Same constraints: PDE residuals, initial/boundary conditions, periodicity, and Runge-Kutta relations."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数集合一致，包含权重、偏置、λ、collocation点和RK系数等 / Same parameter set: weights, biases, λ, collocation points, and RK coefficients."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解细节一致：前馈网络、自动微分、L-BFGS、隐式Runge-Kutta / Same solution details: feed-forward nets, automatic differentiation, L-BFGS, implicit Runge-Kutta."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": false,
+          "reason": "验证对象大体一致，但“finite-element reference solutions”与金标准中的spectral/Chebfun/NekTar不符，加入了未支持方法 / Main validation examples match, but 'finite-element reference solutions' conflicts with gold's spectral/Chebfun/NekTar references and adds unsupported detail."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论一致：可从稀疏噪声数据恢复PDE解并识别未知系数 / Same finding: recover PDE solutions and identify unknown coefficients from sparse noisy data."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优缺点一致：数据效率、物理约束、噪声鲁棒；局限是高维collocation成本和训练敏感性 / Same strengths and limitations: data efficiency, physics constraints, noise robustness; limits include collocation cost and training sensitivity."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "金标准强调对后续physics-informed OPF的方法学意义；LLM改成GitHub开源信息，含义不符 / Gold states methodological significance for later physics-informed OPF; LLM instead claims GitHub code/data, which is unsupported and different."
+        }
+      }
+    },
+    "Predicting_AC_Optimal_Power_Flows": {
+      "source_hash": "0291d3510cdec53e2411709d09dede5bdb5995155eaa0a34eaee4aa44dd705f6",
+      "paper_title": "Predicting AC Optimal Power Flows: Combining Deep Learning and Lagrangian Dual Methods",
+      "instance_name": "Predicting_AC_Optimal_Power_Flows",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "仅换行/空格差异，标题含义一致 / Only line-break spacing differs; title meaning is identical."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者姓名一致，仅缩写空格格式不同 / Same authors; only spacing in initials differs."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致 / Institutions match exactly."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：用深度学习预测AC-OPF设定值 / Same core purpose: predict AC-OPF setpoints with deep learning."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：AC-OPF非线性且需快速近似 / Same motivation: AC-OPF is nonlinear and needs faster accurate approximations."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "都在说预测发电与电压并满足物理/工程约束 / Both describe predicting dispatch and voltages while respecting physical and engineering constraints."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题含义一致：能否用深度学习结合拉格朗日方法逼近AC-OPF / Same question: can deep learning with Lagrangian duality approximate AC-OPF feasibly."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出变量一致，补充的角度和无功功率也与原文一致 / Output variables match; added angles and reactive power are consistent with the gold."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "提到的DNN、约束惩罚、hot-start、拉格朗日更新都与原模型一致 / DNN, constraint penalties, hot-start, and Lagrangian updates are all consistent."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "AC潮流/ACOPF本质一致，细节展开不改变含义 / AC power flow equations are the same ACOPF formulation; added details do not change meaning."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "单时段/静态OPF含义一致，hot-start不改变时间属性 / Single-period/static OPF is consistent; hot-start does not change the time-horizon classification."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "都表明不是显式随机/鲁棒优化，而是利用负荷变化与hot-start / Both indicate no explicit stochastic/robust OPF; they use load variation and hot-start."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "输电网AC-OPF一致，补充IEEE/NESTA只是更具体 / Transmission-network OPF matches; IEEE/NESTA is just more specific."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "子梯度更新、拉格朗日松弛和hot-start都符合原方法 / Subgradient updates, Lagrangian relaxation, and hot-start all fit the original method."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "高精度和显著加速与原文结论一致 / High accuracy and large speedups match the paper's findings."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "输入是负荷需求，未引入需求响应，符合固定负荷 / Inputs are load demands with no demand response, consistent with fixed load."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "预测误差加约束惩罚的总体目标一致，虽未写出生成成本但不冲突 / Overall objective of prediction error plus constraint penalties matches; omission of generation cost is not conflicting."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "列出的电压、机组、线路和潮流约束与原文一致 / Listed voltage, generator, line, and power-flow constraints match the gold."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数集合与原文一致，包含负荷、hot-start、导纳、边界和拉格朗日乘子 / Parameter set matches the gold, including loads, hot-start, admittance, bounds, and multipliers."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "训练网络、子网络、hot-start和拉格朗日更新的核心流程一致 / Core workflow of subnetworks, hot-start, and Lagrangian updates is consistent."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "测试系统和80/20划分一致；省略优化器超参不影响事实 / Test cases and 80/20 split match; omitting optimizer hyperparameters does not change the fact."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论一致：约束感知和hot-start提升，完整拉格朗日模型最好 / Conclusions match: constraint-aware and hot-start improve performance, full Lagrangian model is best."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点和局限都与原文一致，虽更简略但不矛盾 / Strengths and limitations are consistent with the paper, though more concise."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "hot-start这一重要特征与原文一致；补充的可行性恢复也不冲突 / Hot-start as an important feature matches the gold; added feasibility restoration is not conflicting."
+        }
+      }
+    },
+    "Probabilistically_Robust_AC_Power_Flow": {
+      "source_hash": "a1bd4be05ca59dc5de9a3be177f040ca29016b8e2de91be5ca7637ea0a8d5b6a",
+      "paper_title": "Probabilistically Robust AC Optimal Power Flow",
+      "instance_name": "Probabilistically_Robust_AC_Power_Flow",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Publication year matches exactly."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Authors match exactly."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构信息等价，补充了更细单位但不冲突 / Institutions are equivalent; extra sub-units do not conflict."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：在不确定负荷与可再生出力下最小化成本并给出概率约束保证 / Same core purpose: minimize cost under uncertainty with probabilistic constraint guarantees."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：传统OPF在不确定性下刚性且鲁棒法过保守 / Same motivation: rigid classical OPF under uncertainty and overly conservative robust methods."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题表述一致：含不确定负荷与可再生能源的鲁棒/机会约束AC-OPF / Same problem: AC-OPF with uncertain load and renewable generation under robust/chance constraints."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致，保留了效率与概率保证的核心 / Same research question, preserving efficiency and probabilistic guarantees."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": false,
+          "reason": "输出中加入了“bus voltage and line-flow-feasible operating point”，与金标准列出的具体输出不完全对应 / Adds a feasible operating point not listed in the gold outputs."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "包含场景证书与凸SDP松弛，技术含义一致 / Includes scenario-with-certificates and convex SDP relaxation, same meaning."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "描述的是AC功率流及W提升矩阵的SDP形式，等价于金标准 / Describes AC power flow with lifted W matrix, equivalent to the gold standard."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "单期OPF、按小时重复求解，与金标准一致 / Single-period OPF repeated hourly, consistent with the gold standard."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "时间分辨率为1小时，表述一致 / Temporal resolution is 1 hour, matching the gold standard."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "每次求解是单小时静态点，非24小时联合优化 / Each solve is a single-hour snapshot, not a 24-hour joint optimization."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "不确定性处理方式一致：概率鲁棒、场景证书、机会约束 / Same uncertainty handling: probabilistic robustness, scenario-with-certificates, chance constraints."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "电力系统域特征一致，包含可再生、负荷、约束与输电网络 / Same power-system domain features with renewables, loads, and transmission constraints."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法增强一致：凸松弛+随机场景证书采样 / Same enhancement: convex relaxation plus randomized scenario-with-certificates sampling."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "概率保证与较低保守性一致；“对受限网络精确”不冲突 / Probabilistic guarantee and lower conservatism match; exactness for restricted networks is not conflicting."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": false,
+          "reason": "金标准是FixedLoad，而LLM明确把负荷建模为不确定量 / Gold standard is FixedLoad, but LLM explicitly models loads as uncertain."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标仍是最小化发电成本，附加惩罚项表述不改变主旨 / Objective remains minimizing generation cost; added penalty variant does not change the core meaning."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "列出的约束与金标准主要约束一致，虽未逐项展开SDP与机会约束但不冲突 / Listed constraints match the main gold constraints; omission of SDP/chance constraints is not conflicting."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数覆盖了金标准中的关键不确定量、风险水平、导纳和矩阵分解等 / Covers key gold parameters including uncertainties, risk levels, admittances, and matrix splits."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "SDP提升与场景证书是核心求解细节，YALMIP/Mosek为一致补充 / SDP lifting and scenario-with-certificates are the core details; YALMIP/Mosek are consistent additions."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "39-bus系统、10,000次Monte Carlo验证与对比方法一致，细节略少但不矛盾 / 39-bus system and 10,000 Monte Carlo validation with comparisons are consistent, though less detailed."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论方向一致：减少不可行样本并优于参数化方法 / Same conclusion: fewer infeasible samples and better than the parameterized approach."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点与限制与金标准一致，精确性仅对受限网络成立 / Strengths and limitation align; exactness only for restrictive network classes."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "可扩展到N-1安全约束和停运概率，与金标准一致 / Extension to N-1 security constraints and outage probabilities matches the gold standard."
+        }
+      }
+    },
+    "Real_Time_Lagrangian_Deep_Reinforcement_Learning": {
+      "source_hash": "6bcf8dcaf9930e5e54754ecd221ff24a37ce7bb4830c9fd3e587657382f29668",
+      "paper_title": "Real-Time Optimal Power Flow: A Lagrangian Based Deep Reinforcement Learning Approach",
+      "instance_name": "Real_Time_Lagrangian_Deep_Reinforcement_Learning",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅换行/空格差异 / Same title, only formatting differs."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI完全一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致 / Authors match."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构信息包含金标准且更具体 / Includes the gold institution with extra specific unit."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的相同：用DRL做实时OPF决策并满足约束 / Same core purpose: DRL for real-time OPF under constraints."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：需要更快响应可再生与负荷波动 / Same motivation: faster response to renewable and load variability."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题本质一致：实时OPF下的成本最小化与约束满足 / Same problem: real-time OPF balancing cost and constraints."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致，都是实时生成近最优且满足约束的OPF决策 / Same research question about real-time near-optimal constrained OPF decisions."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": false,
+          "reason": "输出被改成了结果/目标值；金标准是决策变量PtG和VtG / Output was changed to results/objective; gold is decision variables PtG and VtG."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "保留了DRL、Lagrangian和连续动作控制的核心特征 / Preserves DRL, Lagrangian, and continuous-action control."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "AC潮流特征一致，虽更具体但不冲突 / AC formulation matches; extra detail is compatible."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "都表示单周期/逐时段的实时调度 / Both indicate single-period, sequential real-time dispatch."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "都指实时调度粒度，未与金标准冲突 / Both denote real-time dispatch granularity without conflict."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "与金标准一致：每个时段单独优化 / Matches gold: optimization is per dispatch interval."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "一致：利用实时负荷/可再生波动，但不是显式随机/鲁棒OPF / Matches: uses variability but not explicit stochastic/robust OPF."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "传输网OPF语境一致，所列约束也符合该域 / Transmission-network OPF context matches."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "保留了DDPG/DRL与Lagrangian增强，虽表述更概括 / Keeps DDPG/DRL and Lagrangian enhancement, just more general."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "与金标准一致：高最优性、约束满足、显著提速 / Matches gold: high optimality, constraint compliance, and speedup."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "金标准包含负荷侧特征；LLM虽未显式需求响应，但保留了实时负荷输入 / Gold includes load-side features; LLM keeps real-time load input without conflicting."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数一致：最小化总发电成本 / Objective matches: minimize total generation cost."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，包含功率平衡、电压、爬坡和线路限额 / Constraint set matches: power balance, voltage, ramping, and line limits."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "包含了金标准中的主要参数类别，虽少了部分符号但不冲突 / Includes main parameter categories from gold; missing some symbols but no contradiction."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": false,
+          "reason": "遗漏了关键点：Lagrangian增广动作价值函数和无critic、解析梯度 / Misses key points: Lagrangian augmented action-value and no critic with analytic gradient."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "测试系统、对比方法和随机净负荷验证都一致，虽细节更少 / Test system, baselines, and random net-load validation match, with fewer details."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "主要结论一致：接近IP最优、满足约束、实时且大幅节省时间 / Main findings match: near-IP optimal, constraint-satisfying, real-time, large time savings."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点和局限与金标准一致，虽概括更简略 / Strengths and limitations are consistent, just more concise."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": true,
+          "reason": "核心特征一致：连续动作DRL且不使用critic网络 / Core feature matches: continuous-action DRL without a critic network."
+        }
+      }
+    },
+    "Real_Time_Sequential_Security_Constrained_OPF": {
+      "source_hash": "69e59ec552a5d2d988b1acccfcff229e28aef9f177696127d6481220914ecec2",
+      "paper_title": "Real-Time Sequential Security-Constrained Optimal Power Flow: A Hybrid Knowledge-Data-Driven Reinforcement Learning Approach",
+      "instance_name": "Real_Time_Sequential_Security_Constrained_OPF",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅换行被去除 / Same title, line break removed."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者名单完全一致 / Author list matches exactly."
+        },
+        "hasInstitution": {
+          "factually_correct": false,
+          "reason": "机构有误，加入了Tsinghua University和Harbin Institute of Technology，且Alibaba US表述不等同于DAMO Academy, Alibaba US / Incorrect institutions added and affiliation wording changed."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：用混合KDD-RL做实时序列SCOPF并提升安全与效率 / Same core purpose: hybrid KDD-RL for real-time sequential SCOPF with safety and efficiency."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致，概括了ACOPF非凸、时序耦合、参数不准和未见过的故障场景 / Same motivation: nonconvex ACOPF, time coupling, inaccurate parameters, unseen contingencies."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": false,
+          "reason": "过于泛化为普通SCACOPF问题，遗漏并弱化了论文解决的三类核心痛点与KDD-RL安全层方案 / Too generic; misses the three core pain points and the KDD-RL safety-layer solution."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题本质一致：能否在参数不准下用混合RL实时生成安全OPF调度 / Same question: can hybrid RL generate safe real-time OPF dispatch under inaccurate models."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容一致，都是安全的有功/无功调度及相关安全运行量 / Same outputs: safe active/reactive dispatch and related secure operating quantities."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "包含的关键模型特征一致，虽更具体但不冲突 / Key model features match; added specifics do not conflict."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "与ACOPF及用于安全层的线性化AC潮流特征一致 / Consistent with ACOPF and linearized AC power flow for the safety layer."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "都表达了序列式、多步、时序耦合决策 / Both indicate sequential, multi-step, time-coupled decision making."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "虽更笼统，但未与1小时/15分钟的实验时间尺度冲突 / More generic, but not contradictory to the 1h/15min experimental scale."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "与无限时域序列决策、故障终止的MDP设定一致 / Matches the infinite-horizon sequential MDP terminated by grid failure."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "都在表达对参数不准和不确定场景的处理，只是表述更简略 / Both describe handling inaccurate parameters and uncertain scenarios, more briefly."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "与输电网SCOPF/ACOPF及有功无功协调调度一致 / Consistent with transmission-network SCOPF/ACOPF and coordinated P/Q dispatch."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": false,
+          "reason": "加入了SAM、优先经验回放等论文未明确列出的增强项，且遗漏了线性投影、知识数据驱动模型等关键项 / Adds unsupported enhancements and omits key listed components."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "与更快决策、减少违约、经济性相近的性能结论一致 / Consistent with faster decisions, fewer violations, and comparable economic performance."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": false,
+          "reason": "Gold是固定负荷；LLM写成包含预测负荷状态，改变了需求侧特征 / Gold is fixed load; LLM adds forecasted load state, changing the demand-side feature."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数核心一致：最小化发电运行成本 / Core objective matches: minimize generation operating cost."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "列出的约束与AC功率平衡、潮流、机组/线路/电压/爬坡及安全层线性约束一致 / Matches AC balance, flow, generator/line/voltage/ramping, and safety-layer linear constraints."
+        },
+        "usesParameter": {
+          "factually_correct": false,
+          "reason": "加入了SAC温度和学习率等Gold未列出的参数，且遗漏部分关键符号；属于不准确扩展 / Adds unsupported SAC temperature/learning-rate parameters and omits some key symbols."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解流程一致：改进SAC输出动作，经线性安全层投影并做无效约束识别 / Same solution flow: improved SAC, linear safety-layer projection, and inactive-constraint identification."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证在IEEE 30-bus及更大系统、含故障/参数误差场景和多种基线上，核心一致 / Validation on IEEE 30-bus and larger systems with contingency/parameter-error scenarios and baselines matches."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论一致：保持安全边界、减少违约、可扩展且决策时间低 / Findings match: safe operation, fewer violations, scalability, and low decision time."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点和线性化安全层局限都与Gold一致，虽更简略 / Strengths and linearized safety-layer limitation are consistent, though abbreviated."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "Gold强调安全层是关键创新；LLM却写成评估可扩展性，改变了该字段含义 / Gold says the safety layer is the key innovation; LLM instead states scalability evaluation, changing the meaning."
+        }
+      }
+    },
+    "Reserve_Constrained_AC_Power_Flow": {
+      "source_hash": "92d7455dc84b33d8c9bd9839c193922400ef6a14fa8ce74cb00e732638e9175b",
+      "paper_title": "Reserve Constrained AC Optimal Power Flow Using Accelerated Primal-Dual Interior Point Method",
+      "instance_name": "Reserve_Constrained_AC_Power_Flow",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者一致，仅分隔符不同 / Authors match; only delimiter differs."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：ACOPF下能量与备用协同优化 / Same core purpose: co-optimize energy dispatch and reserves under ACOPF."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致，均强调简化模型忽略AC约束导致问题 / Same motivation: simplified methods neglect AC constraints and cause operational issues."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题本质一致，都是单期RCOPF中综合备用与AC约束求解 / Same problem: single-period RCOPF with comprehensive reserves and AC constraints."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致，都是高效求解含备用的ACOPF / Same research question: efficiently solve reserve-constrained ACOPF."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容基本一致，均为最优调度、备用分配及网络状态 / Outputs align: dispatch, reserve allocations, and network state variables."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "模型特征一致：单期、RCOPF、能量与备用协同、AC网络 / Same model features: single-period RCOPF with energy-reserve co-optimization on AC network."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "都指向完整AC潮流/ACOPF建模 / Both indicate full AC power-flow formulation."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "均为单期 / Both are single-period."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "均表示单个运行时段/快照 / Both indicate one operating snapshot."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "均为单期优化 / Both specify a single-period horizon."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "一致：确定性备用约束，无显式随机/鲁棒建模 / Consistent: deterministic reserve requirements without explicit stochastic/robust modeling."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "都属于输电网/大电网的备用调度与能量-辅助服务协同 / Both are transmission-scale power-system reserve scheduling and energy-ancillary co-optimization."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法增强一致，均为A-PDIPM及其线性代数加速细节 / Same enhancement: A-PDIPM with linear-algebra acceleration details."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能目标一致：更快、更稳定地求解大规模问题 / Same performance goal: faster and more stable large-scale solving."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "含义一致，消费侧设备参与能量/备用 / Same meaning: consuming devices participate in energy and reserve provision."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数一致，都是最大化市场剩余并包含罚项/成本项 / Objective matches: maximize market surplus with cost and penalty terms."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，均含设备、AC潮流、母线平衡、备用需求与边界约束 / Constraint set matches: device, AC flow, balance, reserve requirement, and bounds."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数集合一致，均涉及报价、成本、网络参数、备用需求与求解参数 / Parameters align: bids, costs, network data, reserve requirements, and solver parameters."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解细节一致，均描述A-PDIPM、KKT、对称Jacobian、Cholesky与初始化 / Same solution details: A-PDIPM, KKT, symmetric Jacobian, Cholesky, initialization."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证概述一致，均提到73到23643母线案例及与IPOPT/前后备用OPF比较 / Validation matches: 73-bus to 23,643-bus cases and comparison with IPOPT/pre-post reserve OPF."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "结论一致：RCOPF更优，A-PDIPM更快更稳 / Findings align: RCOPF improves surplus and A-PDIPM is faster and more stable."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优点与局限一致，均强调AC协同优化、效率提升和单期限制 / Strengths and limitation match: AC co-optimization, efficiency gains, and single-period limitation."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "遗漏了多项关键附加性质，仅给出数据来源 / Misses several key extra properties; only states dataset source."
+        }
+      }
+    },
+    "Scalable_Security_Constrained_Multi_Step_OPF": {
+      "source_hash": "0d072e1f33bef595c9abb3a1e7897f71a635e8043cb5fff742ebedf3ebf279e9",
+      "paper_title": "Scalable Solutions for Security-Constrained Optimal Power Flow With Multiple Time Steps",
+      "instance_name": "Scalable_Security_Constrained_Multi_Step_OPF",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "仅换行差异，标题含义一致 / Line break only; title meaning is identical."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Year matches exactly."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI完全一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者顺序与姓名一致 / Authors match exactly in order and names."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构一致，仅换行格式不同 / Institutions match; only formatting differs."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "核心目的一致：面向大规模多时段SCOPF的可扩展高效求解 / Same core purpose: scalable efficient solving for large multi-time-step SCOPF."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致，均强调大规模、百万级变量和非凸约束导致难解 / Same motivation: huge variable counts and nonconvex constraints make the problem hard."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": false,
+          "reason": "遗漏了两阶段DC/AC分解与加速求解这一关键已解决问题，且表述更像问题定义而非已解决方案 / Omits the key solved approach (two-stage DC/AC decomposition and acceleration) and reads more like a problem description."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题本质一致：分解式求解器能否在大规模多时段SCOPF中保持高质量可行解 / Same research question in substance: can a decomposition-based solver scale while keeping high-quality feasible solutions?"
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容一致，均为调度/开关/电压角/AC可行点/备用分配等结果 / Same outputs: dispatch, switching, voltage angles, feasible AC point, reserves."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "保留了关键模型特征：两阶段DC/AC分解与顺序优化 / Preserves the key model features: two-stage DC/AC decomposition and sequential optimization."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "DC与AC两种潮流建模及其分工一致，虽更具体但不冲突 / Same DC and AC formulation features; extra detail does not conflict."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "均表示多时段/多时间步顺序优化 / Both indicate multi-period multi-time-step sequential optimization."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": false,
+          "reason": "金标准是具体8/48/168小时，LLM改成了泛化的阶段划分和2000+节点，时间跨度错误 / Gold specifies 8/48/168 hours; LLM replaces this with generic staging and bus size, which changes the horizon."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": true,
+          "reason": "都明确是确定性/安全约束/事故约束，不是随机或鲁棒不确定性 / Both indicate deterministic security/contingency handling, not stochastic or robust uncertainty."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "都属于输电网/大规模电网OPF应用 / Both are transmission-network large-scale grid OPF applications."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "列出的加速/增强手段与金标准同类且兼容，未引入冲突 / Listed enhancements are compatible with the gold-standard acceleration methods and do not conflict."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "都表达了面向大规模实例和严格时间限制的可扩展性 / Both express scalability for large instances under strict time limits."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": false,
+          "reason": "金标准是固定负荷，LLM加入了分段报价的消费设备，改变了需求侧建模 / Gold is fixed load; LLM adds bid-block consumption devices, changing the demand-side model."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数均为最大化市场剩余/福利，变量描述一致 / Objective is the same: maximize market surplus/welfare with the same variable types."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，均包含功率平衡、AC/DC网络、备用、爬坡、开关、事故等 / Constraint set matches: power balance, AC/DC equations, reserves, ramping, switching, contingencies, etc."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数均属于同一类模型变量/参数，且未与金标准冲突 / Parameters are from the same model family and do not conflict with the gold standard."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "两阶段MILP+NLP、Gurobi+IPOPT与顺序优化的核心流程一致 / Core workflow matches: two-stage MILP+NLP with Gurobi, IPOPT, and sequential optimization."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": false,
+          "reason": "金标准强调具体9个网络规模、C1/C2/C3和PNNL平台；LLM只给出泛化的300+场景，信息不一致且缺少关键验证细节 / Gold specifies exact network sizes, C1/C2/C3, and PNNL platform; LLM gives a generic summary and misses key validation details."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "平均分数与总体结论一致，虽省略部分细节但不冲突 / Average scores and overall conclusion match; details are omitted but not contradicted."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": false,
+          "reason": "加入了“依赖备用充足度”等未在金标准中明确的限制，并弱化了关键局限如线性化/松弛和全局最优性损失 / Adds unsupported limitation about reserve abundance and weakens key limitations like relaxation/linearization and loss of global optimality."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "金标准强调这是工程优化求解框架而非学习模型；LLM只说用于某数据集，遗漏了核心性质 / Gold says it is an engineering optimization framework, not a learning model; LLM only states dataset usage and misses the core property."
+        }
+      }
+    },
+    "Multi_Period_Storage_Sizing_Placement": {
+      "source_hash": "08742a2d10a634748d09cbf3bf0ecdfeace57ef7808497609f88a2cf1b7755d3",
+      "paper_title": "Sizing and Placement of Community Energy Storage Systems using Multi-Period Optimal Power Flow",
+      "instance_name": "Multi_Period_Storage_Sizing_Placement",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致，仅换行格式不同 / Same title, only line-break formatting differs."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Same publication year."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI完全一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者列表一致 / Author list matches."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构核心信息一致，补充了城市国家不冲突 / Institution matches; added location details do not conflict."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "目的一致：用多期OPF同时确定PV与CES容量及CES位置 / Same purpose: determine PV and CES sizing plus CES placement via multi-period OPF."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致，都是提升自给率、降低成本并考虑网络约束 / Same motivation: improve self-sufficiency, reduce cost, and respect network constraints."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "解决的问题一致，都是在低压社区网中优化PV/CES容量与CES位置 / Same solved problem: optimize PV/CES sizing and CES location in a low-voltage community grid."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题含义一致，都是讨论PV/CES sizing、经济性与位置优化 / Same research question about PV/CES sizing, economics, and placement."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出一致，均包含最优PV/CES容量、CES节点和潮流/损耗结果 / Outputs match: optimal PV/CES sizes, CES node, and flow/loss results."
+        },
+        "hasModelFeature": {
+          "factually_correct": true,
+          "reason": "模型特征一致，都是多期OPF下的PV与CES定容定址 / Same model features: multi-period OPF with PV/CES sizing and placement."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "虽更具体，但与AC型多期OPF一致，没有冲突 / More specific, but consistent with AC multi-period OPF."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "都表示多期、时间耦合的优化 / Both indicate a multi-period, time-coupled optimization."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "15分钟粒度一致 / 15-minute resolution matches."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": true,
+          "reason": "都指向日内多时段优化，未改变实质含义 / Both indicate intra-day multi-step optimization; meaning preserved."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致：低压居民配电网/CIGRÉ低压网 / Same domain: low-voltage residential distribution network/CIGRÉ LV grid."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "方法增强一致，都是维度规划与滚动/递推式策略 / Same enhancements: dimensioning and receding-horizon strategy."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能侧重点一致：降低损耗、优化成本、支持储能布置 / Same performance focus: loss reduction, cost optimization, and storage placement."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "负荷侧信息一致，都是居民负荷/固定负荷情景 / Demand-side representation is consistent with household/fixed loads."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数一致：最小化总社区电费并计入购售电、PV和CES成本 / Objective matches: minimize total community cost including import/export and PV/CES costs."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束集合一致，均含SOC、充放电、PV和标准OPF约束 / Constraint set matches: SOC, charge/discharge, PV, and standard OPF constraints."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数基本一致，LLM补充了利率和寿命等未冲突的经济参数 / Parameters match; added interest rate and lifetime are compatible extras."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "实现细节一致：MATLAB/MATPOWER、扩展变量约束、LV-CIGRÉ测试网 / Implementation details match: MATLAB/MATPOWER, added variables/constraints, LV-CIGRÉ test grid."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证描述一致，均为CIGRÉ低压网、合成负荷和三种成本情景 / Validation matches: CIGRÉ LV network, synthetic loads, and three cost scenarios."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "主要结论一致：高上网电价偏向PV无CES，低成本偏向更大CES，位置随自给率变化 / Main findings match: high feed-in tariff favors PV without CES; lower costs favor larger CES; placement shifts with self-sufficiency."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优缺点一致，LLM仅概括了部分限制但未与原文冲突 / Strengths and limitations are consistent; LLM gives a shorter subset without contradiction."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "原文强调自给率提高时最优节点趋向网络中心；LLM改成逐步排除供电户，含义不符 / Gold says higher self-sufficiency shifts CES toward the network center; LLM’s exclusion rule changes the meaning."
+        }
+      }
+    },
+    "Unbalanced_Three_Phase_TOPF": {
+      "source_hash": "548cbe0b07b10d48a67d19dbabbad2c7c281b94a3059e843b1f9b4bb9effccb8",
+      "paper_title": "Unbalanced Three-Phase Optimal Power Flow for Smart Grids",
+      "instance_name": "Unbalanced_Three_Phase_TOPF",
+      "judgments": {
+        "hasPaperTitle": {
+          "factually_correct": true,
+          "reason": "标题一致 / Title matches exactly."
+        },
+        "hasPublicationYear": {
+          "factually_correct": true,
+          "reason": "年份一致 / Publication year matches exactly."
+        },
+        "hasDOI": {
+          "factually_correct": true,
+          "reason": "DOI一致 / DOI matches exactly."
+        },
+        "hasAuthor": {
+          "factually_correct": true,
+          "reason": "作者信息一致，仅空格差异 / Authors match; only spacing differs."
+        },
+        "hasInstitution": {
+          "factually_correct": true,
+          "reason": "机构核心信息一致，细节略简化 / Institution is the same; minor detail omitted."
+        },
+        "hasPrimaryPurpose": {
+          "factually_correct": true,
+          "reason": "主旨一致：面向智能配电网的不平衡三相OPF / Same primary purpose: unbalanced three-phase OPF for smart-grid distribution control."
+        },
+        "hasMotivation": {
+          "factually_correct": true,
+          "reason": "动机一致：适应强不平衡配电网与分布式资源 / Same motivation: adapt OPF to highly unbalanced distribution networks and DERs."
+        },
+        "hasSolvedProblem": {
+          "factually_correct": true,
+          "reason": "问题本质一致：相别电流约束与不平衡下的过载识别 / Same core problem: phase-specific current limits and overload under unbalance."
+        },
+        "hasResearchQuestion": {
+          "factually_correct": true,
+          "reason": "研究问题一致，表述更概括 / Same research question, phrased more generally."
+        },
+        "hasPrimaryOutput": {
+          "factually_correct": true,
+          "reason": "输出内容一致，LLM仅做了概括 / Outputs are substantively the same, with summarization."
+        },
+        "hasModelFeature": {
+          "factually_correct": false,
+          "reason": "模型特征偏离：Gold强调DMS/负荷削减/无功调度等框架，LLM只写了求解方法与OpenDSS / Model feature is shifted toward method details, missing the paper’s DMS/load-shedding/reactive-dispatch framework."
+        },
+        "hasPowerFlowFormulationFeature": {
+          "factually_correct": true,
+          "reason": "三相不平衡AC/配电潮流表述一致 / Same unbalanced three-phase AC/distribution power-flow formulation."
+        },
+        "hasTimeHorizonFeature": {
+          "factually_correct": true,
+          "reason": "时间属性一致：扩展实时运行 / Same temporal feature: extended real-time operation."
+        },
+        "hasTemporalResolution": {
+          "factually_correct": true,
+          "reason": "15–30分钟一致 / 15–30 min matches."
+        },
+        "hasOptimizationHorizon": {
+          "factually_correct": false,
+          "reason": "Gold是单时段、可重复执行；LLM误写成日内/日调度 / Gold is single-period repeatable execution, not daily operation."
+        },
+        "hasUncertaintyHandlingFeature": {
+          "factually_correct": false,
+          "reason": "Gold为确定性OPF；LLM提到随机过程，改变了不确定性处理 / Gold is deterministic OPF; mentioning stochastic processes changes the uncertainty handling."
+        },
+        "hasPowerSystemDomainFeature": {
+          "factually_correct": true,
+          "reason": "领域一致：智能配电网/径向馈线/DMS / Same domain: smart distribution networks, radial feeders, DMS."
+        },
+        "hasSolutionMethodEnhancementFeature": {
+          "factually_correct": true,
+          "reason": "核心方法一致：准牛顿与数值灵敏度/OpenDSS耦合，附加步长细节不冲突 / Same core method: quasi-Newton, numerical sensitivities, OpenDSS coupling; extra step-size detail is compatible."
+        },
+        "hasModelPerformanceFeature": {
+          "factually_correct": true,
+          "reason": "性能特征一致：适用于扩展实时并在IEEE 123节点测试 / Same performance claim: extended real-time suitability and IEEE 123-bus testing."
+        },
+        "hasDemandSideFeature": {
+          "factually_correct": true,
+          "reason": "需求侧特征一致：负荷可控/削减 / Same demand-side feature: controllable load curtailment."
+        },
+        "hasObjectiveFunction": {
+          "factually_correct": true,
+          "reason": "目标函数一致：可按场景最小化削减或损耗 / Same objective framework: minimize curtailment or losses depending on case."
+        },
+        "hasConstraintFunction": {
+          "factually_correct": true,
+          "reason": "约束类型一致，LLM为概括版 / Constraint types match; LLM is a condensed summary."
+        },
+        "usesParameter": {
+          "factually_correct": true,
+          "reason": "参数集合一致，LLM仅列出部分关键参数 / Same parameter set in substance; LLM lists a subset."
+        },
+        "hasSolutionDetailsSummary": {
+          "factually_correct": true,
+          "reason": "求解流程一致：MATLAB灵敏度、OpenDSS潮流、迭代至收敛 / Same solution flow: MATLAB sensitivities, OpenDSS load flow, iterate to convergence."
+        },
+        "hasModelValidationSummary": {
+          "factually_correct": true,
+          "reason": "验证场景一致：IEEE 123节点及多组测试 / Same validation setup: IEEE 123-bus feeder with multiple tests."
+        },
+        "hasFindingsSummary": {
+          "factually_correct": true,
+          "reason": "主要结论一致：相别约束更安全、无功调度降损、联合控制减少削减 / Main findings match: phase-specific constraints improve safety, reactive dispatch reduces losses, coordinated control cuts curtailment."
+        },
+        "hasStrengthsAndLimitationsSummary": {
+          "factually_correct": true,
+          "reason": "优缺点总体一致，虽略有改写 / Strengths and limitations are substantively the same, though paraphrased."
+        },
+        "hasFurtherProperty": {
+          "factually_correct": false,
+          "reason": "Gold强调控制资源与通用框架；LLM只写实现工具，遗漏核心性质 / Gold emphasizes controllable resources and the general framework; LLM only mentions implementation tools."
+        }
+      }
+    }
+  }
+}

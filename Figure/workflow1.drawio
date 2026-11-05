@@ -1,0 +1,130 @@
+<mxfile host="Electron" agent="Codex">
+  <diagram id="knowledge-graph-construction" name="Knowledge Graph Construction">
+    <mxGraphModel dx="802" dy="723" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="384" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="outer" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;shadow=0;" value="" vertex="1">
+          <mxGeometry height="384" width="1600" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0751B2;strokeColor=#0751B2;fontFamily=Arial;fontSize=22;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;" value="1" vertex="1">
+          <mxGeometry height="40" width="40" x="26" y="13" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=21;fontColor=#073E8C;fontStyle=1;align=left;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" value="Knowledge Graph Construction" vertex="1">
+          <mxGeometry height="38" width="360" x="88" y="14" as="geometry" />
+        </mxCell>
+        <mxCell id="card-framework" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9C8F3;strokeWidth=1.6;arcSize=9;lineJoin=round;shadow=0;" value="" vertex="1">
+          <mxGeometry height="297" width="292" x="52" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" parent="1" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M26%207h30l14%2014v43H26z%22%2F%3E%3Cpath%20d%3D%22M56%207v15h14%22%2F%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2227%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%2234%22%20cy%3D%2247%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%2255%22%20cy%3D%2251%22%20r%3D%224%22%2F%3E%3Cpath%20d%3D%22M38%2031l-3%2012m8-14l10%2018m-15%201l13%202%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" value="" vertex="1">
+          <mxGeometry height="86" width="120" x="138" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=16;fontColor=#101828;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" value="1. Build a Generic&lt;br&gt;OPFModel Knowledge&lt;br&gt;Graph Framework" vertex="1">
+          <mxGeometry height="62" width="252" x="72" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=13.5;fontColor=#101828;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" value="Construct a generic OPFModel&lt;br&gt;framework based on cited papers." vertex="1">
+          <mxGeometry height="48" width="244" x="76" y="238" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=13.5;fontColor=#101828;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" value="Includes: OEO referenced classes&lt;br&gt;and self-defined classes based on OEO." vertex="1">
+          <mxGeometry height="50" width="244" x="76" y="302" as="geometry" />
+        </mxCell>
+        <mxCell id="group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5F92DC;strokeWidth=1.6;arcSize=8;lineJoin=round;shadow=0;" value="" vertex="1">
+          <mxGeometry height="330" width="805" x="420" y="48" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=18;fontColor=#073E8C;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" value="2. LLM Reads Papers and Writes OPFModel Instances" vertex="1">
+          <mxGeometry height="30" width="625" x="510" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="step-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDFEFF;strokeColor=#A9C8F3;strokeWidth=1.45;arcSize=11;lineJoin=round;shadow=0;" value="" vertex="1">
+          <mxGeometry height="276" width="154" x="438" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" parent="1" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M30%207h27l12%2012v46H30z%22%2F%3E%3Cpath%20d%3D%22M57%207v13h12%22%2F%3E%3Cpath%20d%3D%22M39%2031h21M39%2041h21M39%2051h16%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" value="" vertex="1">
+          <mxGeometry height="65" width="100" x="465" y="101" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=14;fontColor=#101828;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" value="2.1 PDF Parsing" vertex="1">
+          <mxGeometry height="42" width="136" x="447" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=12.2;fontColor=#101828;fontStyle=0;align=center;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" value="Split each PDF into&lt;br&gt;text, tables, and figures.&lt;br&gt;&lt;br&gt;Merge them into a&lt;br&gt;unified paper_record." vertex="1">
+          <mxGeometry height="136" width="132" x="449" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="step-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDFEFF;strokeColor=#A9C8F3;strokeWidth=1.45;arcSize=11;lineJoin=round;shadow=0;" value="" vertex="1">
+          <mxGeometry height="276" width="184" x="614" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" parent="1" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M45%2061c-8%200-12-5-11-11-7-2-8-12-2-16-4-7%202-15%2010-14%202-8%2014-10%2018-3%207-4%2015%202%2014%2010%208%201%2011%2010%206%2016%205%206%200%2015-7%2015-1%206-6%2011-13%209-4%206-15%204-15-4z%22%2F%3E%3Cpath%20d%3D%22M48%2018v42M39%2028c5%200%209%204%209%209M58%2025c-5%200-10%204-10%209M37%2045c5%200%2011%203%2011%208M60%2042c-6%200-12%203-12%209%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" value="" vertex="1">
+          <mxGeometry height="65" width="90" x="661" y="93" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=14;fontColor=#101828;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" value="2.2 Two-Round&lt;br&gt;LLM Extraction" vertex="1">
+          <mxGeometry height="42" width="164" x="624" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=12;fontColor=#101828;fontStyle=0;align=center;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" value="Input: paper_record +&lt;br&gt;prompt constraints.&lt;br&gt;&lt;br&gt;&lt;b&gt;Round 1:&lt;/b&gt; Extract OPF&lt;br&gt;model information.&lt;br&gt;&lt;br&gt;&lt;b&gt;Round 2:&lt;/b&gt; Map the model&lt;br&gt;to ontology classes." vertex="1">
+          <mxGeometry height="136" width="160" x="626" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="step-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDFEFF;strokeColor=#A9C8F3;strokeWidth=1.45;arcSize=11;lineJoin=round;shadow=0;" value="" vertex="1">
+          <mxGeometry height="276" width="184" x="820" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="c15" parent="1" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M48%206c9%208%2018%2010%2027%2011v18c0%2015-10%2025-27%2032-17-7-27-17-27-32V17c9-1%2018-3%2027-11z%22%2F%3E%3Cpath%20d%3D%22M35%2035l9%209%2018-20%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" value="" vertex="1">
+          <mxGeometry height="65" width="82" x="871" y="101" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=14;fontColor=#101828;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" value="2.3 Consistency Check" vertex="1">
+          <mxGeometry height="42" width="156" x="834" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c17" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=12.2;fontColor=#101828;fontStyle=0;align=center;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" value="Re-check the structured&lt;br&gt;OPFModel instance&lt;br&gt;information.&lt;br&gt;&lt;br&gt;Remove incorrect or&lt;br&gt;inconsistent&lt;br&gt;information." vertex="1">
+          <mxGeometry height="136" width="152" x="836" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="step-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDFEFF;strokeColor=#A9C8F3;strokeWidth=1.45;arcSize=11;lineJoin=round;shadow=0;" value="" vertex="1">
+          <mxGeometry height="276" width="184" x="1024" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="c18" parent="1" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cellipse%20cx%3D%2238%22%20cy%3D%2214%22%20rx%3D%2221%22%20ry%3D%228%22%2F%3E%3Cpath%20d%3D%22M17%2014v31c0%205%209%208%2021%208%206%200%2011-1%2015-3%22%2F%3E%3Cpath%20d%3D%22M17%2028c0%205%209%208%2021%208%206%200%2011-1%2015-3M17%2042c0%205%209%208%2021%208%22%2F%3E%3Ccircle%20cx%3D%2267%22%20cy%3D%2238%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%2276%22%20cy%3D%2252%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%2261%22%20cy%3D%2259%22%20r%3D%224%22%2F%3E%3Cpath%20d%3D%22M69%2042l5%207m-10-7l-2%2013m3%203l7-4%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" value="" vertex="1">
+          <mxGeometry height="65" width="86" x="1073" y="101" as="geometry" />
+        </mxCell>
+        <mxCell id="c19" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=14;fontColor=#101828;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" value="2.4 Write into&lt;br&gt;Knowledge Graph" vertex="1">
+          <mxGeometry height="42" width="164" x="1034" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c20" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=12.2;fontColor=#101828;fontStyle=0;align=center;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" value="Create OPFModel&lt;br&gt;instances.&lt;br&gt;&lt;br&gt;Write Data Properties&lt;br&gt;and Object Properties&lt;br&gt;into the knowledge&lt;br&gt;graph." vertex="1">
+          <mxGeometry height="136" width="160" x="1036" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="example" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3478D4;strokeWidth=1.6;arcSize=10;dashed=1;dashPattern=6 5;fixDash=1;lineJoin=round;shadow=0;" value="" vertex="1">
+          <mxGeometry height="260" width="286" x="1280" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c21" parent="1" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M48%208c-13%200-22%209-22%2021%200%208%204%2013%2010%2018%203%203%204%206%204%209h16c0-3%201-6%204-9%206-5%2010-10%2010-18C70%2017%2061%208%2048%208z%22%2F%3E%3Cpath%20d%3D%22M40%2062h16M43%2068h10M48%201v4M21%2010l6%206M75%2010l-6%206M16%2031h7M73%2031h7%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" value="" vertex="1">
+          <mxGeometry height="60" width="70" x="1290" y="106" as="geometry" />
+        </mxCell>
+        <mxCell id="c22" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=16;fontColor=#073E8C;fontStyle=1;align=left;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" value="Example" vertex="1">
+          <mxGeometry height="30" width="130" x="1360" y="109" as="geometry" />
+        </mxCell>
+        <mxCell id="c23" parent="1" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=13.6;fontColor=#101828;fontStyle=0;align=left;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" value="&lt;div style=&#39;text-align:left&#39;&gt;PaperModel_001 rdf:type OPFModel&lt;/div&gt;&lt;br&gt;&lt;div style=&#39;text-align:left&#39;&gt;PaperModel_001 hasModelName ...&lt;/div&gt;&lt;br&gt;&lt;div style=&#39;text-align:left&#39;&gt;PaperModel_001 hasPaperTitle ...&lt;/div&gt;&lt;br&gt;&lt;div style=&#39;text-align:left&#39;&gt;PaperModel_001 hasMotivation ...&lt;/div&gt;" vertex="1">
+          <mxGeometry height="174" width="248" x="1301" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" style="edgeStyle=none;rounded=1;html=1;strokeColor=#0751B2;strokeWidth=2.8;lineCap=round;lineJoin=round;endArrow=classic;endFill=1;endSize=9;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="202" as="sourcePoint" />
+            <mxPoint x="406" y="202" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e25" edge="1" parent="1" style="edgeStyle=none;rounded=1;html=1;strokeColor=#0751B2;strokeWidth=2.1;lineCap=round;lineJoin=round;endArrow=classic;endFill=1;endSize=7;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="596" y="193" as="sourcePoint" />
+            <mxPoint x="610" y="193" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e26" edge="1" parent="1" style="edgeStyle=none;rounded=1;html=1;strokeColor=#0751B2;strokeWidth=2.1;lineCap=round;lineJoin=round;endArrow=classic;endFill=1;endSize=7;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="802" y="193" as="sourcePoint" />
+            <mxPoint x="816" y="193" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e27" edge="1" parent="1" style="edgeStyle=none;rounded=1;html=1;strokeColor=#0751B2;strokeWidth=2.1;lineCap=round;lineJoin=round;endArrow=classic;endFill=1;endSize=7;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1008" y="193" as="sourcePoint" />
+            <mxPoint x="1020" y="193" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e28" edge="1" parent="1" style="edgeStyle=none;rounded=1;html=1;strokeColor=#0751B2;strokeWidth=2.8;lineCap=round;lineJoin=round;endArrow=classic;endFill=1;endSize=9;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1239" y="202" as="sourcePoint" />
+            <mxPoint x="1270" y="202" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

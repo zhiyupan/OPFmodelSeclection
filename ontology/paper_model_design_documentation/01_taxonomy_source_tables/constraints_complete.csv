@@ -1,0 +1,1289 @@
+﻿名称,mean,分类,补充讲解
+P_balance,AC潮流的有功功率平衡约束,,
+s_balance,AC潮流的复功率平衡约束,,
+Q_balance,AC潮流的无功功率平衡约束,,
+"以下是利用多周期最优电力流对社区储能系统的尺寸与布局Böhringer, M., Choudhury, S., Weck, S., & Hanson, J. (2021). Sizing and Placement of Community Energy Storage Systems using Multi-Period Optimal Power Flow. 2021 IEEE Madrid PowerTech, 1～6. https://doi.org/10.1109/PowerTech46648.2021.9494820",,,
+"p_t^grid,i ≥ 0；p_t^grid,e ≤ 0",将从外部电网买电和向外部电网卖电拆成两个变量，并规定符号方向,,"Grid import/export sign constraint 外部电网购售电符号约束
+
+
+这不是普通线路潮流限制，而是PCC/外部电网交换功率建模约束。买电为正，卖电为负，方便目标函数里分别设置购电价格和上网电价。你的表里目前没有单独的 grid import/export 约束。
+
+"
+"e_t^ces = e_{t-1}^ces + [ -η_ces,c -1/η_ces,d ] [ p_ces,c ; p_ces,d ]，∀ t ∈ T \ {1}",储能当前时刻能量等于上一时刻能量加上充放电影响,,"CES energy balance constraint 社区储能能量动态平衡约束
+
+你表里有“储能能量水平上下限”和“储能充/放电功率上下限”，但还缺跨时间动态方程。这是 multi-period OPF 里最核心的储能动态约束。
+
+
+"
+Vmmax/Vmmin,节点电压幅值上下限,,
+"以下是机会约束论文中的通用约束 Jia, M., Hug, G., Su, Y., & Shen, C. (2023). Chance-Constrained OPF: A Distributed Method With Confidentiality Preservation. IEEE Transactions on Power Systems, 38(4), 3373～3387. https://doi.org/10.1109/TPWRS.2022.3200941",,,
+Vamax/Vamin,节点电压相角的上下限,,
+Pgmax/Pgmin,发电机有功上下限,,
+Qgmax/Qgmin,发电机无功上下限,,
+Vg上下限,发电机节点电压设定值,,
+Vw上下限,风电机组电压,,
+Vp上下限,光伏电源电压,,
+Pij的上下限,线路有功潮流,,
+Qij的上下限,线路无功潮流,,
+Sij的上下限,线路视在功率/复功率潮流，线路容量的上下限,,
+Iij的上下限,线路电流,,
+Rg的上下限,发电机爬坡率,,
+Pw的上下限,风电有功出力,,
+Qw的上下限,风电无功出力,,
+"以下是主动配电网中概率opf综述Ullah, Z., Wang, S., Wu, G., Hasanien, H. M., Jabbar, M. W., Qazi, H. S., Tostado-Véliz, M., Turky, R. A., & Elkadeem, M. R. (2022). Advanced studies for probabilistic optimal power flow in active distribution networks: A scientometric review. IET Generation, Transmission & Distribution, 16(18), 3579～3604. https://doi.org/10.1049/gtd2.12555",,,
+Rk上下限,储能充放电速率,,
+"ES,it上下限",储能能量水平,,
+"Pᵈ_S,it上下限",储能放电功率,,
+"Pᶜ_S,it上下限",储能充电功率,,
+"以下是可再生能源集成Wang, Z., Younesi, A., Liu, M. V., Guo, G. C., & Anderson, C. L. (2023). AC Optimal Power Flow in Power Systems With Renewable Energy Integration: A Review of Formulations and Case Studies. IEEE Access, 11, 102681～102712. https://doi.org/10.1109/ACCESS.2023.3314330",,,
+Qc及其上下限,无功补偿量,,
+T及其上下限,变压器分接头/变比,,
+"以下是概率稳健ACopf 的Chamanbaz, M., Dabbene, F., & Lagoa, C. M. (2019). Probabilistically Robust AC Optimal Power Flow. IEEE Transactions on Control of Network Systems, 6(3), 1135～1147. https://doi.org/10.1109/TCNS.2019.2921300",,,
+"ΔVij,max",允许的最大线路电压差,,这是在SDP等数学方法模型中比较用得到的约束，但不是完全通用的运行约束
+"αk ≥ 0, Σαk=1",发电机参与因子,不确定性调节策略约束，非通用,当可再生能源出力不稳定时，发电机要适当参与补偿出力或者减少出力
+Pp的上下限,光伏有功出力,,
+Qp的上下限,光伏无功出力,,
+"δPw,i,min ≤ δPw,i ≤ δPw,i,max",风电有功出力的不确定性偏差上下限,,
+PR的上下限,可再生能源有功出力,,
+QR的上下限,可再生能源无功出力,,
+"δPd,i,min ≤ δPd,i ≤ δPd,i,max",某个节点的有功负荷不确定性偏差上下限,,
+"δPp,i,min ≤ δPp,i ≤ δPp,i,max",光伏有功出力的不确定性偏差上下限,,
+"δPR,i,min ≤ δPR,i ≤ δPR,i,max",可再生能源有功出力的不确定性偏差上下限,,
+"δQd,i,min ≤ δQd,i ≤ δQd,i,max",无功负荷不确定性偏差上下限,,
+"δQw,i,min ≤ δQw,i ≤ δQw,i,max",风电无功出力的不确定性偏差上下限,,
+"δQp,i,min ≤ δQp,i ≤ δQp,i,max",光伏无功出力的不确定性偏差上下限,,
+"δQR,i,min ≤ δQR,i ≤ δQR,i,max",可再生能源无功出力的不确定性偏差上下限,,
+N-1 SC constraint,,,
+N-K SC constraint,,,
+SDP / 半正定松弛约束 W ⪰ 0,一个简化AC问题的数学方法所需要满足的约束条件,,
+Pr{约束满足h≤0} ≥ 1 − ε,机会约束,,
+rank(W)=1,这个约束保证数学方法界的可用性，真的是可以对应一个物理上的电压的,,
+c ∈ C_N−1 / C_N−k,N−1 / N−k 安全事故集合,,
+"∀δ∈Δ: g=0, h≤0",鲁棒可行性约束,,
+"以下是可再生能源继承电力系统中的acopf综述Wang, Z., Younesi, A., Liu, M. V., Guo, G. C., & Anderson, C. L. (2023). AC Optimal Power Flow in Power Systems With Renewable Energy Integration: A Review of Formulations and Case Studies. IEEE Access, 11, 102681～102712. https://doi.org/10.1109/ACCESS.2023.3314330",,,
+"Flexible demand limits                                 灵活需求限额 / 可调负荷有功无功上下限P_Li^min ≤ P_Li ≤ P_Li^max
+
+Q_Li^min ≤ Q_Li ≤ Q_Li^max",灵活需求限额 / 可调负荷有功无功上下限,,"普通负荷本身一般没有“有功/无功上下限约束”，因为普通负荷在 OPF 里通常是已知参数，不是优化变量。
+真正有上下限的是：
+1. 可调负荷 / 灵活需求：负荷可以被调度，所以要有上下限。
+
+2. 切负荷量：负荷可以被削减，所以“削减多少”要有上下限。
+
+3. 不确定负荷：负荷会波动，所以用不确定变量或场景范围描述，但这不是“操作约束”，而是“不确定性建模”。"
+0 ≤ L_d^SH ≤ L_d^P，∀d ∈ D," Load shedding limits
+中文：限电限制 / 切负荷上下限",,"L_d^SH：负荷 d 被切除的有功负荷量
+L_d^P：负荷 d 原本的有功需求
+D：负荷集合
+
+意思是：切负荷不能为负，也不能超过该负荷本身的需求量。"
+φ^min ≤ φ ≤ φ^max,"Phase shifter angle limits
+中文：移相器角度限制",,"φ：移相器的相移角
+φ^min：允许的最小相移角
+φ^max：允许的最大相移角
+
+文献把它放在 conventional control limits 里面，和并联电容器、变压器分接头一起作为控制设备物理上下限。"
+x_TCSC^min ≤ x_TCSC ≤ x_TCSC^max,"FACTS device limits
+中文：FACTS 设备限制 / FACTS 控制设备约束",,"x_TCSC：TCSC 的控制变量，通常可以理解为可控串联补偿电抗/补偿程度
+x_TCSC^min：TCSC 控制变量下限
+x_TCSC^max：TCSC 控制变量上限
+
+TCSC 是 FACTS 设备的一种，所以这类约束可以推广成：
+
+x_FACTS,i^min ≤ x_FACTS,i ≤ x_FACTS,i^max
+
+文献明确写的是 TCSC controls。"
+"s_i(u_i^min − u_i^0) ≤ u_i − u_i^0 ≤ s_i(u_i^max − u_i^0)，i = 1,...,n
+
+Σ_{i=1}^{n} s_i ≤ N
+
+s_i ∈ {0,1}，i = 1,...,n","Number of control actions limits
+中文：控制动作次数限制",,"含义：
+
+u_i：第 i 个控制变量优化后的值
+u_i^0：第 i 个控制变量原始值
+u_i^min，u_i^max：第 i 个控制变量允许上下限
+s_i：控制动作状态变量
+s_i = 0：不动作，此时 u_i − u_i^0 必须等于 0
+s_i = 1：允许动作，此时 u_i 可以在上下限内变化
+N：最多允许动作的控制变量数量
+
+这组约束的意思是：虽然系统里有很多控制设备，但一次优化中最多只允许 N 个设备发生动作。"
+−S_l^max ≤ S_lt ≤ S_l^max，∀l ∈ N_T，∀t,"Transmission interface limits
+中文：传输接口限制 / 联络线或输电断面潮流约束",,"含义：
+
+S_lt：联络线/输电断面 l 在时间 t 的潮流
+S_l^max：联络线/输电断面 l 的最大允许潮流
+N_T：tie lines / interface lines 的集合
+t：时间
+
+这和普通线路潮流限制类似，但对象不是单条普通支路，而是联络线、接口线、输电断面。"
+Re(λ_i) < 0，∀i ∈ N_E,"Small-signal stability
+中文：小信号稳定性约束",,"含义：
+
+λ_i：系统状态矩阵的第 i 个特征值
+Re(λ_i)：特征值的实部
+N_E：特征值集合
+λ_max：允许的最大负实部上界
+
+判断逻辑：
+
+如果某个特征值实部为正，系统小扰动后会发散，说明小信号不稳定。
+所以小信号稳定要求所有特征值实部都小于 0。"
+"δ_COI = (Σ_{i=1}^{N_G} M_i δ_i) / (Σ_{i=1}^{N_G} M_i) 然后暂态稳定约束写成：
+
+|δ_i − δ_COI|_max ≤ δ^max","9. Transient stability
+中文：暂态稳定约束",,"含义：
+
+δ_i：第 i 台发电机转子角
+M_i：第 i 台发电机惯性常数
+δ_COI：center of inertia，惯性中心角
+|δ_i − δ_COI|_max：第 i 台发电机相对于惯性中心的最大转子角偏差
+δ^max：允许的最大转子角偏差
+
+文献说明，δ^max 通常根据运行经验设置，很多电力公司会设在 100° 到 120° 左右，以留出足够暂态稳定裕度。"
+"11.1 单台机组小时排放约束
+Σ_i e_i^n R_i ≤ E_i^n + A_i^n，∀n ∈ N_A","Emission constraints
+中文：排放约束",,"含义：
+
+e_i^n：机组 i 每发 1 MWh 电释放的污染物 n 排放量
+R_i：机组 i 的出力或发电量相关变量
+E_i^n：监管机构给机组 i 对污染物 n 的排放限制
+A_i^n：额外排放配额
+N_A：污染物种类集合，例如 NOx，SOx 等"
+"V_k(t) I_k*(t) = b P_k^g(t) − P_k^d(t) − r_k(t) + [Q_k^g(t) − Q_k^d(t) − s_k(t)] i
+
+其中储能无功功率 s_k(t) 的上下限为：
+
+s_k^min ≤ s_k(t) ≤ s_k^max","Reactive storage power bounds
+中文：储能无功输入/输出上下限",,"含义：
+
+s_k(t)：储能在节点 k、时间 t 的无功功率输入/输出
+s_k^min：储能无功功率下限
+s_k^max：储能无功功率上限
+r_k(t)：储能有功充放电速率
+b_k(t)：储能能量水平
+V_k(t) I_k*(t)：节点 k 的复功率注入表达"
+"0.5 e_max,ces = e_{t=1}^ces = e_{t=T}^ces",要求优化周期结束时储能容量回到开始状态,,"CES terminal continuity constraint 储能首末状态连续约束
+
+
+这类约束防止模型在最后一个时刻把电池彻底放空来“作弊”。它不是简单上下限，而是周期边界条件。你的表里目前没有这个。
+
+"
+"p_{n=1}^max,pv = … = p_{n=N}^max,pv ≤ 10 kWp",所有家庭光伏最大装机容量相同，且不超过 10 kWp,,"PV installed capacity equality/upper-bound constraint 光伏装机容量设计约束
+
+
+
+这不是运行出力约束，而是容量设计/规划约束。如果你的本体只做运行 OPF，可以不放核心层；如果包含 sizing and placement OPF，就应该放。
+
+"
+"ssr ∈ R，0 ≤ ssr ≤ 1；(1 − ssr) Σ_{n=1}^{N} p_t,n^load ≥ p_t^grid,i，∀t ∈ T",限制每个时段从外部电网购买的电量不能超过总负荷的一定比例,,"Self-sufficiency rate constraint 自给率约束 / 外部购电比例限制
+
+它表达的是“社区希望尽量自给自足”的运行需求。不是传统安全约束，而是用户运行偏好/能源自治约束。
+
+
+"
+"P_sub^reverse ≤ P_sub^reverse,max，或 P_PCC ≥ P_PCC^min",限制配电网向上级输电网反送功率,,"Substation reverse power flow limitation 变电站反向潮流限制
+
+智能配电网综述明确把 “substation reverse power flow limitation” 列为技术约束。你表里有 transmission interface limits，但它更偏联络线/断面；这里是配电网 PCC/变电站反送功率限制，建议单独建类。"
+"以下是只能配电网络的最佳运行：模型方法综述Evangelopoulos, V. A., Georgilakis, P. S., & Hatziargyriou, N. D. (2016). Optimal operation of smart distribution networks: A review of models, methods and future research. Electric Power Systems Research, 140, 95～106. https://doi.org/10.1016/j.epsr.2016.06.035",,,
+pf_i^min ≤ pf_i ≤ pf_i^max；或 Q_i = P_i tan φ_i，φ_i^min ≤ φ_i ≤ φ_i^max,限制 DG 的功率因数范围，控制 P/Q 关系,,"Power factor constraint 分布式电源功率因数约束
+
+智能配电网综述把 “DG power factor” 明确列为控制变量，所以应补一个 PowerFactorConstraint。
+
+
+"
+"s_l ∈ {0,1}，或 u_l^RCS ∈ {0,1}",配电网重构中，联络开关状态是离散变量,,"
+你表里有控制动作次数限制，但没有开关状态本身。智能配电网综述把 RCS，也就是 remote control of tie switches，列为控制变量。这个适合补到 TopologyReconfigurationConstraint 下面。
+Remote-controlled tie switch constraint 远程联络开关/重构开关约束
+
+
+"
+常见写法：Σ_l s_l =N,配电网重构后通常仍要保持径向结构，避免形成不允许的环网,,"Network reconfiguration / radiality constraint 网络重构/辐射状拓扑约束
+
+"
+VUF_i ≤ VUF_i^max,三相配电网中限制电压不平衡程度,,"Voltage unbalance factor constraint 电压不平衡度约束
+
+智能配电网综述把 voltage unbalance factor，VUF，作为重要优化对象。它经常也可作为约束出现，尤其是三相不平衡配电网 OPF。你表里没有。"
+"SCL_i ≤ SCL_i^max，或 I_i^sc ≤ I_i^sc,max",限制故障短路水平不超过设备承受能力,,"Short-circuit level constraint 短路容量/短路电流水平约束
+智能配电网综述提到有多周期 OPF 用于最大化风电利用，并考虑 short-circuit-level constraint。你表里没有这个，适合补成安全/保护类约束。
+"
+"文献没有固定符号；可抽象成 P_i^contract,min ≤ P_i ≤ P_i^contract,max，或 Curt_i ≤ Curt_i^contract,max",来自监管或合约的功率、削减、响应义务限制,,"Contractual constraint 合同约束 / 用户-DSO-DG业主约束
+
+这个不是通用物理约束，而是市场/监管/合约约束。智能配电网综述明确提到 “contract terms between DSOs, consumers and DG owners”。你的 ontology 可以放到 RegulatoryConstraint 下"
+"p^min ≤ p^c ≤ p^max；q^min ≤ q^c ≤ q^max；v^min ≤ v^c ≤ v^max；                        s_line(p^c,q^c,v^c,θ^c)≤ s_line^max，∀c ∈ C",不只是有 N-1 标签，而是每一个事故状态 c 下都要满足运行约束,,"Post-contingency operating constraints 故障后运行约束
+
+"
+p_g^0 = p_g^c，v_g^0 = v_g^c，∀c ∈ C,事故前后的发电机控制变量保持不变,,"Preventive security coupling constraint 预防控制耦合约束
+
+这是安全约束 OPF 里很关键的一个点：N-1 后不是重新任意调度，而是要求同一组预防性控制量在事故后也可行。你现在表里只有事故集合，没有这个耦合公式。"
+"φ_i(x,u) ∈ S_i，∀i = 1,…,l",用动态方程/稳定判据定义可行域,,"Dynamic security constraint 动态安全约束的一般形式
+
+这篇神经网络论文把动态安全约束抽象成 φ_i(x,u) ∈ S_i。它比普通 g(x,u)≤0、h(x,u)=0 更复杂，代表由微分方程、暂态过程、小信号稳定等定义的“动态可行域”。"
+"以下是用于编码动态安全约束Murzakhanov, I., Venzke, A., Misyris, G. S., & Chatzivasileiadis, S. (2022). Neural Networks for Encoding Dynamic Security-Constrained Optimal Power Flow (arXiv:2003.07939). arXiv. https://doi.org/10.48550/arXiv.2003.07939",,,
+γ_min ≤ min_λ [ −Re{λ} / sqrt(Im{λ}² + Re{λ}²) ],要求关键振荡模态的阻尼比不低于最小阈值,,"Small-signal damping ratio constraint 小信号阻尼比约束
+
+表里已经有 Re(λ_i)<0 的小信号稳定约束，但这篇文献给的是更严格、更工程化的最小阻尼比约束。建议把它作为 SmallSignalStabilityConstraint 的更细子类。
+
+"
+"A(p^c,q^c,v^c,θ^c) ν^c = λ^c ν^c，∀c ∈ C",小信号稳定分析中，特征值必须来自线性化系统矩阵,,"Eigenvalue equation constraint 系统矩阵特征值约束
+
+ ν^c = λ^c ν^c，∀c ∈ C这不是普通运行边界，而是动态稳定性建模约束。它和阻尼比约束配套使用：先由 Aν=λν 得到 λ，再用 λ 判断阻尼比。"
+z_1 ≥ z_2,用神经网络输出判断该控制量是否落在安全可行域内,,"Feasible-space classification constraint 神经网络可行域判别约束
+
+这是方法约束，不是物理约束。它表示神经网络判断输入 [p_g^0, v_g^0] 属于原始动态安全约束问题的可行空间。你的本体如果要描述 ML-surrogate OPF，可以加；如果只做传统 OPF 模型分类，可以不加。"
+z_1 ≥ z_2 + ε,加 margin 缩小神经网络预测可行域，减少误判可行的风险,,"Conservative feasible-space constraint 保守可行域约束
+
+这个约束控制“安全性和经济性”的权衡。ε 越大，模型越保守，越不容易违反动态安全约束，但成本可能更高。"
+"以下是机器学习加速的分布式优化方法和综述Steven, R., Klymenko, O. V., & Short, M. (2026). Machine learning-accelerated distributed optimisation methods for optimal power flow: A review. Renewable and Sustainable Energy Reviews, 226, 116190. https://doi.org/10.1016/j.rser.2025.116190",,,
+x_i^boundary = x_j^boundary；常见可写 V_i^{r} = V_i^{s}，θ_i^{r} = θ_i^{s},分布式 OPF 中，不同区域对共享边界变量的副本必须一致,,"Consensus constraint 一致性约束
+
+机器学习加速分布式优化综述提到，ADMM 适合处理 separable objective 和 complicating constraints；在 OPF 中，区域之间共享的功率流/电压变量就是典型 complicating constraint。你表里没有这个分布式 OPF 专用约束。"
+V_a^r = V_a^s，δ_a^r = δ_a^s,被多个区域同时包含的节点，其电压副本必须相等,,"Boundary voltage equality constraint 边界节点电压一致约束
+
+文献讲 Erseghe 的 ADMM-OPF 时说，把网络分成非重叠区域，并要求出现在多个区域 voltage set 中的节点电压保持相等。这个可以作为 ConsensusConstraint 的具体子类。"
+"常见形式：x_s^{first} = x_s^{second,ω}，或 u^0 = u^ω",随机多周期 AC-OPF 用 ADMM 分解为 first-stage 和多个 second-stage 问题，二阶段场景必须和一阶段决策耦合,,"Scenario/second-stage coupling constraint 随机场景二阶段耦合约束
+
+机器学习加速分布式优化综述提到 stochastic multi-period AC-OPF 被 ADMM 分解成 first-stage problem 和多个 parallel second-stage problems。你的表里有 chance/robust，但没有 stochastic scenario coupling / two-stage coupling。"
+"变量符号：
+Pg,t,s：机组 g 在时间 t、场景 s 下的有功出力
+
+Qg,t,s：机组 g 在时间 t、场景 s 下的无功出力
+
+Wg,t,s：机组开关状态，1 表示开机，0 表示关机
+
+Pming / Pmaxg：机组有功出力下限 / 上限
+
+Qming / Qmaxg：机组无功出力下限 / 上限
+约束形式：
+Pming Wg,t,s ≤ Pg,t,s ≤ Pmaxg Wg,t,s
+Qming Wg,t,s ≤ Qg,t,s ≤ Qmaxg Wg,t,s","约束意思：
+机组只有在开机状态 Wg,t,s = 1 时，才能发出有功和无功功率；如果 Wg,t,s = 0，则 Pg,t,s 和 Qg,t,s 都被强制为 0。",,"机组启停耦合出力约束
+英文可命名：Commitment-coupled generation limits / Unit commitment generation limits             这不是普通的“发电机上下限约束”，而是带机组启停状态的上下限约束。
+
+普通 OPF 里常见的是：
+Pming ≤ Pg ≤ Pmaxg
+但是 UC-OPF 里必须写成：
+Pming Wg ≤ Pg ≤ Pmaxg Wg
+因为 UC 要决定机组开不开机。所以这个约束适合单独作为你本体里的一个中等粒度 constraint 类。"
+"变量符号：
+Pg,t,s：时间 t 的机组有功出力
+
+Pg,t+1,s：下一时段机组有功出力
+
+Rupg：机组爬坡上升速率
+
+Rdng：机组爬坡下降速率
+
+Δt：相邻时间间隔
+
+Ug,t+1,s：启动决策变量
+
+Mg,t+1,s：停机决策变量
+
+Pming：机组最小有功出力
+约束形式：
+Pg,t+1,s − Pg,t,s ≤ Rupg Δt + Ug,t+1,s Pming
+Pg,t,s − Pg,t+1,s ≤ Rdng Δt + Mg,t+1,s Pming","约束意思：
+机组的出力不能在相邻时间段之间突然大幅变化。
+
+第一条限制出力上升速度，第二条限制出力下降速度。",," 机组爬坡约束
+英文可命名：Generator ramping constraint / Ramp-up and ramp-down constraints                              补充讲解：
+这类约束属于多时段调度模型里非常核心的动态运行约束。
+
+如果你只做单时段 OPF，这个约束通常不会出现。
+
+但是只要涉及 UC、经济调度、EMS、multi-period OPF、rolling horizon OPF，这个约束就很通用。
+其中 Ug 和 Mg 的作用是：
+
+当机组启动或停机时，允许出力发生较大跳变，否则普通爬坡速率会过于严格。"
+"以下是UC-OPF框架的文献Nikkhah, S., Nasr, M.-A., & Rabiee, A. (2021). A Stochastic Voltage Stability Constrained EMS for Isolated Microgrids in the Presence of PEVs Using a Coordinated UC-OPF Framework. IEEE Transactions on Industrial Electronics, 68(5), 4046～4055. https://doi.org/10.1109/TIE.2020.2987271",,,
+"变量符号：
+Tong,t−1,s：机组已经连续开机的时间
+
+Toffg,t−1,s：机组已经连续停机的时间
+
+Tupg：最小开机时间
+
+Tdng：最小停机时间
+
+Wg,t,s：当前时段机组状态
+
+Wg,t−1,s：上一时段机组状态
+约束形式：
+(Tong,t−1,s − Tupg)(Wg,t,s − Wg,t−1,s) ≥ 0
+(Toffg,t−1,s − Tdng)(Wg,t−1,s − Wg,t,s) ≥ 0","约束意思：
+机组一旦开机，不能马上关机；
+
+机组一旦关机，也不能马上重新开机。",," 最小开机 / 最小停机时间约束
+英文可命名：Minimum up/down time constraints                                补充讲解：
+这是 UC 问题的典型约束。
+
+它反映的是柴油机、火电机组、燃气机组等设备的实际物理运行限制。
+对于你的 OPF model selection 来说，这个约束可以作为一个重要标签：
+• 
+如果模型包含机组启停决策，那么它更接近 UC-OPF；
+
+• 
+如果模型还包含最小开停机时间，那么它比普通 OPF 更适合日内调度、微电网 EMS、机组组合问题。"
+"变量符号：
+Ug,t,s：启动决策，1 表示启动
+
+Mg,t,s：停机决策，1 表示停机
+
+Wg,t,s：当前机组状态
+
+Wg,t−1,s：上一时段机组状态
+约束形式：
+Ug,t,s − Mg,t,s = Wg,t,s − Wg,t−1,s
+Ug,t,s + Mg,t,s ≤ 1","约束意思：
+如果机组状态从 0 变成 1，则 Ug,t,s = 1，表示启动。
+
+如果机组状态从 1 变成 0，则 Mg,t,s = 1，表示停机。
+
+同一时段不能既启动又停机。",,"启动 / 停机逻辑约束
+英文可命名：Start-up and shut-down logical constraints                     补充讲解：
+这个约束是 UC 模型中把“开关状态变量 W”和“启动/停机变量 U、M”连接起来的逻辑约束。
+
+如果没有这个约束，启动成本和停机成本就无法正确计算。"
+"变量符号：
+Pmaxg：机组最大有功出力
+
+Pg,t,s：当前有功出力
+
+Wg,t,s：机组开关状态
+
+RESt：时间 t 的旋转备用需求
+约束形式：
+∑g∈G (Pmaxg Wg,t,s − Pg,t,s) ≥ RESt","约束意思：
+系统在线机组的剩余可发电能力必须大于等于备用需求。",,"旋转备用约束
+英文可命名：Spinning reserve constraint
+补充讲解：
+这个约束表示系统不能把所有在线机组都压到最大出力运行。
+
+必须留出一部分“马上可以增加的发电能力”，用来应对负荷突然增加、风电下降、设备故障等情况。
+你之前如果已经有 reserve constraint，那么这里不需要新增大类；
+
+但可以补充一个更具体的子类：
+Spinning reserve constraint
+
+旋转备用约束
+它比普通 reserve constraint 更具体，因为它只统计已经在线的机组可用余量。"
+"变量符号：
+Li,t,s：节点 i 在时间 t、场景 s 下的 L-index 电压稳定指标
+
+Llimt：时间 t 下允许的最大 L-index
+
+Vi,t,s：节点电压幅值
+
+δi,t,s：节点电压相角
+
+Fji：由重排后的 Ybus 矩阵得到的系数
+
+Bgb：发电机节点集合
+
+Blb：负荷节点集合
+约束形式：
+Li,t,s ≤ Llimt
+其中：
+Li,t,s = |1 − ∑i∈Bgb |Fji| Vi,t,s / Vj,t,s ∠(φji + δi,t,s − δj,t,s)|
+并且：
+Fji = −[Yjj]⁻¹ [Yji] = |Fji| ∠ φji","约束意思：
+系统每个负荷节点的电压稳定指标不能超过允许上限。
+
+L-index 越接近 1，系统越接近电压崩溃点；
+
+L-index 越接近 0，系统越安全。",,"电压稳定 L-index 约束
+英文可命名：Voltage stability index constraint / L-index constraint
+补充讲解：
+这是这篇论文最核心的新增约束之一。
+
+普通 OPF 只限制电压幅值：
+Vmin ≤ Vi,t,s ≤ Vmax
+但是这并不能保证系统远离电压崩溃点。
+
+L-index 约束进一步要求系统在电压稳定意义上保留安全裕度。
+你之前虽然可能已经有 “Voltage stability constraint 电压稳定约束” 这个大类，但这篇论文给出了一个具体实现方式：
+L-index-based voltage stability constraint
+
+基于 L-index 的电压稳定约束
+这对你的本体很有价值，因为它可以作为 voltage stability constraint 的一个具体子类。"
+"变量符号：
+SOCn,t,s：储能 n 在时间 t、场景 s 下的荷电状态
+
+Pchn,t,s：储能充电功率
+
+Pdchn,t,s：储能放电功率
+
+ηchn：储能充电效率
+
+ηdchn：储能放电效率
+
+Δt：时间间隔
+约束形式：
+SOCn,t+1,s − SOCn,t,s = (Pchn,t,s ηchn − Pdchn,t,s ηdchn) Δt
+论文中按照这个形式给出。实际很多储能模型也会写成：
+SOCn,t+1,s = SOCn,t,s + (Pchn,t,s ηchn − Pdchn,t,s / ηdchn) Δt","约束意思：
+储能下一时刻的 SOC 由当前 SOC、充电功率、放电功率和充放电效率决定。",,"ESS 储能能量状态转移约束
+英文可命名：ESS state-of-charge transition constraint / ESS energy balance constraint
+补充讲解：
+这是多时段储能建模的核心约束。
+
+它不是简单的“储能功率上下限”，而是把不同时段连接起来的动态约束。
+如果你的 constraint 体系里还没有储能类约束，这个必须补。"
+"变量符号：
+SOCn,t,s：储能荷电状态
+
+SOCminn：最小 SOC
+
+SOCmaxn：最大 SOC
+约束形式：
+SOCminn ≤ SOCn,t,s ≤ SOCmaxn","约束意思：
+储能不能过度充电，也不能过度放电。",,"ESS 荷电状态上下限约束
+英文可命名：ESS SOC limits
+补充讲解：
+这是储能系统最基本的安全约束。
+
+如果没有这个约束，优化器可能会让储能无限放电或充电，得到不现实的调度结果。"
+"变量符号：
+Pchn,t,s：储能充电功率
+
+Pdchn,t,s：储能放电功率
+
+PESSmaxn：储能最大功率
+
+Ichn,t,s：储能充电允许变量
+
+Idchn,t,s：储能放电允许变量
+约束形式：
+0 ≤ Pchn,t,s ≤ PESSmaxn Ichn,t,s
+0 ≤ Pdchn,t,s ≤ PESSmaxn Idchn,t,s","约束意思：
+储能的充电功率和放电功率不能超过设备最大功率。",,"ESS 充放电功率约束
+英文可命名：ESS charging/discharging power limits
+补充讲解：
+这里的关键点是乘上了二进制变量 Ichn,t,s 和 Idchn,t,s。
+
+也就是说，是否允许充电、是否允许放电，本身也是优化决策的一部分。"
+"变量符号：
+Ichn,t,s：储能充电状态变量
+
+Idchn,t,s：储能放电状态变量
+约束形式：
+Ichn,t,s + Idchn,t,s ≤ 1","约束意思：
+储能在同一时刻不能同时充电和放电。",,"ESS 充放电互斥约束
+英文可命名：ESS charge/discharge mutual exclusivity constraint
+补充讲解：
+这个约束非常重要。
+
+如果没有它，模型可能会出现同一储能同时充电和放电的非物理解。
+这类约束不仅适用于 ESS，也适用于 PEV、电池、V2G、氢储能等设备。"
+"以下是凸松弛opf Peng, Q., Tang, Y., & Low, S. H. (2015). Feeder Reconfiguration in Distribution Networks Based on Convex Relaxation of OPF. IEEE Transactions on Power Systems, 30(4), 1793～1804. https://doi.org/10.1109/TPWRS.2014.2356513",,,
+"N_s, N_l, E_T, path(i,s)",每个负荷节点必须连接到且只连接到一个变电站,,"单变电站供电连通约束
+Single-substation connectivity constraint
+表里有径向性，但没有明确写“每个负荷节点只能由一个变电站供电”"
+"s_i, S_ij, z_ij, l_ij",用支路潮流模型描述节点功率平衡,,"Branch-flow 功率平衡约束
+表里有 AC 的 P_balance/Q_balance/s_balance，但不是 branch-flow / DistFlow 形式"
+"v_i, v_j, P_ij, Q_ij, r_ij, x_ij, l_ij",描述沿线路从节点 i 到节点 j 的电压下降,,"支路电压降约束Branch voltage drop constraint / DistFlow voltage equation
+表里有 ΔVij,max，但那只是最大电压差限制，不是物理电压降方程"
+"P_ij, Q_ij, v_i, l_ij 。描述 P_ij² + Q_ij² = v_i l_ij",支路功率-电流-电压关系约束Branch power-current-voltage relation,,表里有 Pij/Qij/Iij/Sij 上下限，但没有它们之间的物理耦合关系
+"SOCP 松弛约束P_ij, Q_ij, v_i, l_ij。把 P_ij² + Q_ij² = v_i l_ij 松弛为 P_ij² + Q_ij² ≤ v_i l_ij",SOCP 松弛约束。SOCP relaxation constraint,,表里有 SDP 松弛 W ⪰ 0 和 rank(W)=1，但没有 branch-flow SOCP 二阶锥松弛
+"V_i, v_i, i ∈ N_s","变电站电压固定约束Substation/slack voltage fixing constraint
+变电站节点电压固定为 1 p.u. 或指定值",,表里有 Vm/Vg 上下限，但没有 slack/substation bus 的固定电压约束
+"以下是MTDC ACDCopf Bakır, H., Guvenc, U., Duman, S., & Kahraman, H. T. (2023). Optimal Power Flow for Hybrid AC/DC Electrical Networks Configured With VSC-MTDC Transmission Lines and Renewable Energy Sources. IEEE Systems Journal, 17(3), 3938～3949. https://doi.org/10.1109/JSYST.2023.3248658",,,
+"DC 电网功率平衡约束Pdc,i, Vdc,i, Vdc,j, Gdc,ij",DC 节点注入功率必须等于 DC 网络导纳产生的功率传输,,
+"VSC AC 侧电压约束Vc,j",换流器 AC 侧电压必须在允许范围内,,
+"DC 母线电压约束Vdc,j",DC 母线电压必须在允许范围内,,
+"VSC 控制模式约束 / 设定约束Vdc, Qc, Pdc, Vc",某些 VSC 固定 Vdc-Qc，另一些固定 Pdc-Vc,,
+"以下是实时opf Surender Reddy, S., & Bijwe, P. R. (2016). Day-Ahead and Real Time Optimal Power Flow considering Renewable Energy Resources. International Journal of Electrical Power & Energy Systems, 82, 400～408. https://doi.org/10.1016/j.ijepes.2016.03.033",,,
+"PFi：第 i 台调节机组的参与因子
+
+DPGi,t：第 i 台机组在子时段 t 的出力调整量
+
+DPSolar,t：太阳能出力相对于基准时刻的变化量
+
+DPWind,t：风电出力相对于基准时刻的变化量
+
+DPLoad,t：负荷相对于基准时刻的变化量
+
+PGi,0：第 i 台机组的基准出力
+
+PGi,t：第 i 台机组在子时段 t 的实际出力
+约束形式：
+DPGi,t = PFi (DPSolar,t + DPWind,t + DPLoad,t)
+PGi,t = PGi,0 + DPGi,t
+PFi = PGi,t / Σi PGi,t","Best-fit participation factor imbalance allocation constraint
+中文：最优拟合参与因子功率不平衡分配约束",,"约束意思：
+当实时运行中风电、光伏、负荷发生变化时，系统总功率不平衡量不是随便由某台机组承担，而是按照参与因子 PFi 分配给各个调节机组。
+为什么不重复：
+你表里有类似：
+αk ≥ 0, Σαk = 1
+
+发电机参与因子
+但是这篇论文的约束更具体，它不是单纯定义 participation factor，而是把：
+• 
+solar variability
+
+• 
+wind variability
+
+• 
+load variability
+
+• 
+generator adjustment
+
+• 
+RT/DA 子时段调度
+
+全部耦合起来。"
+"t：RT-OPF 的 1 min 子时段
+
+dst：DA-OPF 的 15 min 子时段
+
+VGi,t：子时段 t 的发电机节点电压
+
+QGi,t：子时段 t 的无功出力
+
+Pij,t：子时段 t 的线路潮流
+约束形式：
+VGi,min ≤ VGi,t ≤ VGi,max
+QGi,min ≤ QGi,t ≤ QGi,max
+−Pij,max ≤ Pij,t ≤ Pij,max
+对于 DA-OPF：
+VGi,min ≤ VGi,dst ≤ VGi,max
+QGi,min ≤ QGi,dst ≤ QGi,max
+−Pij,max ≤ Pij,dst ≤ Pij,max"," Sub-interval security enforcement constraint
+中文：子时段安全约束 / 多时间分辨率安全约束",,"约束意思：
+不是只在调度时刻检查电压、无功、线路潮流，而是在调度区间内部的每个子时段都要检查。
+RT-OPF：每 1 min 检查一次。
+
+DA-OPF：每 15 min 检查一次。
+为什么不重复：
+你表里有电压约束、无功约束、线路潮流约束。
+
+但这些是普通约束本身。
+这篇论文的新增点是：
+这些安全约束必须在调度区间内部的每个高分辨率子时段都成立。
+所以它不是一个全新的物理约束，而是一个时间分辨率增强型约束模式。"
+"
+PWj,t：风电场 j 在子时段 t 的出力
+PS,k,t：光伏 k 在子时段 t 的出力
+PWj,av,t：风电可用出力
+PS,k,av,t：光伏可用出力
+
+约束形式：
+PWj,t = PWj,av,t
+PS,k,t = PS,k,av,t
+弱一点也可写成：
+0 ≤ PWj,t ≤ PWj,av,t
+0 ≤ PS,k,t ≤ PS,k,av,t","Non-schedulable renewable injection constraint
+中文：不可调度可再生能源注入约束 / 必须接纳可再生能源约束",,"约束意思：
+风电和光伏被视为 non-schedulable generation，也就是不可调度电源。系统运营者需要接纳当时可用的风电和光伏出力。
+为什么不重复：
+你表里有：
+Pw 上下限
+
+Pp 上下限
+
+PR 上下限
+
+风电/光伏不确定性偏差上下限
+但这篇论文强调的是：
+风电和光伏不是优化器自由调度的发电机，而是按照可用资源强制注入或近似强制接纳。
+这和普通 Pmin ≤ P ≤ Pmax 不完全一样。"
+"PGi,dt：第 i 台机组在日前时段 dt 的发电量
+
+Ddt：时段 dt 的需求
+
+NG：发电机集合
+约束形式：
+Σi PGi,dt ≤ Ddt","Deregulated DA-OPF demand non-obligation constraint
+中文：市场环境下发电不必完全满足负荷约束",,"约束意思：
+在 deregulated market / 非管制市场环境下，GENCO 不一定必须供应全部负荷需求。它可以根据利润最大化选择少卖一些电。
+为什么不重复：
+你表里大概率都是从系统调度角度出发，默认功率平衡必须满足。
+
+这条约束是市场主体利润最大化语境下的约束，不是传统物理 OPF 的常规约束。
+文献明确说，在 deregulated environment 中，GENCOs are not obliged to meet the demand，并给出 ΣPG ≤ D 的约束。"
+"以下是储备约束 Peng, Y., & Fu, Y. (2026). Reserve Constrained AC Optimal Power Flow Using Accelerated Primal-Dual Interior Point Method. IEEE Transactions on Power Systems, 41(3), 1717～1730. https://doi.org/10.1109/TPWRS.2025.3626450",,,
+"变量符号：
+prgu_j：regulation up reserve，调频上备用
+
+prgd_j：regulation down reserve，调频下备用
+
+pscr_j：synchronized reserve，同步备用 / 旋转备用
+
+pnsc_j：non-synchronized reserve，非同步备用 / 非旋转备用
+
+prru,on_j：online ramping up reserve，在线爬坡上备用
+
+prrd,on_j：online ramping down reserve，在线爬坡下备用
+
+prru,off_j：离线爬坡上备用
+
+prrd,off_j：离线爬坡下备用
+
+u_on_j：设备在线状态
+约束形式示例：
+prgu_j ≤ prgu,max_j u_on_j
+prgd_j ≤ prgd,max_j u_on_j
+prgu_j + pscr_j ≤ pscr,max_j u_on_j
+prgu_j + pscr_j + prru,on_j ≤ prru,on,max_j u_on_j
+prgd_j + prrd,on_j ≤ prrd,on,max_j u_on_j
+pnsc_j ≤ pnsc,max_j (1 − u_on_j)
+pnsc_j + prru,off_j ≤ prru,off,max_j (1 − u_on_j)","Multi-product reserve capability constraint
+中文：多类型备用能力约束",,"约束意思：
+不同类型的备用不能随便提供。
+
+设备是否在线、响应速度、备用类型之间的关系都会限制它能提供多少备用。
+例如：
+• 
+在线设备可以提供 regulation reserve；
+
+• 
+离线设备可以提供 non-synchronized reserve；
+
+• 
+快速备用可以覆盖某些慢速备用需求；
+
+• 
+某些备用类型会共享同一个设备能力上限。
+
+为什么不重复：
+你表里有 spinning reserve constraint，但它只是一个总量式约束：
+Σ(Pmax W − Pg) ≥ RESt
+而这篇论文把备用拆成多个产品类型，并给出设备级别的备用能力限制。
+这不是重复，而是更完整的 reserve constraint 体系。"
+"pj：设备当前有功出力或用电功率
+
+pj,max：设备最大有功边界
+
+pj,min：设备最小有功边界
+
+prgu_j：调频上备用
+
+prgd_j：调频下备用
+
+pscr_j：同步备用
+
+prru,on_j：在线爬坡上备用
+
+prrd,on_j：在线爬坡下备用
+
+u_on_j：设备在线状态
+生产设备约束形式：
+pj + prgu_j + pscr_j + prru,on_j ≤ pj,max u_on_j
+pj − prgd_j − prrd,on_j ≥ pj,min u_on_j
+pnsc_j + prru,off_j ≤ pj,max (1 − u_on_j)   消费设备约束形式：
+pj − prgu_j − pscr_j − prru,on_j ≥ pj,min u_on_j
+pj + prgd_j + prrd,on_j ≤ pj,max u_on_j
+prrd,off_j ≤ pj,max (1 − u_on_j)","Energy-reserve joint headroom constraint
+中文：能量-备用联合裕度约束",,"约束意思：
+设备既要发电 / 用电，又要留备用。
+
+如果一台发电机已经接近 Pmax，那么它就没有多少 upward reserve；
+
+如果它已经接近 Pmin，那么它就没有多少 downward reserve。
+为什么不重复：
+你表里有：
+• 
+Pg 上下限
+
+• 
+爬坡约束
+
+• 
+旋转备用约束
+
+但这些没有明确表达：
+能量出力和备用容量会竞争同一段设备裕度 headroom。
+这条约束是 reserve-constrained OPF 的核心，不应该被普通备用约束替代。"
+"prgu_j：调频上备用
+
+pscr_j：同步备用
+
+pnsc_j：非同步备用
+
+pscr,req_n：同步备用需求
+
+pnsc,req_n：非同步备用需求
+约束形式示例：
+Σj∈zone (prgu_j + pscr_j) + pscr,+_n ≥ pscr,req_n
+Σj∈zone (prgu_j + pscr_j + pnsc_j) + pnsc,+_n ≥ pnsc,req_n","Reserve substitution / reserve hierarchy constraint
+中文：备用替代层级约束",,"约束意思：
+某些响应更快或等级更高的备用，可以替代较慢或较低等级的备用。
+例如：
+• 
+regulation up reserve 可以帮助满足 synchronized reserve 需求；
+
+• 
+regulation up + synchronized reserve + non-synchronized reserve 可以共同满足某类备用需求。
+
+为什么不重复：
+你的表里没有 reserve hierarchy / reserve substitution 这种东西。
+
+这不是普通备用容量约束，而是备用产品之间的可替代关系。"
+"Nq：无功备用区域集合
+
+qqru_j：设备 j 提供的无功上备用
+
+qqrd_j：设备 j 提供的无功下备用
+
+qqru,+_n：区域 n 的无功上备用缺额
+
+qqrd,+_n：区域 n 的无功下备用缺额
+
+qqru,req_n：区域 n 的无功上备用需求
+
+qqrd,req_n：区域 n 的无功下备用需求
+约束形式：
+Σj∈zone qqru_j + qqru,+_n ≥ qqru,req_n
+Σj∈zone qqrd_j + qqrd,+_n ≥ qqrd,req_n","Zonal reactive power reserve requirement constraint
+中文：分区无功备用需求约束",,"约束意思：
+每个无功备用区域必须有足够的无功上/下备用能力。
+为什么不重复：
+你表里可能有电压稳定、Qg 上下限、无功补偿 Qc，但没有：
+无功备用区域需求约束。
+这条适合补充到 reserve constraint 体系中。"
+"prgu,+_n：调频上备用缺额
+
+prgd,+_n：调频下备用缺额
+
+pscr,+_n：同步备用缺额
+
+pnsc,+_n：非同步备用缺额
+
+prru,+_n：爬坡上备用缺额
+
+prrd,+_n：爬坡下备用缺额
+
+qqru,+_n：无功上备用缺额
+
+qqrd,+_n：无功下备用缺额
+约束形式：
+reserve_supply_n + reserve_shortfall_n ≥ reserve_requirement_n
+reserve_shortfall_n ≥ 0","Reserve shortfall soft constraint
+中文：备用缺额软约束",,"约束意思：
+如果备用无法完全满足，模型允许出现备用缺额变量，但会在目标函数里付出高额惩罚。
+为什么不重复：
+你表里有硬性的 reserve constraint，但没有这种：
+reserve shortfall + penalty 的软备用约束机制。
+文献后面的 case study 也说明，某些场景中会允许 reserve shortfall penalty，因为这样可以避免为了采购极端昂贵备用而严重降低市场剩余。"
+"pij, qij：线路 i-j 方向有功/无功潮流
+
+pji, qji：线路 j-i 方向有功/无功潮流
+
+sl,max：线路最大视在功率容量
+
+s+_l：线路过载松弛变量
+约束形式：
+sqrt(pij² + qij²) − s+_l ≤ sl,max
+sqrt(pji² + qji²) − s+_l ≤ sl,max
+s+_l ≥ 0","Soft branch flow overload constraint
+中文：软线路过载约束 / 线路过载惩罚约束",,"约束意思：
+线路容量可以被软化。如果线路潮流超过容量，超过部分由 s+_l 表示，并在目标函数中受到惩罚。
+为什么不重复：
+你表里有 Sij ≤ Smax 这种硬线路容量约束。
+
+这篇论文是：
+线路容量硬约束 + 过载松弛变量 + 过载惩罚成本。
+这适合实际大规模 OPF，尤其是为了避免模型不可行。"
+"pj：设备 j 的总有功功率
+
+pjm：设备 j 的第 m 个报价块功率
+
+pjm,max：报价块 m 的最大功率
+
+cjm：报价块成本/价格系数
+
+Mj：设备 j 的报价块集合
+约束形式：
+pj = Σm∈Mj pjm
+0 ≤ pjm ≤ pjm,max","Offer / bid block constraint
+中文：分段报价 / 报价块约束",,"约束意思：
+一个发电机或负荷的功率不是用单一成本函数表示，而是被拆成多个 offer/bid blocks，每个报价块有自己的价格。
+为什么不重复：
+你表里有发电成本系数、Pg 上下限，但没有 market bid block 形式。
+这不是普通物理约束，而是市场型 OPF / market clearing OPF 里的建模约束。"
+"以下是三相不平衡opf Bruno, S., Lamonaca, S., Rotondo, G., Stecchi, U., & La Scala, M. (2011). Unbalanced Three-Phase Optimal Power Flow for Smart Grids. IEEE Transactions on Industrial Electronics, 58(10), 4504～4513. https://doi.org/10.1109/TIE.2011.2106099",,,
+"Va_i, Vb_i, Vc_i：节点 i 的 A/B/C 三相电压
+
+Ia_i, Ib_i, Ic_i：节点 i 的 A/B/C 三相电流
+
+Sa_i, Sb_i, Sc_i：节点 i 的 A/B/C 三相复功率
+
+Pa_i, Qa_i：A 相有功 / 无功
+
+Pb_i, Qb_i：B 相有功 / 无功
+
+Pc_i, Qc_i：C 相有功 / 无功
+
+Yabc_ij：线路 i-j 的三相导纳矩阵
+
+Zabc_ij：线路 i-j 的三相阻抗矩阵
+抽象约束形式：
+S_i^φ = V_i^φ · conjugate(I_i^φ)
+I_i^φ = Σ_j Σ_ψ Y_ij^{φψ} V_j^ψ
+φ, ψ ∈ {a, b, c}
+或者整体写成：
+f_abc(x,u) = 0","ThreePhaseUnbalancedPowerFlowConstraint
+中文：三相不平衡潮流约束",,"约束意思：
+A、B、C 三相不是简单复制三套单相 OPF，而是每一相有自己的电压、电流、功率，同时三相之间还可能通过线路阻抗矩阵互相耦合。
+为什么不重复：
+你表里有：
+P_balance
+
+Q_balance
+
+s_balance
+但这些是普通 AC 潮流平衡，默认通常是单相等值 / 正序模型。
+
+你表里也有 VUF 电压不平衡度约束，但 VUF 只是“不平衡程度指标”，不是三相潮流方程本身。
+这篇论文的真正核心就是：OPF 不是用普通单相 AC 潮流，而是用 three-phase unbalanced distribution load flow。 论文也明确说普通 OPF 要适配配电网特点，TOPF 可以采用 sequence model 或 multiphase model。"
+"
+Ia_l：线路 l 的 A 相电流
+
+Ib_l：线路 l 的 B 相电流
+
+Ic_l：线路 l 的 C 相电流
+
+Imax_l：线路 l 的最大允许热电流
+约束形式：
+|Ia_l| ≤ Imax_l
+|Ib_l| ≤ Imax_l
+|Ic_l| ≤ Imax_l
+也可以用论文中的 penalty 形式表达：
+Cp2 = α2a ((Ia − Imax) / Imax)²
+• 
+α2b ((Ib − Imax) / Imax)²
+
+• 
+α2c ((Ic − Imax) / Imax)²
+
+其中如果某一相电流低于 Imax，对应 α 取 0","PhaseWiseCurrentLimitConstraint
+中文：每相电流约束 / 每相热稳定约束",,"约束意思：
+线路不是只看总电流或正序电流，而是每根相线都不能过载。
+
+如果 A 相过载，即使正序电流 Id 看起来没超限，线路保护仍然可能动作。
+为什么不重复：
+你表里有：
+Iij 的上下限
+但这个是普通线路电流上下限，没有明确区分：
+Ia, Ib, Ic 三相电流分别约束。
+这篇论文专门说明：Test A 只约束正序电流 Id 时，虽然 Id 接近 650 A 并低于阈值，但 A 相电流 Ia 已经远超热极限，因此这个解不满意；Test B 改成分别约束 Ia、Ib、Ic 后，三相电流才都满足安全限制。
+"
+"Id：正序电流，也可以理解为 direct sequence current
+
+Ii：负序电流，论文里叫 inverse sequence current
+
+I0：零序电流
+
+κi：允许的负序比例上限
+
+κ0：允许的零序比例上限
+约束形式：
+Ii / Id ≤ κi
+I0 / Id ≤ κ0
+论文里用 penalty function 表达为：
+Cp3 = α3 (Ii / Id)²
+Cp4 = α4 (I0 / Id)²","SequenceCurrentImbalanceConstraint
+中文：序分量电流不平衡约束 / 负序零序电流约束",,"约束意思：
+不仅限制线路电流大小，还限制三相电流的不平衡程度。
+
+负序电流和零序电流越大，说明三相越不平衡。
+为什么不重复：
+你表里已经有：
+VUF_i ≤ VUF_i^max
+
+电压不平衡度约束
+但是 VUF 是电压不平衡。
+
+这篇论文给的是电流不平衡，而且是通过正序、负序、零序电流比例来表达。
+所以它不是 VUF 的重复，而是另一个三相不平衡安全约束。
+论文 Test C 明确引入 Cp3 和 Cp4，用 Ii/Id 和 I0/Id 来降低相间不平衡，同时让互联线电流保持在阈值以下。"
+"Va_i：节点 i 的 A 相电压
+
+Vb_i：节点 i 的 B 相电压
+
+Vc_i：节点 i 的 C 相电压
+
+Vmin, Vmax：允许电压上下限
+约束形式：
+Vmin ≤ |Va_i| ≤ Vmax
+Vmin ≤ |Vb_i| ≤ Vmax
+Vmin ≤ |Vc_i| ≤ Vmax","PhaseWiseVoltageMagnitudeConstraint
+中文：每相电压幅值约束",,"约束意思：
+三相不平衡配电网里，不能只看某个节点的等值电压，而要分别检查 A/B/C 三相电压是否越限。
+为什么不重复：
+你表里有 Vmmax/Vmmin，也有 VUF。
+
+但是 Vmmax/Vmmin 是普通节点电压上下限，没有明确每一相；VUF 是相间不平衡指标，不等于每相电压上下限。
+论文 Test D 中说，为了保证合适的电压 profile，引入了 penalty function，把电压限制在正常运行范围 ±0.05 p.u. 内，并且表格中展示了不同节点不同相的 line-to-neutral voltage。"
+"PWi,t,s：风机有功出力
+
+QWi,t,s：风机无功出力
+
+φlead：超前功率因数角
+
+φlag：滞后功率因数角
+约束形式：
+tg(φlead) PWi,t,s ≤ QWi,t,s ≤ tg(φlag) PWi,t,s","风机功率因数型无功能力约束
+英文：Power-factor-based WT reactive capability constraint",,"约束意思：
+风机无功出力不是独立随便给的，而是受有功出力和功率因数能力限制。
+为什么值得补：
+这就是我之前说的 P-Q capability constraint 的一种具体形式。
+
+它不是圆形的 P² + Q² ≤ Smax²，而是功率因数角限制型 P-Q 能力约束。
+你的表里如果只有 Qw 上下限，那么这个不重复。因为这里表达的是：
+Qw 的范围随着 Pw 改变。
+论文中式 (24) 明确给出这个约束。
+"
+"tij：线路 i-j 上 LTC 的 tap 档位
+
+tij_min：最小 tap 档位
+
+tij_max：最大 tap 档位
+
+ΔS：每一档 tap 对电压变比的变化量
+
+E'：含有 LTC 的线路集合
+约束形式：
+tij_min ≤ tij ≤ tij_max
+tij ∈ Z
+或者具体到该文算例：
+tij ∈ {−16, −15, ..., 15, 16}",Discrete LTC tap position constraint中文名：负载分接开关离散档位约束 / 离散 tap 约束,,"约束意思：
+LTC 不是连续调节设备，而是只能选择有限个离散档位。
+
+所以它会把普通连续 DOPF 变成混合整数 OPF / MISOCP-DOPF。
+为什么这是你缺的：
+你之前表里如果只有：
+Tmin ≤ T ≤ Tmax
+那只是连续 tap 上下限。
+
+这篇论文明确强调 LTC 是机械继电器离散步进控制，所以 DOPF 中必须用整数变量建模；它还说明 LTC 和电容器组这类离散控制设备是配电网 volt/var control 的主要传统设备。"
+"vi：LTC 一次侧节点 i 的电压平方
+
+vj：LTC 二次侧节点 j 的电压平方
+
+ki'：LTC 电压变比
+
+tij：LTC tap 档位
+
+ΔS：每档 tap 电压变化步长
+约束形式：
+vj = vi (ki')²
+ki' = 1 + ΔS tij",LTC voltage ratio coupling constraint中文名：LTC 电压变比耦合约束,,"约束意思：
+LTC 的二次侧电压不是自由变量，而是由一次侧电压和 tap 档位共同决定。
+换句话说：
+tap 档位 tij 改变
+
+→ 电压变比 ki' 改变
+
+→ 二次侧电压 vj 改变
+为什么这是你缺的：
+很多 OPF 表里只写 tap 上下限，但没有写：
+tap 档位如何真正作用到节点电压。
+这个约束才是 LTC 建模的物理核心。论文在 LTC 模型部分明确给出 vj = vi ki'^2 和 ki' = 1 + ΔS tij。"
+"vi：一次侧电压平方
+
+vj：二次侧电压平方
+
+ki'：LTC 电压变比
+
+ki''：辅助变量，定义为 1 / vi
+原始非线性关系：
+vj = vi (ki')²
+ki' = 1 + ΔS tij
+论文中的松弛形式：
+vj ki'' ≥ (ki')²
+vi ki'' ≥ 1",Conic relaxation of LTC constraint中文名：LTC 二阶锥松弛约束 / LTC SOCP 松弛约束,,"约束意思：
+原始 LTC 电压变比关系是非线性的。
+
+为了把 DOPF 写成 MISOCP，论文把这个非线性关系改写成可以用二阶锥表示的凸约束。
+为什么这是你缺的：
+你之前有普通 SOCP 松弛，例如支路潮流里的：
+Pij² + Qij² ≤ vi lij
+但这篇给的是另一类 SOCP 松弛：
+LTC 设备模型本身的 SOCP 松弛。
+它不是普通支路潮流 SOCP，而是 tap changer 约束的凸化形式。论文明确说这些不等式是 hyperbolic constraints，可以 reformulated as second-order cone constraints。"
+"x, y：两个连续变量
+
+w：用于代替 xy 的辅助变量
+
+xL, xU：x 的下界和上界
+
+yL, yU：y 的下界和上界
+约束形式：
+w ≥ xL y + yL x − xL yL
+w ≥ xU y + yU x − xU yU
+w ≤ xL y + yU x − xL yU
+w ≤ yL x + xU y − yL xU
+在本文中对应的双线性项：
+vj ki''
+vi ki''",McCormick envelope constraint中文名：McCormick 双线性包络约束,,"约束意思：
+McCormick 约束用一组线性不等式包住双线性项 xy，从而把原来的非凸双线性关系变成凸近似。
+为什么这是你缺的：
+你之前如果只有 SOCP/SDP 松弛，还不一定有 McCormick envelope。
+
+但在混合整数 OPF、含离散设备 OPF、含双线性设备模型 OPF 中，McCormick 是非常常见的凸化工具。
+这篇论文明确说 LTC 模型中的双线性项通过 McCormick envelopes 处理，并给出通用的 McCormick 上下包络公式。
+
+它不完全是“物理运行约束”，更像是数学重构 / 凸化约束。
+但你的 constraint 表里既然已经记录 SDP/SOCP/rank 这类数学约束，那么 McCormick 也可以加入
+
+"
+"EPEVi,t,s：节点 i 的 PEV 聚合电池能量
+
+PchPEVi,t,s：PEV 聚合充电功率
+
+PdchPEVi,t,s：PEV 聚合放电功率
+
+ηchPEVi,t,s：PEV 充电效率
+
+ηdchPEVi,t,s：PEV 放电效率
+
+Δt：时间间隔
+约束形式：
+EPEVi,t+1,s = EPEVi,t,s + (PchPEVi,t,s ηchPEVi,t,s − PdchPEVi,t,s / ηdchPEVi,t,s) Δt","PEV 聚合电池能量动态约束
+英文：PEV aggregated battery energy balance constraint",,"约束意思：
+PEV 停车场像一个聚合储能系统，下一时段电量由当前电量、充电功率、放电功率、效率决定。
+为什么值得补：
+如果你已经有 ESS SOC 约束，这个和 ESS 类似，但它仍然值得单独记录为 PEV/V2G 约束，因为 PEV 的容量会随着车辆数量变化。
+论文中式 (31) 给出该能量动态约束。"
+"PchPEVi,t,s：PEV 充电功率
+
+PdchPEVi,t,s：PEV 放电功率
+
+Ψ：安装 PEV 停车场的节点集合
+
+T：时间集合
+约束形式：
+∑t∈T ∑i∈Ψ PchPEVi,t,s ≥ ∑t∈T ∑i∈Ψ PdchPEVi,t,s","PEV 总充电量大于等于总放电量约束
+英文：PEV net charging requirement constraint",,"约束意思：
+在整个调度周期内，PEV 的总充电量不能小于总放电量。
+为什么值得补：
+这个约束不是普通 ESS 必有的。它体现的是电动汽车用户侧需求：车可以给电网放电，但最终不能被过度榨干。
+它不是严格的“离场电量约束”，但和离场电量约束属于同一类思想：PEV 最终要保证用户用车需求。
+论文中式 (36) 给出该约束。
+"
+,Discrete shunt capacitor switching constraint中文名：离散电容器组投切约束,,"这篇论文提到了 capacitor banks，并且说它们通常是 binary ON/OFF 离散状态；但是本文正式模型主要做的是 LTC，不是 capacitor bank。
+所以从这篇论文里你可以得到一个方向性证据：
+电容器组是常见离散控制设备。"
+"以下是可再生能源电力系统的在线优化Wang, Z., Wei, W., Pang, J. Z. F., Liu, F., Yang, B., Guan, X., & Mei, S. (2023). Online Optimization in Power Systems With High Penetration of Renewable Generation: Advances and Prospects. IEEE/CAA Journal of Automatica Sinica, 10(4), 839～858. https://doi.org/10.1109/JAS.2023.123126",,,
+"θi：节点 i 的相角
+
+ωi：节点 i 的频率偏差
+
+Mi：惯性系数
+
+Di：阻尼系数
+
+Pgi：机械输入功率 / 发电功率
+
+PDi：负荷功率
+
+Pij：线路有功潮流
+约束形式：
+θ̇i = ωi
+Mi ω̇i = Pgi − Diωi − PDi − ∑j∈Ni Pij","频率动态约束 / 摆动方程约束
+英文：Frequency dynamic constraint / Swing equation constraint",,"约束意思：
+频率不是静态变量，而是由发电-负荷不平衡、惯性、阻尼和线路功率交换共同决定。
+为什么值得补：
+你现在表里如果只有 frequency security constraint、RoCoF、frequency nadir，那是指标型约束。
+
+这篇给的是更底层的频率动态方程约束。
+综述明确说 AC 系统频率反映系统有功不平衡，必须保持在额定频率附近，否则可能导致停电甚至级联故障；随后给出同步机频率动态模型。"
+"ωj：逆变器节点频率偏差
+
+Vj：节点电压幅值
+
+τj：时间常数
+
+kωj：频率下垂系数
+
+kVj：电压下垂系数
+
+Pjk：支路有功功率
+
+Qjk：支路无功功率
+
+uPj：有功控制输入
+
+uQj：无功控制输入
+约束形式：
+θ̇j = ωj
+τj ω̇j = −kωj ωj − ∑k∈Nj Pjk − PDj + uPj
+τj V̇j = −kVj Vj − ∑k∈Nj Qjk − QDj + uQj","逆变器下垂控制动态约束
+英文：Inverter droop-control dynamic constraint",,"约束意思：
+逆变器型分布式电源的频率和电压通过 droop control 动态调节。
+为什么值得补：
+高比例新能源系统里，很多电源通过电力电子逆变器接入。
+
+这个约束可以帮助你的体系覆盖：
+• 
+inverter-based resource OPF
+
+• 
+grid-forming inverter control
+
+• 
+microgrid dynamic OPF
+
+• 
+online frequency/voltage control
+
+综述明确列出基于 droop control 的逆变器动态方程。"
+"Plj：可控负荷
+
+ulj：负荷控制输入
+
+Tlj：负荷响应时间常数
+约束形式：
+Tlj Ṗlj = −Plj(t) + ulj","可控负荷动态约束
+英文：Controllable load dynamic constraint",,"约束意思：
+可控负荷不是瞬间按命令变化，而是有响应动态。
+为什么值得补：
+你表里有 flexible demand limits 和 load shedding limits，但这些大多是静态上下限。
+
+这篇给的是动态可控负荷模型。
+综述在 load bus 部分给出 controllable load dynamics。"
+"Pgj：发电机调节功率
+
+Plj：可控负荷调节功率
+
+Pgj,min / Pgj,max：发电机调节范围
+
+Plj,min / Plj,max：可控负荷调节范围
+约束形式：
+Pgj,min ≤ Pgj(t) ≤ Pgj,max
+Plj,min ≤ Plj(t) ≤ Plj,max","动态频率控制中的硬输入约束
+英文：Hard input limit constraint in frequency control",,"约束意思：
+动态控制过程中，发电机和可控负荷的调节量不能超过能力范围。
+为什么值得补：
+这和普通 Pg 上下限、flexible load 上下限很像。
+
+但这里的区别是：它强调这些约束在瞬态控制过程中也不能被违反。
+综述说这些 hard constraints should not be violated at any time even during the transient period，并在最优频率控制问题中给出发电和可控负荷的上下限。"
+"Qt：队列状态，电力系统中通常可对应 ESS 的 SOC
+
+xt：充放电变化量
+
+T：时间长度
+约束形式：
+Qt+1 = Qt + xt
+长期平均稳定约束：
+lim T→∞ 1/T ∑t=0到T−1 E[xt] = 0","时间耦合储能/队列状态约束
+英文：Storage queue dynamics / Lyapunov queue constraint",,"约束意思：
+储能不能长期只充不放或只放不充。长期来看，净储能变化要稳定。
+为什么值得补：
+你如果已经有普通 ESS SOC 动态：
+SOCt+1 = SOCt + charge − discharge
+那这个不一定必须新增。
+
+但如果你的本体要覆盖 online optimization / Lyapunov optimization，这个可以作为在线优化特有的状态队列约束。
+综述明确说 Lyapunov optimization 中队列 Qt 在电力系统里通常是 ESS 的 SOC，xt 是充/放电率，并给出 Qt+1 = Qt + xt 以及 mean-rate stability。"
+"SOCt：储能状态
+
+Pch,t / Pdch,t：充放电功率
+
+Pg,t：发电机出力
+
+Pg,t+1：下一时段出力
+
+xt：时段 t 决策变量
+
+xt+1：下一时段决策变量
+典型形式：
+SOCt+1 = SOCt + Pch,t ηch Δt − Pdch,t Δt / ηdch
+Pg,t+1 − Pg,t ≤ Rgup Δt
+Pg,t − Pg,t+1 ≤ Rgdown Δt","多时段时间耦合约束
+英文：Temporal coupling constraint",,"约束意思：
+多时段优化中，当前时段的决策会影响未来时段。
+为什么值得补：
+你大概率已经有 ESS SOC 和 ramping。
+
+但是如果你的表里没有一个专门条目叫 temporal coupling constraint，可以补成一个较抽象的具体约束条目。
+综述明确说 ESS 调度包含充放电速率和 SOC，决策变量在连续时段之间耦合；多阶段经济调度中的 ramping constraints 也是时间耦合约束。"
+,,,
+,,,
+"以下是distributionopf with 离散控制Shukla, S. R., Paudyal, S., & Almassalkhi, M. R. (2019). Efficient Distribution System Optimal Power Flow With Discrete Control of Load Tap Changers. IEEE Transactions on Power Systems, 34(4), 2970～2979. https://doi.org/10.1109/TPWRS.2019.2894674",,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+"VSC 无功功率交换约束Qs,j",VSC 向 AC 网吸收/注入的无功功率不能越限,,
+"VSC 有功功率交换约束Ps,j",VSC 与 AC 网之间交换的有功功率不能越限,,
+"Np：有功备用区域集合
+
+n：备用区域
+
+Gp_n：区域 n 内的发电设备集合
+
+Dp_n：区域 n 内的用电设备集合
+
+prgu_j：设备 j 提供的调频上备用
+
+prgd_j：调频下备用
+
+pscr_j：同步备用
+
+pnsc_j：非同步备用
+
+prru,on_j / prru,off_j：爬坡上备用
+
+prrd,on_j / prrd,off_j：爬坡下备用
+
+prgu,+_n 等：区域备用缺额变量
+
+prgu,req_n 等：区域备用需求
+约束形式示例：
+Σj∈zone prgu_j + prgu,+_n ≥ prgu,req_n
+Σj∈zone prgd_j + prgd,+_n ≥ prgd,req_n
+Σj∈zone (prgu_j + pscr_j) + pscr,+_n ≥ pscr,req_n
+Σj∈zone (prgu_j + pscr_j + pnsc_j) + pnsc,+_n ≥ pnsc,req_n
+Σj∈zone (prru,on_j + prru,off_j) + prru,+_n ≥ prru,req_n
+Σj∈zone (prrd,on_j + prrd,off_j) + prrd,+_n ≥ prrd,req_n","Zonal real power reserve requirement constraint
+中文：分区有功备用需求约束",,"约束意思：
+每个备用区域都必须有足够的有功备用。
+
+不是全系统总备用够了就行，而是每个 reserve zone 都要满足自己的备用需求。
+为什么不重复：
+你表里有 spinning reserve constraint，但那是系统层面的整体备用约束。
+
+这篇论文是 zonal reserve requirement，并且按备用产品类型分别建模。"
+"qj：设备当前无功功率
+
+qj,max：无功上限
+
+qj,min：无功下限
+
+qqru_j：reactive power up reserve，无功上备用
+
+qqrd_j：reactive power down reserve，无功下备用
+
+u_on_j：设备在线状态
+生产设备约束形式：
+qj + qqru_j ≤ qj,max u_on_j
+qj − qqrd_j ≥ qj,min u_on_j
+消费设备约束形式：
+qj + qqrd_j ≤ qj,max u_on_j
+qj − qqru_j ≥ qj,min u_on_j","Reactive power reserve headroom constraint
+中文：无功备用裕度约束",,"约束意思：
+无功功率也需要留备用裕度。
+
+如果设备当前无功输出已经接近上限，就不能再提供太多无功上备用。
+为什么不重复：
+你表里有 Qg/Qw/Qp/QR 上下限，也有电压稳定类约束。
+
+但是这篇论文的新增点是：
+无功备用 reserve 本身被作为一种可优化资源建模。
+这比普通无功上下限更进一步。"

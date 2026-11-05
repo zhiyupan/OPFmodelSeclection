@@ -1,0 +1,3578 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://openenergyplatform.org/ontology/oeo/oeo-social/"
+     xml:base="https://openenergyplatform.org/ontology/oeo/oeo-social/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:oeo="https://openenergyplatform.org/ontology/oeo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:www="https://www.commoncoreontologies.org/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+    <owl:Ontology rdf:about="https://openenergyplatform.org/ontology/oeo/oeo-social/">
+        <owl:versionIRI rdf:resource="https://openenergyplatform.org/ontology/oeo/releases/2.11.0/oeo-social.omn"/>
+        <owl:imports rdf:resource="https://openenergyplatform.org/ontology/oeo/releases/2.11.0/oeo-shared.omn"/>
+        <dc:description>The Open Energy Ontology is an ontology for all aspects of the energy modelling domain. The &apos;Social&apos; module covers entities that relate to people and the social, organisational and economic environment in which energy is produced and consumed, including sector, organisation, and various roles.</dc:description>
+        <terms:license>http://creativecommons.org/publicdomain/zero/1.0/</terms:license>
+        <terms:title>Open Energy Ontology (social module)</terms:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000112 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000112"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000116 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000118 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000119 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000600 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000600"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/source -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#isDefinedBy -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#isDefinedBy"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#closeMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#relatedMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#relatedMatch"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010037 -->
+
+    <owl:AnnotationProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010037"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020425 -->
+
+    <owl:AnnotationProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020425"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020426 -->
+
+    <owl:AnnotationProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020426"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#string -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000136 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000136"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000052 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000053 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000053"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000056 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000056"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000057 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000057"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000080 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000080"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000086 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000086"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000087 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000087"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002410 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002410"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002418 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002418"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000501 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000501"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000503 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000503"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000504 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000504"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000505 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000505"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000506 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000506"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000507 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000507">
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000087"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000508 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000508">
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000107"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000509 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000509"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000510 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000510"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000522 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000522"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010119 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010119">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+        <rdfs:domain rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+        <rdfs:range rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140149"/>
+        <obo:IAO_0000115>A relation between a policy instrument and a transformative measure where a policy instrument guides a transformative measure.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">guides</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/444
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/853
+
+Make subproperty of &apos;is about&apos;:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1507
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1563
+
+move to oeo-shared
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1329
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1614
+
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010121 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010121"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010128 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010128">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140150"/>
+                    <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <obo:IAO_0000115>A relation that holds between a policy or policy instrument and the thing it governs.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">governs</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/855
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/868</oeo:OEO_00020426>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010231 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010231"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010312 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010312"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020056 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020056"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020070 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020070">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020071"/>
+        <rdfs:domain rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010501"/>
+        <rdfs:range rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020069"/>
+        <obo:IAO_0000115 xml:lang="en">Is traded at is a relation that holds between a product and a market exchange where the product is offered for trade/sale at the market exchange.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">is traded at</rdfs:label>
+        <oeo:OEO_00020426>pull request: https://github.com/OpenEnergyPlatform/ontology/pull/748
+
+change range:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/791
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/842
+
+add domain:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/973
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1127
+
+Simplify domain and range by using product:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1239
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1912</oeo:OEO_00020426>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020070"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#domain"/>
+        <owl:annotatedTarget rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010501"/>
+        <obo:IAO_0000116>Extension of domain to financial instrument and other products planned</obo:IAO_0000116>
+    </owl:Axiom>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020071 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020071">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020069"/>
+        <rdfs:range rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010501"/>
+        <obo:IAO_0000115>A relation that holds between a product and a market exchange.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">trades</rdfs:label>
+        <oeo:OEO_00020426>pull request: https://github.com/OpenEnergyPlatform/ontology/pull/748
+
+add domain and range:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/973
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1127
+
+Simplify domain and range by using product:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1239
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1912</oeo:OEO_00020426>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020179 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020179"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020180 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020180"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00040010 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140002 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140002"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140008 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140008"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140017 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140017">
+        <rdfs:domain rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000323"/>
+        <rdfs:range rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030022"/>
+        <obo:IAO_0000115>A relation between a person and an organisation where the person is a member of the organisation.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">member of</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/486
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/562</oeo:OEO_00020426>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140018 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140018">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030022"/>
+        <rdfs:range rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000323"/>
+        <obo:IAO_0000115>A relation between an organisation and a person where the person is a member of the organisation.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">has member</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/486
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/562</oeo:OEO_00020426>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140164 -->
+
+    <owl:ObjectProperty rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140164"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000003"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000004"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000006"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000009 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000009"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000016 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000016"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000017 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000017"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000020 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000020"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000023 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000024 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000024"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000027 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000027"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000029 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000029"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000030"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000031"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000034 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000034"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000038 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000038"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000141 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000141"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000148 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000148"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000007"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000104 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000104"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000310 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000310"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002577 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/RO_0002577"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000187 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UO_0000187"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000189 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UO_0000189"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000190 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UO_0000190"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UO_0010006"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000045 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000045">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+        <obo:IAO_0000115>A producer is an agent that makes goods.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Produzent</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Produzentin</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">producer</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/835
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/845
+
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/314
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/370
+
+move axiom to shared-axioms
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1703
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1706</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000051 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000064 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000064"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000087 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000087">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+        <obo:IAO_0000115>A client is an agent that receives a product or service.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Kunde</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Kundin</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">client</rdfs:label>
+        <oeo:OEO_00020426>rework module structure
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000105 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000105">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000431"/>
+        <obo:IAO_0000115 xml:lang="en">A consumer is a user of a commercial product or service.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Verbraucher</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Verbraucherin</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">consumer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000107 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000107"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000238 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000238">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030022"/>
+        <obo:IAO_0000115 xml:lang="en">An institution is an organisation that serves a social purpose.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Institution</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">institution</rdfs:label>
+        <oeo:OEO_00020426>moved term to oeo-shared:
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/871
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000315 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000315"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000323 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000323"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000329 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000329">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030022"/>
+        <obo:IAO_0000115 xml:lang="en">A political party is an organisation of a group of people with common views or goals that wants to have influence in politics.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">politische Partei</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">political party</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000341 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000341">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+        <obo:IAO_0000115 xml:lang="en">A prosumer is an agent who is producer and consumer at the same time.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">prosumer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000350 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000350"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000379 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000379">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+        <obo:IAO_0000115>A software developer is an agent that creates computer software.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Software-Entwickler</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Software-Entwicklerin</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">software developer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00000431 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000431">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+        <obo:IAO_0000115>A user is an agent that employs an aid, tool or information system to achieve a goal/benefit.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Benutzer</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Benutzerin</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">user</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010082 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010082">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010116"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A trade is a process in which one good or service is exchanged for another good or service or money.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Handel</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">trade</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/307
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/745
+
+Move to oeo-shared:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1458
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1478
+
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1565
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1613
+
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010083 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010083">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010082"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A market participant is an agent who participates in trading in a market exchange.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Marktteilnehmer</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Marktteilnehmerin</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">market participant</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/330
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/745
+
+update definition and improve axiom:
+https://github.com/OpenEnergyPlatform/ontology/issues/617
+https://github.com/OpenEnergyPlatform/ontology/pull/1019
+
+Move to oeo-shared:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1458
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1478
+
+rework module structure
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010115 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010115">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002577"/>
+        <obo:IAO_0000115>An economy is a system of production, distribution, trade and consumption of goods and services.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Wirtschaft</obo:IAO_0000118>
+        <obo:IAO_0000118>economic system</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">economy</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/832
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/843
+move to oeo-shared, add alternative lable
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1329
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1642</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010116 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010116"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010117 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010117"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010123 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010123">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010458"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000503"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020063"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Effort sharing is a regulatory instrument that sets a common emission reduction goal for a number of countries. Each country has a national reduction goal. Under- or overachievement of that goal can be compensated by various flexibilities given in the regulation.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Lastenteilung</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">effort sharing</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/834
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/857
+
+Make subclass of &apos;regulatory instrument&apos; and improve definition:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1545
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1786</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010126 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010126">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020063"/>
+        <obo:IAO_0000115>An Annual Emission Allocation (AEA) is an emission certificate used in the Effort Sharing Decision (ESD) and the Effort Sharing Regulation (ESR). It permits the emission of a CO2 equivalent quantity of 1 tonne.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">AEA</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">jährliche Emissionszuweisung</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">Annual Emission Allocation</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/834
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/857</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010136 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010136">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                        <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010116"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002418"/>
+                        <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140124"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Distribution is the process of delivering goods and services to agents. ETst</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Verteilung</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">distribution</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/836
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/876
+
+add &apos;has participant axiom&apos;:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1327
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1395</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010212 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010212">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140150"/>
+        <obo:IAO_0000115>A decarbonisation pathway is a policy that aims at long-term emissions reductions.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Dekarbonisierungspfad</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">decarbonisation pathway</rdfs:label>
+        <oeo:OEO_00020425>study descriptor</oeo:OEO_00020425>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/831
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/951
+add oekg annotation
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1529
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1897</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010268 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010268">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040003"/>
+        <obo:IAO_0000115>An emission price is a monetary price of emitting a certain emission value.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Emissionspreis</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">emission price</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/866
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1253
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652
+add axiom to oeo-shared-axioms
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1902
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1915</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010269 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010269">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010268"/>
+        <obo:IAO_0000115>A CO2 price is an emission price of emitting a certain CO2 emission value.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">CO2-Preis</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">carbon price</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">CO2 price</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/866
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1253
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010270 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010270">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010269"/>
+        <obo:IAO_0000115>A carbon tax value is a CO2 price that is set by a carbon tax.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">CO2-Steuer-Höhe</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">carbon tax value</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/866
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1253
+
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010271 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010271">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020154"/>
+        <obo:IAO_0000115>A CO2 emission certificate price is an emission price of an CO2 emission certificate that allows the emission of certain CO2 emission value.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">CO2-Zertifikatspreis</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">CO2 emission certificate price</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/866
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1253
+
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652
+
+make equivalent axiom a subclass of axiom and split it 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/2138
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/2143</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010328 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010328">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000431"/>
+        <obo:IAO_0000115>An OEP user is a user who interacts with the Open Energy Platform.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">OEP user</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1339
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1383</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010329 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010329">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010328"/>
+        <obo:IAO_0000115>A qualitist is an OEP user who mainly interacts with qualitative information.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">qualitist</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1339
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1383</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010330 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010330">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010328"/>
+        <obo:IAO_0000115>A quantitist is an OEP user who mainly interacts with quantitative information.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">quantitist</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1339
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1383</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010331 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010331">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010328"/>
+        <obo:IAO_0000115>An apinist is an OEP user who mainly interacts via an API.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">apinist</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1339
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1383</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010444 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010444">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <obo:IAO_0000115>Sufficiency is a plan specification for reducing, in absolute terms, the consumption and production of end-use products and services through changes in social practices in order to comply with environmental sustainability while ensuring an adequate social foundation for all people.</obo:IAO_0000115>
+        <obo:IAO_0000119>Definition and elucidation based on:
+Jonas Lage, Johannes Thema, Carina Zell-Ziegler, Benjamin Best, Luisa Cordroch, and Frauke Wiese (2023): Citizens call for sufficiency and regulation — A comparison of European citizen assemblies and National Energy and Climate Plans. In: Energy Research &amp; Social Science, Vol. 104, https://doi.org/10.1016/j.erss.2023.103254</obo:IAO_0000119>
+        <obo:IAO_0000600>This definition consists of three characteristics that are present in most definitions of sufficiency: 1) sufficiency is understood as a strategy for achieving mainly (but not solely) environmental goals of sustainability, 2) sufficiency pursues sustainability goals by absolute reductions in consumption and production and 3) sufficiency implies a focus on social innovation to change social practices and individual behaviour.</obo:IAO_0000600>
+        <rdfs:label xml:lang="en">sufficiency</rdfs:label>
+        <oeo:OEO_00020425>study descriptor</oeo:OEO_00020425>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1553
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1648
+add oekg annotation
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1529
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1897</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010456 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010456">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010492"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+        <obo:IAO_0000115 xml:lang="en">An economic instrument is a policy instrument that creates monetary (price) incentives to stimulate transformative measures.</obo:IAO_0000115>
+        <obo:IAO_0000600 xml:lang="en">Examples: subsidies for installation of renewable energy technologies, tradable permits</obo:IAO_0000600>
+        <rdfs:label xml:lang="en">economic instrument</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1545
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1786
+
+Convert to equivalent class:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1826
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1906</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010457 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010457">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140109"/>
+        <obo:IAO_0000600 xml:lang="en">A voluntary agreement is a contract between a government (institution) and one or more private institutions. The agreement&apos;s goal is to ensure transformative measures by the participating private institutions.</obo:IAO_0000600>
+        <rdfs:label xml:lang="en">voluntary agreement</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1545
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1786</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010458 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010458">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010495"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+        <obo:IAO_0000115 xml:lang="en">A regulatory instrument is a policy instrument that stipulates rules made by a government (=institution) to control the way something is done.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">regulatory instrument</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1545
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1786
+
+Convert to equivalent class:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1826
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1906</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010459 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010459">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010494"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+        <obo:IAO_0000115 xml:lang="en">An information instrument is a policy instrument that aims at providing knowledge to persons and/or institutions to stimulate transformative measures.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">information instrument</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1545
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1786
+
+Convert to equivalent class:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1826
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1906</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010460 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010460">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010493"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+        <obo:IAO_0000115 xml:lang="en">An education instrument is a policy instrument that aims at teaching the necessary understanding and skills to specific groups of people so that these are enabled to perform specific transformative measures.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">education instrument</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1545
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1786
+
+Convert to equivalent class:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1826
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1906</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010461 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010461">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010496"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010457"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A voluntary agreement instrument is a policy instrument that uses voluntary instruments between a government (institution) and one or more private institutions. The agreement&apos;s goal is to ensure transformative measures by the participating private institutions.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">voluntary agreement instrument</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1545
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1786
+
+Convert to equivalent class:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1826
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1906</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010489 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010489"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010492 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010492">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">An economic instrument function is a function of a policy instrument that promotes, amongst others, economic measures.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">economic instrument function</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1826
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1906</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010493 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010493">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">An education instrument function is a function of a policy instrument that promotes, amongst others, education measures.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">education instrument function</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1826
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1906</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010494 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010494">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">An information instrument function is a function of a policy instrument that promotes, amongst others, information measures.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">information instrument function</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1826
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1906</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010495 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010495">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An regulatory instrument function is a function of a policy instrument that promotes, amongst others, regulatory measures.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">regulatory instrument function</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1826
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1906</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010496 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010496">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">An voluntary agreement instrument function is a function of a policy instrument that promotes, amongst others, voluntary agreement measures.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">voluntary agreement instrument function</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1826
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1906</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010501 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010501">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010116"/>
+                    <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00360019"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <obo:IAO_0000115 xml:lang="en">A product is a continuant that is either a good or a service product.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Produkt</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">product</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1239
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1514
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1912</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020015 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020015"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020060 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020060">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020065"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020071"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020066"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A fuel market exchange is an energy market exchange where fuels like oil, coal, renewable fuels, and natural gas are traded.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">fuel market exchange</rdfs:label>
+        <oeo:OEO_00020426>issue https://github.com/OpenEnergyPlatform/ontology/issues/677
+pull request https://github.com/OpenEnergyPlatform/ontology/pull/740
+pull request https://github.com/OpenEnergyPlatform/ontology/pull/748
+
+Move to oeo-shared:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1458
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1478
+
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020063 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020063">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020015"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140002"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020154"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An emission certificate is a licence that permits its holder/owner a specific emission value. An emission certificate can be traded at a CO2 market exchange.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Emissionszertifikat</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">emission certificate</rdfs:label>
+        <oeo:OEO_00020426>issue https://github.com/OpenEnergyPlatform/ontology/issues/677
+pull request https://github.com/OpenEnergyPlatform/ontology/pull/740
+moved to oeo-shared
+pull request https://github.com/OpenEnergyPlatform/ontology/pull/956
+add axiom to emission quantity value and emission certificate price
+pull request https://github.com/OpenEnergyPlatform/ontology/pull/1034
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652rework module change axiom to emission certificate price 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/2144
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/2161</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020064 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020064">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020063"/>
+        <obo:IAO_0000115>An EU Allowance (EUA) is an emission certificate used in the European Union Emissions Trading System (EU ETS). It permits the emission of a CO2 equivalent quantity of 1 tonne.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">EU-Berechtigung</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">EU-Klimazertifikat</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">EUA</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">EU allowance</rdfs:label>
+        <oeo:OEO_00020426>issue https://github.com/OpenEnergyPlatform/ontology/issues/677
+pull request https://github.com/OpenEnergyPlatform/ontology/pull/740</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020065 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020065">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020069"/>
+        <obo:IAO_0000115>An energy market exchange is a market exchange in which energy commodities are traded.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Energiebörse</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">energy market exchange</rdfs:label>
+        <oeo:OEO_00020426>issue https://github.com/OpenEnergyPlatform/ontology/issues/256
+pull request https://github.com/OpenEnergyPlatform/ontology/pull/748
+
+Move to oeo-shared:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1458
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1478
+
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020066 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020066">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040011"/>
+        <obo:IAO_0000115>Fuel commodity role is the commodity role of fuels.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">fuel commodity role</rdfs:label>
+        <oeo:OEO_00020426>https://github.com/OpenEnergyPlatform/ontology/issues/256
+https://github.com/OpenEnergyPlatform/ontology/pull/748
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020067 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020067">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010116"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040011"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010116"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020070"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020069"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A commodity is a good that bears the commodity role.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Ware</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">product</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">commodity</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/302
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/748
+add alternative term
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/800
+subclass of good
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/843
+change axiom
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/869
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020068 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020068">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020066"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020070"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020060"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A fuel commodity is a commodity that is a fuel.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">fuel commodity</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/302
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/748</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020069 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020069">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040002"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030022"/>
+        <rdfs:subClassOf rdf:nodeID="genid55"/>
+        <obo:IAO_0000115>A market exchange is an organisation that has the market exchange role.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">market exchange</rdfs:label>
+        <oeo:OEO_00020426>pull request: https://github.com/OpenEnergyPlatform/ontology/pull/748
+
+Move to oeo-shared:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1458
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1478
+
+rework module structure
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652s</oeo:OEO_00020426>
+    </owl:Class>
+    <owl:Restriction rdf:nodeID="genid55">
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010082"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                        <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010083"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020069"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:nodeID="genid55"/>
+        <oeo:OEO_00020426>https://github.com/OpenEnergyPlatform/ontology/issues/617
+https://github.com/OpenEnergyPlatform/ontology/pull/1019
+rework module structure
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Axiom>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020075 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020075">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020069"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020071"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020063"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An emission market exchange is a market exchange where emission certificates are traded</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">emission market exchange</rdfs:label>
+        <oeo:OEO_00020426>issue https://github.com/OpenEnergyPlatform/ontology/issues/302
+pull request https://github.com/OpenEnergyPlatform/ontology/pull/781</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020076 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020076">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000350"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A markup is a quantity value that indicates a virtual amount added to an assumed or historical price to predict a price in a different context.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Aufschlag</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">markup</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/256
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/800
+make subclass of quantity value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1917
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1931</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020077 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020077">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000350"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A markdown is a quantity value that indicates a virtual amount deducted from an assumed or historical price to predict a price in a different context.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Abschlag</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">markdown</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/256
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/800
+make subclass of quantity value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1917
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1931</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020108 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020108">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010456"/>
+        <obo:IAO_0000115 xml:lang="en">A feed-in tariff is an economic instrument designed to stimulate investment in renewable energy technologies by offering long-term contracts to agents who are producers of renewable energy.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Einspeisetarif</obo:IAO_0000118>
+        <rdfs:comment>Feed-in tariffs provide cost-based compensation to renewable energy producers, leading to price certainty and long-term contracts that help finance energy transformation units, e.g. power plants</rdfs:comment>
+        <rdfs:label xml:lang="en">feed-in tariff</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/839
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/898
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/909
+
+Make subclass of &apos;economic instrument&apos;:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1545
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1786</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020109 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020109">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010456"/>
+        <obo:IAO_0000115 xml:lang="en">A market premium is an economic instrument that ensures a guaranteed remuneration, e.g. a fixed feed-in tariff, by paying to the producing agent the difference between a guaranteed return on a good/product and the monetary price for which the good/product is traded on the market.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Marktprämie</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">market premium</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/839
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/899
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/909
+
+Make subclass of &apos;economic instrument&apos;:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1545
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1786</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020110 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020110">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010456"/>
+        <obo:IAO_0000115 xml:lang="en">A levy is an economic instrument that consists of a compulsory financial charge imposed on an agent or institution by a governmental organisation.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Umlage</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">levy</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/839
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/900
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/909
+
+Make subclass of &apos;economic instrument&apos;:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1545
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1786</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020111 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020111">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020109"/>
+        <obo:IAO_0000115>A capacity premium is a market premium that guarantees remuneration for reserving capacity of energy transformation units to be available for unexpected events.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Kapazitätsprämie</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">capacity premium</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/839
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/903
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/909</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020112 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020112">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020110"/>
+        <obo:IAO_0000115>A tax is a levy whose returns are used by the government to finance expenditures for the common welfare.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Steuer</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">tax</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/839
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/901
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/909</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020113 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020113">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140127"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UO_0010006"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Inflation rate is an economic value reprensenting the ratio between the monetary price for a good at two different points in time that equalises differences in monetary price levels between these two points in time.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Inflationsrate</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">inflation rate</rdfs:label>
+        <oeo:OEO_00020426>https://github.com/OpenEnergyPlatform/ontology/issues/335
+https://github.com/OpenEnergyPlatform/ontology/pull/910
+
+make subclass of fraction value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1875
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1878</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020114 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020114">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140127"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UO_0010006"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112>The exchange rate between USD and EUR on March 15, 2020 was X.X.</obo:IAO_0000112>
+        <obo:IAO_0000115>The exchange rate is an economic value representing the ratio at which one currency can be exchanged for another.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Umrechnungskurs</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">market exchange rate</obo:IAO_0000118>
+        <rdfs:comment>The ratio at which one can exchange one currency for another can differ over time therefore it is necessary to specify a time point when referring to an exchange rate.</rdfs:comment>
+        <rdfs:label xml:lang="en">exchange rate</rdfs:label>
+        <oeo:OEO_00020426>https://github.com/OpenEnergyPlatform/ontology/issues/335
+https://github.com/OpenEnergyPlatform/ontology/pull/910
+
+make subclass of fraction value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1875
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1878</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020115 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020115">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140127"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UO_0010006"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Purchasing power parity is an economic value representing the ratio between currencies that equalises differences in monetary price levels between countries for the same set of goods.</obo:IAO_0000115>
+        <obo:IAO_0000118>PPP</obo:IAO_0000118>
+        <terms:source>https://www.oecd.org/sdd/prices-ppp/purchasingpowerparities-frequentlyaskedquestionsfaqs.htm#FAQ1</terms:source>
+        <rdfs:label xml:lang="en">purchasing power parity</rdfs:label>
+        <oeo:OEO_00020426>https://github.com/OpenEnergyPlatform/ontology/issues/867
+https://github.com/OpenEnergyPlatform/ontology/pull/910
+
+make subclass of fraction value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1875
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1878</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020116 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020116">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040009"/>
+        <obo:IAO_0000115>System cost are total costs of a system.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Systemkosten</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">system cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/335
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/910
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020117 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020117">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040003"/>
+        <obo:IAO_0000112>The electricity price is Y EUR per megawatt-hour.</obo:IAO_0000112>
+        <obo:IAO_0000115>Electricity price is the monetary price per energy unit of electricity.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Strompreis</obo:IAO_0000118>
+        <rdfs:comment>has unit some &quot;currency per energy unit&quot;</rdfs:comment>
+        <rdfs:label xml:lang="en">electricity price</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/335
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/910</oeo:OEO_00020426>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/335
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/910
+add axiom in oeo-shared-axioms
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1902
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1915</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020124 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020124">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000350"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A due is a quantity value that represents a payment that an agent makes to belong to an organisation.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Mitgliedsbeitrag</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">due</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/904
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/913
+make subclass of quantity value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1917
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1931</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020125 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020125">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000350"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A remuneration is a quantity value that describes a financial compensation provided in exchange for services performed.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">remuneration</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/902
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/913
+make subclass of quantity value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1917
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1931</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020126 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020126">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000350"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A fee is a quantity value that represents an amount of money paid for a  particular piece of work or for a particular right or service.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Gebühr</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">fee</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/905
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/913
+make subclass of quantity value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1917
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1931</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020127 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020127">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040009"/>
+        <obo:IAO_0000115>Levelised cost of electricity are the net cost of converting energy to electricity / electric energy over the lifetime of an energy transformation unit. They are calculated considering all relevant costs including investment, operation, maintenance and fuel cost, etc.</obo:IAO_0000115>
+        <obo:IAO_0000118>LCOE</obo:IAO_0000118>
+        <rdfs:comment>Since over the lifetime of an energy transformation unit different costs exhibit different relevance or vary over time, the LCOE differ over the course of the lifetime.</rdfs:comment>
+        <rdfs:label xml:lang="en">levelised cost of electricity</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/906
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/913
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020128 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020128">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000350"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Market revenue is a quantity value that represents the income from a trade at a market exchange.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">market revenue</rdfs:label>
+        <oeo:OEO_00020426>add term
+https://github.com/OpenEnergyPlatform/ontology/issues/908
+https://github.com/OpenEnergyPlatform/ontology/pull/929
+make subclass of quantity value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1917
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1931</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020145 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020145">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040009"/>
+        <obo:IAO_0000115>A variable cost is a cost that depends on an amount of goods or services.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">unit-level cost</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">variable Kosten</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">variable cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/891
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/953
+
+Reformulate definition to singular:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1257
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1260
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020146 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020146">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020145"/>
+        <obo:IAO_0000112>An example for variable production cost are costs incurred for raw materials (of which more are needed if production is increased).</obo:IAO_0000112>
+        <obo:IAO_0000115>Variable production costs are costs that depend on the amount of goods or services produced and which are paid by the producer.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">variable Produktionskosten</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">variable production cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/891
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/953
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020154 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020154">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010268"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020056"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020063"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Emission certificate price is a monetary price of an emission certificate that allows the emission of a certain emission value.</obo:IAO_0000115>
+        <obo:IAO_0000118>CO2 price</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Emissionszertifikatspreis</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">emission certificate price</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/866
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/956
+add relation to emission certificate
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1034
+
+make subclass of &apos;emission price&apos;:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/866
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1253
+
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020155 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020155">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020181"/>
+        <obo:IAO_0000115>Social cost of carbon emission is the cost the society bears for a greenhouse gas emission value.</obo:IAO_0000115>
+        <obo:IAO_0000118>social cost of CO2</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">social cost of carbon emission</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/866
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/956
+add axiom to emission value, add new parent class and relabel
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1034
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020156 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020156">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020112"/>
+        <obo:IAO_0000115>Carbon tax is a tax for emitting CO2 or other greenhouse gases (measured in CO2 equivalent values).</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">CO2 tax</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">CO2-Steuer</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">carbon tax</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/866
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/956</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020167 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020167">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040009"/>
+        <obo:IAO_0000115>Investment costs are costs of a long-term commitment of financial resources in tangible or intangible assets.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Investitionskosten</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">capital investment cost</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">fixed investment cost</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">investment</obo:IAO_0000118>
+        <obo:IAO_0000119>FIBO definition of investment relates to property only: https://spec.edmcouncil.org/fibo/ontology?searchBoxQuery=investment,
+
+Gabler on Investition: langfristige Bindung finanzieller Mittel in materiellen oder in immateriellen Vermögensgegenständen (https://wirtschaftslexikon.gabler.de/definition/investition-39454)</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">investment cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/891
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1022
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020168 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020168">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040009"/>
+        <obo:IAO_0000112>rent, regular technical maintenance cost, staff cost, certification cost</obo:IAO_0000112>
+        <obo:IAO_0000115>A fixed cost is a cost for operation and maintenance that does not vary with the amount of goods or services produced.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Fixkosten</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">fixed operation and maintenance cost</obo:IAO_0000118>
+        <obo:IAO_0000119>oemof-Model: https://oemof-solph.readthedocs.io/en/latest/_modules/oemof/solph/options.html?highlight=fix%20costs
+
+Fixe Kosten: Kosten, die von der jeweils betrachteten Einflussgröße bzw. Entscheidung unabhängig sind, d.h. Kosten, die sich nicht mit der jeweils betrachteten Einflussgröße ändern. (https://wirtschaftslexikon.gabler.de/definition/fixe-kosten-33359)</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">fixed cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/891
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1022
+
+Reformulate definition to singular:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1257
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1260
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020169 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020169">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020167"/>
+        <obo:IAO_0000115>Equipment cost is an investment cost for acquisition of the components and machinery including environmental facilities.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Ausrüstungskosten</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">equipment cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/891
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1022
+
+Reformulate definition to singular:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1257
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1260
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020170 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020170">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020167"/>
+        <obo:IAO_0000112>costs that occur for becoming operational</obo:IAO_0000112>
+        <obo:IAO_0000115>Installation and development cost are investment costs incurred for setting up the installation.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Installationskosten</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">installation and development cost</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">site development cost</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">installation cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/891
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1022
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020171 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020171">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020167"/>
+        <obo:IAO_0000115>Grid connection costs are investment costs for establishing the grid connection from the energy generating device to point of connection to national grid.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">grid connection cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/891
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1022
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020172 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020172">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020167"/>
+        <obo:IAO_0000115>A property cost is an investment cost arising from the acquisition of a property.</obo:IAO_0000115>
+        <obo:IAO_0000118>land cost</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">property cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/891
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1022
+
+Reformulate definition to singular:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1257
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1260
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020173 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020173">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020167"/>
+        <obo:IAO_0000115>Decommissioning costs are investment costs arising from the decommissioning of a technological device at the end of its lifetime.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Stilllegungskosten</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">decommissioning cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/891
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1022
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020174 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020174">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040009"/>
+        <obo:IAO_0000115>A delivery cost is a cost for a product or service that refers to the total unit cost of a product or commodity delivered to a certain market, city or customer. It is normally composed of all associated transport costs and the unit cost of production for that product.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Lieferkosten</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">delivery cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/891
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1022
+
+Reformulate definition to singular:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1257
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1260
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020181 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020181">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040009"/>
+        <obo:IAO_0000115>Social cost of emission is the cost the society bears for an emission value.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">social cost of emission</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/958
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1034
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00020427 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00020427">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000080"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010501"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140002"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040003"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A monetary price is a quality of a product that indicates the value in terms of the amount of money requested, expected, required or given in exchange for something else.</obo:IAO_0000115>
+        <rdfs:label>monetary price</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1902
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1915</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00030016 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00030016">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030022"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000045"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An organisational energy producer is an organisation that undertakes the generation of electricity and/or heat.&quot;</obo:IAO_0000115>
+        <obo:IAO_0000118>organisational energy producer</obo:IAO_0000118>
+        <obo:IAO_0000119>inspired by https://ec.europa.eu/eurostat/documents/38154/41386/Ele_AQ_documentation.pdf/a06bf650-1830-4fcb-9376-7be1f8ab080c</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">organisational energy producer</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/314
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/370</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00030017 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00030017">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030016"/>
+        <obo:IAO_0000115>An energy autoproducer is an organisational energy producer who produces electrical energy and/or heat wholly or partly for their own use as an activity which supports their primary activity.</obo:IAO_0000115>
+        <obo:IAO_0000119>inspired by https://ec.europa.eu/eurostat/documents/38154/41386/Ele_AQ_documentation.pdf/a06bf650-1830-4fcb-9376-7be1f8ab080c</obo:IAO_0000119>
+        <rdfs:comment>They may be privately or publicly owned.</rdfs:comment>
+        <rdfs:label xml:lang="en">energy autoproducer</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/314
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/370</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00030018 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00030018">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030016"/>
+        <obo:IAO_0000115>A main activity energy producer is an organisational energy producer whose primary activity is electrical energy and/or heat production.</obo:IAO_0000115>
+        <obo:IAO_0000119>inspired by https://ec.europa.eu/eurostat/documents/38154/41386/Ele_AQ_documentation.pdf/a06bf650-1830-4fcb-9376-7be1f8ab080c</obo:IAO_0000119>
+        <rdfs:comment>They may be privately or publicly owned. Note that the sale need not take place through the public grid.</rdfs:comment>
+        <rdfs:label xml:lang="en">main activity energy producer</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/314
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/370</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00030019 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00030019"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00030022 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00030022">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000315"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00030035 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00030035"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00040002 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00040002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <obo:IAO_0000115>A role of an organisation, association, or group of persons, whether incorporated or unincorporated, which constitutes, maintains, or provides a facility for bringing together purchasers and sellers of financial instruments, commodities, or other products, services, or goods, and includes the market place and facilities maintained by the exchange</obo:IAO_0000115>
+        <obo:IAO_0000118>exchange</obo:IAO_0000118>
+        <obo:IAO_0000118>market</obo:IAO_0000118>
+        <obo:IAO_0000119>fibo-fbc-fct-mkt:Exchange</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">market exchange role</rdfs:label>
+        <rdfs:seeAlso>https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/Exchange</rdfs:seeAlso>
+        <oeo:OEO_00020426>https://github.com/OpenEnergyPlatform/ontology/issues/341
+https://github.com/OpenEnergyPlatform/ontology/pull/639
+
+https://github.com/OpenEnergyPlatform/ontology/issues/677
+https://github.com/OpenEnergyPlatform/ontology/pull/740
+
+change label to market exchange role
+https://github.com/OpenEnergyPlatform/ontology/pull/748
+
+Move to oeo-shared:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1458
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1478
+
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00040003 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00040003">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000350"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020056"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010116"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A monetary value is a quantity value that states the amount of money specified in monetary units.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Geldwert</obo:IAO_0000118>
+        <obo:IAO_0000118>amount of money</obo:IAO_0000118>
+        <obo:IAO_0000119>fibo-fnd-acc-cur:MonetaryPrice</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">monetary value</rdfs:label>
+        <rdfs:seeAlso>https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/MonetaryPrice</rdfs:seeAlso>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/331
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/640
+move to oeo-shared
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/956
+add relation to good
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1034
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652
+relabel as monetary value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1902
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1915
+make subclass of quantity value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1917
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1931
+
+change axiom to good (role)
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/2144
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/2161</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00040004 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00040004">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010489"/>
+        <obo:IAO_0000112>The currency used in France in 2020 was Euro.</obo:IAO_0000112>
+        <obo:IAO_0000115>A unit which is a measure of the medium of an exchange value, defined by reference to the geographical location of the monetary authorities responsible for it.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Währung</obo:IAO_0000118>
+        <obo:IAO_0000119>fibo-fnd-acc-cur:Currency</obo:IAO_0000119>
+        <rdfs:comment>Currency is the unit of monetary value as defined by each country.</rdfs:comment>
+        <rdfs:label xml:lang="en">currency</rdfs:label>
+        <rdfs:seeAlso>https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/Currency</rdfs:seeAlso>
+        <oeo:OEO_00020426>https://github.com/OpenEnergyPlatform/ontology/issues/331
+https://github.com/OpenEnergyPlatform/ontology/pull/640
+add comment and example
+https://github.com/OpenEnergyPlatform/ontology/pull/910
+moved to oeo-shared
+https://github.com/OpenEnergyPlatform/ontology/pull/956
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00040005 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00040005">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010083"/>
+        <obo:IAO_0000115>A trader is a market participant that engages in the transfer of financial assets in any financial market on behalf of a client or a financial services provider.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Händler</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Händlerin</obo:IAO_0000118>
+        <obo:IAO_0000119>fibo-fbc-pas-fpas:Trader</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">trader</rdfs:label>
+        <rdfs:seeAlso>https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/Trader</rdfs:seeAlso>
+        <oeo:OEO_00020426>Implement in line with FIBO:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/377
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/641
+
+Make trader subclass of market participant:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/330
+https://github.com/OpenEnergyPlatform/ontology/pull/745</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00040006 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00040006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A request is a process whereby an agent asks another agent for something or to do something.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Anfrage</obo:IAO_0000118>
+        <obo:IAO_0000119>https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Communications/Request</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">request</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/642
+
+add &apos;has participant axiom&apos;:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1327
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1395</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00040007 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00040007">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040006"/>
+        <obo:IAO_0000115>A price request is a request in which an agent asks another agent for a price.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">price request</rdfs:label>
+        <oeo:OEO_00020426>https://github.com/OpenEnergyPlatform/ontology/issues/376
+https://github.com/OpenEnergyPlatform/ontology/pull/642</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00040008 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00040008">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000350"/>
+        <obo:IAO_0000115>Marginal cost is the quantity value that corresponds to the change in the total cost that arises when the quantity produced is incremented by one unit; that is, it is the cost of producing one more unit of a good.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Grenzkosten</obo:IAO_0000118>
+        <obo:IAO_0000119>O&apos;Sullivan, Arthur; Sheffrin, Steven M. (2003). Economics: Principles in Action.</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">marginal cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/642
+make subclass of quantity value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1917
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1931</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00040009 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00040009">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030019"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140002"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040003"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Cost is a process attribute that describes the amount of money needed to buy, make, or do a thing.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Kosten</obo:IAO_0000118>
+        <obo:IAO_0000119>https://dictionary.cambridge.org/dictionary/english/cost</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/268
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/643
+move to oeo-shared
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/956
+delete cost in oeo-social
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/975
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/977
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652
+make subclass of quantity value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1917
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1931
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00040011 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00040011">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010117"/>
+        <obo:IAO_0000115>A commodity role is a good role that inheres in something that is used in commerce and is exchangeable with other commodities of the same type.</obo:IAO_0000115>
+        <obo:IAO_0000119>fibo-fnd-pas-pas:Commodity</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">commodity role</rdfs:label>
+        <rdfs:seeAlso>https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/Commodity</rdfs:seeAlso>
+        <oeo:OEO_00020426>https://github.com/OpenEnergyPlatform/ontology/issues/339
+https://github.com/OpenEnergyPlatform/ontology/pull/644
+moved to oeo-shared and renamed
+https://github.com/OpenEnergyPlatform/ontology/pull/748
+made subclass of good role
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/843
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00090001 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00090001"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00090002 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00090002">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00090001"/>
+        <obo:IAO_0000115>A public funder is a funder that gives public money.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">öffentlicher Förderer</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">public funder</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/246
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/776</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00090003 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00090003">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00090001"/>
+        <obo:IAO_0000115>A private funder is a funder that gives private money.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">privater Förderer</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">private funder</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/246
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/776</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140009 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140009"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140012 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140012"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140013 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140013">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000350"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A gross domestic product is a quantity value that represents the broadest measure of aggregate economic activity, measuring the total unduplicated market value of all final goods and services produced within a statistical area in a period.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">BIP</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Bruttoinlandsprodukt</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">GDP</obo:IAO_0000118>
+        <rdfs:comment>has unit some currency per time unit</rdfs:comment>
+        <rdfs:label xml:lang="en">gross domestic product</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/454
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/559
+alternative term:
+https://github.com/OpenEnergyPlatform/ontology/issues/675
+https://github.com/OpenEnergyPlatform/ontology/pull/676
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1487
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1623
+make subclass of quantity value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1917
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1931</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140023 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140023">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000350"/>
+        <obo:IAO_0000115>Gross value added is a quantity value that is the value of goods and services produced in a sector of an economy, measuring that sector&apos;s contribution to gross domestic product (GDP). It is calculated as the monetary value of products and services produced, less the value of intermediate consumption.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Bruttowertschöpfung</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">GVA</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">gross value added</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/455
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/563
+alternative term:
+https://github.com/OpenEnergyPlatform/ontology/issues/675
+https://github.com/OpenEnergyPlatform/ontology/pull/676
+make subclass of quantity value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1917
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1931</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140109 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140109">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+        <obo:IAO_0000115>A contract is a document that contains an agreement between two or more competent agents to which those agents agree to be legally bound.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Vertrag</obo:IAO_0000118>
+        <obo:IAO_0000119>https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">contract</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/756</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140117 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140117">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <obo:IAO_0000115>Delivery time is a one-dimensional temporal region expressing the amount of time that it takes for goods that have been bought to arrive at the place where they are wanted.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Lieferzeit</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">delivery time</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/778</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140118 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140118">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000148"/>
+        <obo:IAO_0000115>A delivery time point is a zero-dimensional temporal region expressing the point in time when goods that have been bought arrive at the place where they are wanted.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Lieferzeitpunkt</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">delivery time point</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/778</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140119 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140119">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+        <obo:IAO_0000115>A sender is an agent who initiates a communication.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Sender</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">sender</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/778</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140120 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140120">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+        <obo:IAO_0000115>A receiver is an agent who obtains information from a sender.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Empfänger</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Empfängerin</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">receiver</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/778</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140121 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140121">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+        <obo:IAO_0000115>A bid is a document describing an offer made by an agent to another agent in an effort to exchange commodities or services via terms relating to price and quantity which will be part of the resulting contract.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Gebot</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">bid</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/778</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140122 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140122">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+        <obo:IAO_0000115>An award is a document that signifies that a supplier for a particular commodity or service specified in a bid has been accepted.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Zuschlag</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">award</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/778</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140123 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140123">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+        <obo:IAO_0000115>A provider is an agent that transfers commodities or services to other agents.</obo:IAO_0000115>
+        <obo:IAO_0000119>https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/ServiceProvider (adapted)</obo:IAO_0000119>
+        <rdfs:comment>The transfer is typically defined in a contract.</rdfs:comment>
+        <rdfs:label xml:lang="en">provider</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/778</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140124 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140124">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A service is a process that is an intangible activity performed by some agent for the benefit of another agent.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Dienstleistung</obo:IAO_0000118>
+        <obo:IAO_0000119>https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/Service (adapted)</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">service</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/778
+
+add &apos;has participant axiom&apos; and move to oeo-shared:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1327
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1395
+
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140125 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140125">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030035"/>
+        <obo:IAO_0000115>A delivery interval is the duration between repeated deliveries of services or commodities.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Lieferintervall</obo:IAO_0000118>
+        <rdfs:comment>This duration is often contractually fixed and regular.</rdfs:comment>
+        <rdfs:label xml:lang="en">delivery interval</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/256
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/779</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140127 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140127"/>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140130 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140130">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000051"/>
+        <obo:IAO_0000115>A power plant operator is an agent that operates an electric utility generation station.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Kraftwerksbetreiber</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Kraftwerksbetreiberin</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">power plant operator</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/256
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/779</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140131 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140131">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040005"/>
+        <obo:IAO_0000115>A trader that trades the power of fossil fuel power plants.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">conventional trader</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/256
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/779</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140136 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140136">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <obo:IAO_0000115>Dispatch assignment is a plan specification that refers to resource planning at a power plant (usually by the plant’s operator).</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">dispatch assignment</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/792</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140137 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140137">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <obo:IAO_0000115>A power plant portfolio is an information content entity that describes a particular combination or mix of different power plants, e.g. renewables and fossil plants within one business unit or company or trader.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">power plant portfolio</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/376
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/792</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140140 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140140">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040005"/>
+        <obo:IAO_0000115>A demand trader is a trader that deals specifically with energy demand.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">demand trader</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/256
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/793</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140141 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140141">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <obo:IAO_0000115>A merit order is a plan specification that describes the dispatch ranking of power plants (electrical generation) based on ascending order of price.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Merit-Order</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">geordnete Grenzkostenkurve</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">merit order</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/256
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/793</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140143 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140143">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040005"/>
+        <obo:IAO_0000115>A direct marketer is a trader who is the relay between the energy exchange and power plant operators.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Direktvermarkter</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">direct marketer</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/256
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/793</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140149 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140149">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000115>A transformative measure is a process that is an activity that has a direct impact on a specific variable in question.</obo:IAO_0000115>
+        <obo:IAO_0000118>policies and measures</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">transformative measure</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/444
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/797
+
+move to oeo-shared, alternative label
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1329
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1614
+
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140150 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140150">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030022"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A policy is a plan specification that is a deliberate system of principles, rules and guidelines, adopted by an organisation to guide decision making with respect to particular situations and implemented to achieve stated goals.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Politik</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">policies and measures</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">policy</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/444
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/797
+
+relations:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/444
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/853
+
+alternative label
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1329
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1614
+
+reclassify and add axiom to target description
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1684
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1778
+
+replaced &apos;has bearer&apos; with &apos;characteristic of&apos;
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1907
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1928</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140151 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140151">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000007"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030022"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:nodeID="genid85"/>
+        <obo:IAO_0000115 xml:lang="en">A policy instrument is an action specification of an organisation (e.g. a government) that promotes transformative measures.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Politikinstrument</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">policies and measures</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">policy instrument</rdfs:label>
+        <oeo:OEO_00020425>study descriptor</oeo:OEO_00020425>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/444
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/797
+
+Redefine as &apos;plan specification&apos; and add axiom:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1507
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1563
+
+move to oeo-shared, alternative label
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1329
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1614
+
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652
+
+reclassify
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1684
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1778
+
+update definition
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1766
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1791
+
+add oekg annotation
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1529
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1897</oeo:OEO_00020426>
+    </owl:Class>
+    <owl:Restriction rdf:nodeID="genid85">
+        <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010119"/>
+        <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140149"/>
+    </owl:Restriction>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:nodeID="genid85"/>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/444
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/853</oeo:OEO_00020426>
+    </owl:Axiom>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00140171 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00140171">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <obo:IAO_0000115>An email address is an information content entity that identifies an email box to which messages are delivered.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">E-Mail-Adresse</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">email address</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/818
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/827</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00160005 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00160005">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020145"/>
+        <obo:IAO_0000115>A fuel cost is a variable cost that depends on the type and amount of fuel.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Brennstoffkosten</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Kraftstoffkosten</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">fuel cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1257
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1260
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00160006 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00160006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <obo:IAO_0000115>A market share is a quality of a market exchange which quantifies the proportion a good to the total amount of goods traded in that market exchange.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">market share</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1636
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1779</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00160007 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00160007">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140127"/>
+        <obo:IAO_0000115>A market share value is a fraction value that quantifies a market share.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">market share value</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1636
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1779
+
+make subclass of fraction value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1875
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1878</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00230013 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00230013">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+        <obo:IAO_0000115 xml:lang="en">A population is an aggregate of people in a spatial region.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Bevölkerung</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">population</rdfs:label>
+        <oeo:OEO_00020426 xml:lang="en">issue: https://github.com/OpenEnergyPlatform/ontology/issues/479
+https://github.com/OpenEnergyPlatform/ontology/issues/301
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/491</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00230014 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00230014">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00230013"/>
+        <owl:disjointWith rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00230015"/>
+        <obo:IAO_0000115 xml:lang="en">An urban population is a population living in urban areas, as defined by national statistical offices.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Städtische Bevölkerung</obo:IAO_0000118>
+        <obo:IAO_0000119 xml:lang="en">United Nations Population Division. World Urbanization Prospects: 2018 Revision.</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">urban population</rdfs:label>
+        <oeo:OEO_00020426 xml:lang="en">issue: https://github.com/OpenEnergyPlatform/ontology/issues/479
+https://github.com/OpenEnergyPlatform/ontology/issues/301
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/491</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00230015 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00230015">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00230013"/>
+        <obo:IAO_0000115 xml:lang="en">A rural population is a population living in rural areas, as defined by national statistical offices.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">ländliche Bevölkerung</obo:IAO_0000118>
+        <obo:IAO_0000119 xml:lang="en">United Nations Population Division. World Urbanization Prospects: 2018 Revision.</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">rural population</rdfs:label>
+        <oeo:OEO_00020426 xml:lang="en">issue: https://github.com/OpenEnergyPlatform/ontology/issues/301
+https://github.com/OpenEnergyPlatform/ontology/issues/479
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/491</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00230016 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00230016">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00230013"/>
+        <obo:IAO_0000115 xml:lang="en">The labour force is the population of people ages 15 and older who supply labour to the production of goods and services.  It includes people who are currently employed and people who are unemployed but seeking work as well as first-time job-seekers.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Arbeiterschaft</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Arbeitskräfte</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">labor force</obo:IAO_0000118>
+        <obo:IAO_0000119 xml:lang="en">https://databank.worldbank.org/reports.aspx?source=2&amp;type=metadata&amp;series=SL.TLF.TOTL.IN</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">labour force</rdfs:label>
+        <oeo:OEO_00020426 xml:lang="en">issue: https://github.com/OpenEnergyPlatform/ontology/issues/479
+https://github.com/OpenEnergyPlatform/ontology/issues/301
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/491</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00230017 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00230017">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00230013"/>
+        <obo:IAO_0000115 xml:lang="en">The working age population is the population of people aged 15 to 65.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Bevökerung im erwerbstätigen Alter</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">working age population</rdfs:label>
+        <oeo:OEO_00020426 xml:lang="en">issue: https://github.com/OpenEnergyPlatform/ontology/issues/301
+https://github.com/OpenEnergyPlatform/ontology/issues/479
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/491</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00240021 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00240021">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140127"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UO_0000187"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A discount rate is an economic value with the unit percent that refers to the interest rate used in discounted cash flow (DCF) analysis to determine the present value of future cash flows.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Diskontierungsrate</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">discount rate</rdfs:label>
+        <oeo:OEO_00020426 xml:lang="en">issue: https://github.com/OpenEnergyPlatform/ontology/issues/1049
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1077
+
+make subclass of fraction value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1875
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1878</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00240036 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00240036">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040003"/>
+        <obo:IAO_0000115 xml:lang="en">An import price is the monetary price for the import of a material entity.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Importpreis</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">import price</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1050
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1083
+add axiom to oeo-shared-axioms
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1902
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1915</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00240037 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00240037">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040003"/>
+        <obo:IAO_0000115 xml:lang="en">An export price is the monetary price for the export of a material entity.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Exportpreis</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">export price</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1050
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1083
+add axiom to oeo-shared-axioms
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1902
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1915</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00320073 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00320073">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00030035"/>
+        <obo:IAO_0000115>An amortisation time is the time span in which the investment costs are refinanced from the annual profits and depreciation of the investment.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">Amortisationszeit</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">amortisation time</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1380
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1436
+
+rework module structure 
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1592
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1652</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00330002 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00330002">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020145"/>
+        <obo:IAO_0000115>An electricity cost is a variable cost that depends on electricity price and amount.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">electricity cost</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1365
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1482
+
+make subclass of process attribute
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1914
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1999</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00350000 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00350000">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000350"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UO_0000189"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A population count is a quantity value to measure the size of a population.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">population count</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1487
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1623</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00350001 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00350001">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140127"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00040010"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UO_0000187"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Annual GDP growth is an economic value that quantifies the difference between GDP in one year compared to the previous year.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">annual GDP growth</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1487
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1623
+
+make subclass of fraction value
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1875
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1878</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00360000 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00360000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00000323"/>
+                            <rdf:Description rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00030022"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Acceptance is a realizable entity that represents the attitude of a person or organisation with respect to a certain constructional, (infra)structural or political measure that may be realized in, affected by or results of complex processes like discussions, communications, transformative measures or former personal experiences.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">acceptance</rdfs:label>
+        <oeo:OEO_00020425>study descriptor</oeo:OEO_00020425>
+        <oeo:OEO_00020426 xml:lang="en">issue: https://github.com/OpenEnergyPlatform/ontology/issues/1552
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1698
+add oekg annotation
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1529
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1897
+replaced &apos;has bearer&apos; with &apos;characteristic of&apos;
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1907
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1928</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00360018 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00360018">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <obo:IAO_0000115 xml:lang="en">A service product role is the role of an immaterial entity that is the result of a service process, and whose value is determined by the value and the costs of the service.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">service product role</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1584
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1748</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00360019 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00360019">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000141"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00360018"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
+        <obo:IAO_0000115 xml:lang="en">A service product is an immaterial entity that has the service product role.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">service product</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1584
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1748</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00360033 -->
+
+    <owl:Class rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00360033">
+        <rdfs:subClassOf rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140150"/>
+        <obo:IAO_0000115 xml:lang="en">Spatial planning policy is a policy of a German federal state that designates portions of a spatial region to purposes like settlement, infrastructur and sustainability.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">spatial planning policy</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/1766
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1791</oeo:OEO_00020426>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010122 -->
+
+    <owl:NamedIndividual rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010122">
+        <rdf:type rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140151"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000503"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00020064"/>
+            </owl:Restriction>
+        </rdf:type>
+        <obo:BFO_0000050 rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010129"/>
+        <obo:IAO_0000115>The European Union Emissions Trading System (EU ETS) is a policy instrument that implements an emissions trading system covering the European Union, Norway, Iceland and Liechtenstein.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">EU ETS</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">EU-EHS</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Emissionshandelssystem der Europäischen Union</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">European Union Emissions Trading System</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/834
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/857
+
+add axioms:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/928
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/944
+
+move govern axioms to oeo-shared-axioms
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1399
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1724</oeo:OEO_00020426>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010124 -->
+
+    <owl:NamedIndividual rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010124">
+        <rdf:type rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010123"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000503"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010126"/>
+            </owl:Restriction>
+        </rdf:type>
+        <obo:BFO_0000050 rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010129"/>
+        <obo:IAO_0000115>The Effort Sharing Decision (ESD) is the European effort sharing for the years 2013-2020. It covers the European Union, Norway, Iceland and Liechtenstein and the following greenhouse gases: carbon dioxide, methane, nitrous oxide, hydrofluorocarbons, perfluorocarbons and sulphur hexafluoride. Emission quantities under the ESD are calculated using global warming potentials from the Fourth IPCC Assessment Report.</obo:IAO_0000115>
+        <obo:IAO_0000118>ESD</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Lastenteilungsentscheidung</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">Effort Sharing Decision</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/834
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/857</oeo:OEO_00020426>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010125 -->
+
+    <owl:NamedIndividual rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010125">
+        <rdf:type rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010123"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00000503"/>
+                <owl:someValuesFrom rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010126"/>
+            </owl:Restriction>
+        </rdf:type>
+        <obo:BFO_0000050 rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00010129"/>
+        <obo:IAO_0000115>The Effort Sharing Regulation (ESR) is the European effort sharing for the years 2021-2030. It covers the European Union, Norway, Iceland and Liechtenstein and the following greenhouse gases: carbon dioxide, methane, nitrous oxide, hydrofluorocarbons, perfluorocarbons, sulphur hexafluoride and nitrogen trifluoride. Emission quantities under the ESR are calculated using global warming potentials from the Fifth IPCC Assessment Report.</obo:IAO_0000115>
+        <obo:IAO_0000118>ESR</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="de">Lastenteilungsverordnung</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">Effort Sharing Regulation</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/834
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/857</oeo:OEO_00020426>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://openenergyplatform.org/ontology/oeo/OEO_00010129 -->
+
+    <owl:NamedIndividual rdf:about="https://openenergyplatform.org/ontology/oeo/OEO_00010129">
+        <rdf:type rdf:resource="https://openenergyplatform.org/ontology/oeo/OEO_00140150"/>
+        <obo:IAO_0000115>The EU climate policy is the policy of the European Union for reducing greenhouse gas emissions. It uses an EU emission sector division.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="de">EU-Klimapolitik</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">EU climate policy</rdfs:label>
+        <oeo:OEO_00020426>issue: https://github.com/OpenEnergyPlatform/ontology/issues/834
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/857
+
+Improve definition and axioms:
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1449
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1462
+
+move axiom to oeo-shared-axioms
+issue: https://github.com/OpenEnergyPlatform/ontology/issues/1399
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/1724</oeo:OEO_00020426>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.24) https://github.com/owlcs/owlapi -->
+

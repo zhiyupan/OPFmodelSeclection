@@ -1,0 +1,1150 @@
+Prefix: : <https://openenergyplatform.org/ontology/oeo/>
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <https://openenergyplatform.org/ontology/oeo/oeo-shared-axioms>
+<https://openenergyplatform.org/ontology/oeo/releases/2.11.0/oeo-shared-axioms.omn>
+Import: <https://openenergyplatform.org/ontology/oeo/releases/2.11.0/oeo-model.omn>
+Import: <https://openenergyplatform.org/ontology/oeo/releases/2.11.0/oeo-physical.omn>
+Import: <https://openenergyplatform.org/ontology/oeo/releases/2.11.0/oeo-sector.omn>
+Import: <https://openenergyplatform.org/ontology/oeo/releases/2.11.0/oeo-social.omn>
+
+Annotations: 
+    dc:description "The Open Energy Ontology is an ontology for all aspects of the energy modelling domain. The \"oeo-shared-axioms\" module covers axioms that connect classes from more than one thematic module.",
+    dc:license "http://creativecommons.org/publicdomain/zero/1.0/",
+    <http://purl.org/dc/terms/title> "Open Energy Ontology (Shared axioms module)"
+
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000115>
+
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000116>
+
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000118>
+
+    Annotations: 
+        rdfs:comment "In the OEO, we don't follow the definition strictly. We use alternative term for synonyms and ambiguous terms as well. See https://github.com/OpenEnergyPlatform/ontology/wiki/Handling-ambiguous-terms"
+    
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000119>
+
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000600>
+
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000601>
+
+    
+AnnotationProperty: <http://purl.org/dc/terms/license>
+
+    
+AnnotationProperty: <http://purl.org/dc/terms/title>
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>
+
+    
+AnnotationProperty: <https://www.commoncoreontologies.org/ont00001754>
+
+    
+AnnotationProperty: OEO_00020426
+
+    
+AnnotationProperty: OEO_00020434
+
+    
+AnnotationProperty: OEO_00110012
+
+    
+AnnotationProperty: dc:description
+
+    
+AnnotationProperty: dc:identifier
+
+    
+AnnotationProperty: dc:license
+
+    
+AnnotationProperty: rdfs:comment
+
+    
+AnnotationProperty: rdfs:isDefinedBy
+
+    
+AnnotationProperty: rdfs:label
+
+    
+AnnotationProperty: rdfs:seeAlso
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+Datatype: xsd:integer
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/BFO_0000050>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/BFO_0000051>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/BFO_0000054>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/IAO_0000136>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0000052>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0000053>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0000056>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0000057>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0000085>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0000086>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0000087>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0000091>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0001015>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0001025>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002222>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002223>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002224>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002229>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002230>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002233>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002234>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002328>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002352>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002353>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002410>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002418>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002427>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002501>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0003000>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/uo#is_unit_of>
+
+    
+ObjectProperty: <https://openenergyplatform.org/ontology/oeo/oeo-physical/OEO_00010238>
+
+    
+ObjectProperty: OEO_00000500
+
+    
+ObjectProperty: OEO_00000501
+
+    
+ObjectProperty: OEO_00000502
+
+    
+ObjectProperty: OEO_00000503
+
+    
+ObjectProperty: OEO_00000504
+
+    
+ObjectProperty: OEO_00000505
+
+    
+ObjectProperty: OEO_00000506
+
+    
+ObjectProperty: OEO_00000507
+
+    
+ObjectProperty: OEO_00000508
+
+    
+ObjectProperty: OEO_00000509
+
+    
+ObjectProperty: OEO_00000510
+
+    
+ObjectProperty: OEO_00000514
+
+    
+ObjectProperty: OEO_00000515
+
+    
+ObjectProperty: OEO_00000516
+
+    
+ObjectProperty: OEO_00000522
+
+    
+ObjectProperty: OEO_00000523
+
+    
+ObjectProperty: OEO_00000524
+
+    
+ObjectProperty: OEO_00000529
+
+    
+ObjectProperty: OEO_00000530
+
+    
+ObjectProperty: OEO_00000531
+
+    
+ObjectProperty: OEO_00000532
+
+    
+ObjectProperty: OEO_00000533
+
+    
+ObjectProperty: OEO_00010121
+
+    
+ObjectProperty: OEO_00010128
+
+    
+ObjectProperty: OEO_00010231
+
+    
+ObjectProperty: OEO_00010234
+
+    Domain: 
+        <http://purl.obolibrary.org/obo/BFO_0000015> or OEO_00000061
+    
+    
+ObjectProperty: OEO_00010235
+
+    
+ObjectProperty: OEO_00010312
+
+    
+ObjectProperty: OEO_00020056
+
+    
+ObjectProperty: OEO_00020070
+
+    
+ObjectProperty: OEO_00020071
+
+    
+ObjectProperty: OEO_00020179
+
+    
+ObjectProperty: OEO_00020180
+
+    
+ObjectProperty: OEO_00020182
+
+    
+ObjectProperty: OEO_00020188
+
+    
+ObjectProperty: OEO_00020189
+
+    
+ObjectProperty: OEO_00020190
+
+    
+ObjectProperty: OEO_00020432
+
+    Domain: 
+        OEO_00020227
+    
+    Range: 
+        OEO_00020039
+    
+    
+ObjectProperty: OEO_00020436
+
+    Domain: 
+        OEO_00000365
+    
+    
+ObjectProperty: OEO_00020437
+
+    Domain: 
+        OEO_00000365
+    
+    
+ObjectProperty: OEO_00020438
+
+    Domain: 
+        OEO_00020227
+    
+    
+ObjectProperty: OEO_00020439
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Domain: 
+        OEO_00020227
+    
+    Range: 
+        OEO_00000367
+    
+    
+ObjectProperty: OEO_00040010
+
+    
+ObjectProperty: OEO_00140002
+
+    
+ObjectProperty: OEO_00140008
+
+    
+ObjectProperty: OEO_00140093
+
+    
+ObjectProperty: OEO_00140094
+
+    
+ObjectProperty: OEO_00140096
+
+    Range: 
+        
+            Annotations: OEO_00020426 "issue: https://github.com/OpenEnergyPlatform/ontology/issues/749
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/751"
+        OEO_00000206
+    
+    
+ObjectProperty: OEO_00140164
+
+    
+ObjectProperty: OEO_00240025
+
+    SubPropertyOf: 
+        <http://purl.obolibrary.org/obo/RO_0002353>
+    
+    
+ObjectProperty: OEO_00390079
+
+    Domain: 
+        OEO_00020227
+    
+    Range: 
+        OEO_00000368
+    
+    
+ObjectProperty: owl:topObjectProperty
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000002>
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000003>
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000004>
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000015>
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000016>
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000020>
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000023>
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000034>
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000040>
+
+    
+Class: <http://purl.obolibrary.org/obo/IAO_0000027>
+
+    
+Class: <http://purl.obolibrary.org/obo/IAO_0000030>
+
+    
+Class: <http://purl.obolibrary.org/obo/IAO_0000088>
+
+    SubClassOf: 
+        OEO_00020188 some OEO_00010412
+    
+    
+Class: <http://purl.obolibrary.org/obo/IAO_0000100>
+
+    SubClassOf: 
+        OEO_00000514 some OEO_00020121,
+        OEO_00020188 some OEO_00020186
+    
+    
+Class: <http://purl.obolibrary.org/obo/IAO_0000310>
+
+    SubClassOf: 
+        OEO_00020188 some OEO_00010412
+    
+    
+Class: OEO_00000001
+
+    
+Class: OEO_00000006
+
+    
+Class: OEO_00000020
+
+    
+Class: OEO_00000031
+
+    
+Class: OEO_00000045
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000056> some OEO_00240003
+    
+    
+Class: OEO_00000061
+
+    
+Class: OEO_00000064
+
+    
+Class: OEO_00000072
+
+    
+Class: OEO_00000087
+
+    
+Class: OEO_00000107
+
+    
+Class: OEO_00000139
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000087> some OEO_00040011
+    
+    
+Class: OEO_00000143
+
+    
+Class: OEO_00000145
+
+    SubClassOf: 
+        OEO_00010312 some OEO_00240014
+    
+    
+Class: OEO_00000147
+
+    
+Class: OEO_00000150
+
+    
+Class: OEO_00000199
+
+    
+Class: OEO_00000206
+
+    
+Class: OEO_00000227
+
+    SubClassOf: 
+        OEO_00010312 some OEO_00050000
+    
+    
+Class: OEO_00000264
+
+    SubClassOf: 
+        
+            Annotations: OEO_00020426 "issue: https://github.com/OpenEnergyPlatform/ontology/issues/415
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/821"
+        OEO_00140164 some OEO_00020065
+    
+    
+Class: OEO_00000274
+
+    
+Class: OEO_00000315
+
+    
+Class: OEO_00000316
+
+    
+Class: OEO_00000331
+
+    
+Class: OEO_00000350
+
+    
+Class: OEO_00000364
+
+    
+Class: OEO_00000365
+
+    
+Class: OEO_00000367
+
+    
+Class: OEO_00000368
+
+    
+Class: OEO_00000395
+
+    
+Class: OEO_00000407
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/IAO_0000136> some 
+            (OEO_00000061
+             and (<http://purl.obolibrary.org/obo/RO_0000056> some <http://purl.obolibrary.org/obo/BFO_0000015>))
+    
+    
+Class: OEO_00000423
+
+    SubClassOf: 
+        
+            Annotations: OEO_00020426 "issue: https://github.com/OpenEnergyPlatform/ontology/issues/415
+pull request: https://github.com/OpenEnergyPlatform/ontology/pull/821"
+        OEO_00140164 some OEO_00000143
+    
+    
+Class: OEO_00010078
+
+    
+Class: OEO_00010079
+
+    SubClassOf: 
+        OEO_00020056 some OEO_00020063
+    
+    
+Class: OEO_00010115
+
+    
+Class: OEO_00010116
+
+    
+Class: OEO_00010117
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000052> some 
+            (<http://purl.obolibrary.org/obo/BFO_0000004> or OEO_00000139)
+    
+    
+Class: OEO_00010130
+
+    SubClassOf: 
+        OEO_00000501 value OEO_00010129
+    
+    
+Class: OEO_00010138
+
+    
+Class: OEO_00010140
+
+    
+Class: OEO_00010255
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00000199
+    
+    
+Class: OEO_00010268
+
+    SubClassOf: 
+        OEO_00020056 some 
+            (OEO_00000147
+             and (<http://purl.obolibrary.org/obo/RO_0000053> some OEO_00020427))
+    
+    
+Class: OEO_00010280
+
+    
+Class: OEO_00010285
+
+    
+Class: OEO_00010292
+
+    
+Class: OEO_00010296
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00050018
+    
+    
+Class: OEO_00010315
+
+    
+Class: OEO_00010319
+
+    SubClassOf: 
+        OEO_00010312 some OEO_00010315
+    
+    
+Class: OEO_00010320
+
+    SubClassOf: 
+        OEO_00010312 some OEO_00140004
+    
+    
+Class: OEO_00010362
+
+    
+Class: OEO_00010404
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00020039
+    
+    
+Class: OEO_00010406
+
+    
+Class: OEO_00010407
+
+    SubClassOf: 
+        OEO_00000504 some OEO_00010406
+    
+    
+Class: OEO_00010408
+
+    SubClassOf: 
+        OEO_00020070 some OEO_00020060
+    
+    
+Class: OEO_00010409
+
+    SubClassOf: 
+        OEO_00020070 some OEO_00020060
+    
+    
+Class: OEO_00010412
+
+    
+Class: OEO_00010444
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/IAO_0000136> some 
+            (OEO_00140039 or OEO_00240003)
+    
+    
+Class: OEO_00010491
+
+    EquivalentTo: 
+        OEO_00000331
+         and (<http://purl.obolibrary.org/obo/RO_0000087> some OEO_00040011)
+         and (OEO_00240025 some OEO_00050000)
+    
+    
+Class: OEO_00020011
+
+    
+Class: OEO_00020015
+
+    
+Class: OEO_00020039
+
+    
+Class: OEO_00020060
+
+    
+Class: OEO_00020063
+
+    SubClassOf: 
+        OEO_00140002 some OEO_00010079
+    
+    
+Class: OEO_00020065
+
+    
+Class: OEO_00020068
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000087> some OEO_00000001
+    
+    
+Class: OEO_00020072
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00000367
+    
+    
+Class: OEO_00020093
+
+    
+Class: OEO_00020117
+
+    SubClassOf: 
+        OEO_00020056 some 
+            (OEO_00000139
+             and (<http://purl.obolibrary.org/obo/RO_0000053> some OEO_00020427))
+    
+    
+Class: OEO_00020121
+
+    
+Class: OEO_00020155
+
+    
+Class: OEO_00020181
+
+    
+Class: OEO_00020185
+
+    
+Class: OEO_00020186
+
+    
+Class: OEO_00020201
+
+    SubClassOf: 
+        (<http://purl.obolibrary.org/obo/RO_0000057> some OEO_00010116) or (<http://purl.obolibrary.org/obo/RO_0002418> some OEO_00140124)
+    
+    
+Class: OEO_00020202
+
+    SubClassOf: 
+        (<http://purl.obolibrary.org/obo/RO_0000057> some OEO_00010116) or (<http://purl.obolibrary.org/obo/RO_0002418> some OEO_00140124)
+    
+    
+Class: OEO_00020227
+
+    
+Class: OEO_00020248
+
+    
+Class: OEO_00020252
+
+    
+Class: OEO_00020309
+
+    EquivalentTo: 
+        OEO_00020248
+         and (<http://purl.obolibrary.org/obo/IAO_0000136> some 
+            (OEO_00140149 or OEO_00140151))
+    
+    
+Class: OEO_00020317
+
+    EquivalentTo: 
+        OEO_00000364
+         and (<http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00000199)
+    
+    
+Class: OEO_00020321
+
+    EquivalentTo: 
+        OEO_00000364
+         and (<http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00260007)
+    
+    
+Class: OEO_00020345
+
+    EquivalentTo: 
+        OEO_00000364
+         and (<http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00010444)
+    
+    
+Class: OEO_00020410
+
+    
+Class: OEO_00020411
+
+    EquivalentTo: 
+        OEO_00020248
+         and (<http://purl.obolibrary.org/obo/IAO_0000136> some 
+            (OEO_00030024
+             and (<http://purl.obolibrary.org/obo/RO_0000091> some OEO_00020410)))
+    
+    
+Class: OEO_00020427
+
+    
+Class: OEO_00030007
+
+    EquivalentTo: 
+        OEO_00000364
+         and (<http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00020252)
+    
+    
+Class: OEO_00030008
+
+    EquivalentTo: 
+        OEO_00000364
+         and (<http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00010115)
+    
+    
+Class: OEO_00030009
+
+    EquivalentTo: 
+        OEO_00000364
+         and (<http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00000147)
+    
+    
+Class: OEO_00030010
+
+    EquivalentTo: 
+        OEO_00000364
+         and (<http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00030024)
+    
+    
+Class: OEO_00030015
+
+    SubClassOf: 
+        OEO_00140164 some OEO_00030024
+    
+    
+Class: OEO_00030019
+
+    
+Class: OEO_00030024
+
+    
+Class: OEO_00040003
+
+    
+Class: OEO_00040009
+
+    
+Class: OEO_00040011
+
+    
+Class: OEO_00050000
+
+    
+Class: OEO_00050018
+
+    
+Class: OEO_00090001
+
+    
+Class: OEO_00140003
+
+    
+Class: OEO_00140004
+
+    
+Class: OEO_00140038
+
+    
+Class: OEO_00140039
+
+    
+Class: OEO_00140081
+
+    
+Class: OEO_00140124
+
+    
+Class: OEO_00140138
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/IAO_0000136> some 
+            (OEO_00240014
+             and (<http://purl.obolibrary.org/obo/RO_0000057> some OEO_00000031))
+    
+    
+Class: OEO_00140139
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00010362
+    
+    
+Class: OEO_00140149
+
+    
+Class: OEO_00140150
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000051> some OEO_00020093
+    
+    
+Class: OEO_00140151
+
+    
+Class: OEO_00240003
+
+    
+Class: OEO_00240014
+
+    
+Class: OEO_00240026
+
+    EquivalentTo: 
+        OEO_00000331
+         and (<http://purl.obolibrary.org/obo/RO_0000087> some OEO_00010117)
+         and (OEO_00240025 some OEO_00050000)
+    
+    
+Class: OEO_00240027
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000087> some OEO_00040011
+    
+    
+Class: OEO_00240028
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000087> some OEO_00040011
+    
+    
+Class: OEO_00240029
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000087> some OEO_00040011
+    
+    
+Class: OEO_00240030
+
+    
+Class: OEO_00240031
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000087> some OEO_00040011
+    
+    
+Class: OEO_00240032
+
+    
+Class: OEO_00240034
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000087> some OEO_00040011
+    
+    
+Class: OEO_00240035
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000087> some OEO_00040011
+    
+    
+Class: OEO_00240036
+
+    SubClassOf: 
+        OEO_00020056 some 
+            (OEO_00010116
+             and (<http://purl.obolibrary.org/obo/RO_0000053> some OEO_00020427)
+             and (<http://purl.obolibrary.org/obo/RO_0000056> some OEO_00020201))
+    
+    
+Class: OEO_00240037
+
+    SubClassOf: 
+        OEO_00020056 some 
+            (OEO_00010116
+             and (<http://purl.obolibrary.org/obo/RO_0000053> some OEO_00020427)
+             and (<http://purl.obolibrary.org/obo/RO_0000056> some OEO_00020202))
+    
+    
+Class: OEO_00260007
+
+    
+Class: OEO_00320021
+
+    
+Class: OEO_00330023
+
+    
+Class: OEO_00390107
+
+    EquivalentTo: 
+        OEO_00000364
+         and (<http://purl.obolibrary.org/obo/IAO_0000136> some OEO_00000367)
+    
+    
+Individual: OEO_00010042
+
+    Types: 
+        (not (OEO_00010312 some OEO_00140004))
+         and (OEO_00010312 some OEO_00140003)
+    
+    
+Individual: OEO_00010043
+
+    Types: 
+        OEO_00010312 some OEO_00140038
+    
+    
+Individual: OEO_00010046
+
+    Types: 
+        OEO_00010312 some OEO_00050000
+    
+    
+Individual: OEO_00010058
+
+    Types: 
+        OEO_00010312 some 
+            (OEO_00010140
+             and (OEO_00140003
+             and (<http://purl.obolibrary.org/obo/RO_0000057> some OEO_00000006)))
+    
+    
+Individual: OEO_00010061
+
+    Types: 
+        OEO_00010312 some 
+            (OEO_00140003
+             and (<http://purl.obolibrary.org/obo/RO_0000057> some OEO_00010280))
+    
+    
+Individual: OEO_00010122
+
+    Facts:  
+     OEO_00010128  OEO_00010131,
+     OEO_00010128  OEO_00010132,
+     OEO_00010128  OEO_00010133,
+     OEO_00010128  OEO_00010205
+    
+    
+Individual: OEO_00010129
+
+    Types: 
+        OEO_00000503 some OEO_00010130
+    
+    
+Individual: OEO_00010131
+
+    
+Individual: OEO_00010132
+
+    
+Individual: OEO_00010133
+
+    
+Individual: OEO_00010164
+
+    Types: 
+        OEO_00010312 some 
+            (OEO_00240003
+             and (OEO_00000533 some OEO_00240030))
+    
+    
+Individual: OEO_00010165
+
+    Types: 
+        OEO_00010312 some 
+            (OEO_00240003
+             and (OEO_00000533 some OEO_00240029))
+    
+    
+Individual: OEO_00010166
+
+    Types: 
+        OEO_00010312 some 
+            (OEO_00240003
+             and (OEO_00000533 some OEO_00240027))
+    
+    
+Individual: OEO_00010167
+
+    Types: 
+        OEO_00010312 some 
+            (OEO_00240003
+             and (OEO_00000533 some OEO_00240032))
+    
+    
+Individual: OEO_00010168
+
+    Types: 
+        OEO_00010312 some 
+            (OEO_00240003
+             and (OEO_00000533 some OEO_00240034))
+    
+    
+Individual: OEO_00010200
+
+    Types: 
+        OEO_00010312 some 
+            (OEO_00140004
+             and (OEO_00010285 or (<http://purl.obolibrary.org/obo/RO_0000057> some OEO_00010292)))
+    
+    
+Individual: OEO_00010201
+
+    Types: 
+        OEO_00010312 some 
+            (OEO_00140004
+             and (<http://purl.obolibrary.org/obo/RO_0000057> some OEO_00010292))
+    
+    
+Individual: OEO_00010202
+
+    Types: 
+        OEO_00010312 some 
+            (OEO_00140004
+             and (<http://purl.obolibrary.org/obo/RO_0000057> some OEO_00010285))
+    
+    
+Individual: OEO_00010204
+
+    Facts:  
+     OEO_00000501  OEO_00010129
+    
+    
+Individual: OEO_00010205
+
+    
+Individual: OEO_00010228
+
+    Types: 
+        OEO_00010312 some 
+            (OEO_00260007
+             and (<http://purl.obolibrary.org/obo/RO_0002427> some 
+                (OEO_00140038
+                 and (OEO_00000532 some OEO_00000072))))
+    
+    
+Individual: OEO_00010229
+
+    Types: 
+        OEO_00010312 some OEO_00010138
+    
+    

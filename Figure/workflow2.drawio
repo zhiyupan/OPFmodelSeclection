@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-08-14T09:14:13.895730+00:00" agent="Codex" version="24.7.17" type="device">
+  <diagram id="online-user-requirement-recommendation" name="Online User Requirement Recommendation">
+    <mxGraphModel dx="1600" dy="435" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="435" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9FBFEF;strokeWidth=1.2;arcSize=10;dashed=0;dashPattern=7 5;shadow=1;shadowColor=#A9BCD8;shadowOpacity=42;shadowOffsetX=2;shadowOffsetY=3;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="0" width="1616" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="2" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0751B2;strokeColor=#0751B2;fontFamily=Arial;fontSize=24;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="38" y="15" width="42" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="Online User Requirement Recommendation" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=20;fontColor=#073E8C;fontStyle=1;align=left;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="92" y="17" width="500" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="step-1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9C8F3;strokeWidth=1.2;arcSize=12;dashed=0;dashPattern=7 5;shadow=1;shadowColor=#B6C7DF;shadowOpacity=34;shadowOffsetX=2;shadowOffsetY=3;" vertex="1" parent="1">
+          <mxGeometry x="14" y="66" width="197" height="375" as="geometry" />
+        </mxCell>
+        <mxCell id="step-2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9C8F3;strokeWidth=1.2;arcSize=12;dashed=0;dashPattern=7 5;shadow=1;shadowColor=#B6C7DF;shadowOpacity=34;shadowOffsetX=2;shadowOffsetY=3;" vertex="1" parent="1">
+          <mxGeometry x="231" y="66" width="217" height="375" as="geometry" />
+        </mxCell>
+        <mxCell id="step-3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9C8F3;strokeWidth=1.2;arcSize=12;dashed=0;dashPattern=7 5;shadow=1;shadowColor=#B6C7DF;shadowOpacity=34;shadowOffsetX=2;shadowOffsetY=3;" vertex="1" parent="1">
+          <mxGeometry x="468" y="66" width="192" height="375" as="geometry" />
+        </mxCell>
+        <mxCell id="step-4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9C8F3;strokeWidth=1.2;arcSize=12;dashed=0;dashPattern=7 5;shadow=1;shadowColor=#B6C7DF;shadowOpacity=34;shadowOffsetX=2;shadowOffsetY=3;" vertex="1" parent="1">
+          <mxGeometry x="680" y="66" width="192" height="375" as="geometry" />
+        </mxCell>
+        <mxCell id="step-5" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9C8F3;strokeWidth=1.2;arcSize=12;dashed=0;dashPattern=7 5;shadow=1;shadowColor=#B6C7DF;shadowOpacity=34;shadowOffsetX=2;shadowOffsetY=3;" vertex="1" parent="1">
+          <mxGeometry x="892" y="66" width="217" height="375" as="geometry" />
+        </mxCell>
+        <mxCell id="step-6" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9C8F3;strokeWidth=1.2;arcSize=12;dashed=0;dashPattern=7 5;shadow=1;shadowColor=#B6C7DF;shadowOpacity=34;shadowOffsetX=2;shadowOffsetY=3;" vertex="1" parent="1">
+          <mxGeometry x="1129" y="66" width="192" height="375" as="geometry" />
+        </mxCell>
+        <mxCell id="step-7" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9C8F3;strokeWidth=1.2;arcSize=12;dashed=0;dashPattern=7 5;shadow=1;shadowColor=#B6C7DF;shadowOpacity=34;shadowOffsetX=2;shadowOffsetY=3;" vertex="1" parent="1">
+          <mxGeometry x="1341" y="66" width="245" height="375" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2248%22%20cy%3D%2220%22%20r%3D%2212%22%2F%3E%3Cpath%20d%3D%22M26%2064c0-17%209-28%2022-28s22%2011%2022%2028z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" vertex="1" parent="1">
+          <mxGeometry x="79" y="79" width="68" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="1. User Inputs&lt;br&gt;Raw Requirement" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=14;fontColor=#101828;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="34" y="146" width="157" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" value="Natural-language description&lt;br&gt;of the desired OPF model." style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=12.5;fontColor=#101828;fontStyle=0;align=center;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="35" y="214" width="155" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7FAFF;strokeColor=#A9C8F3;strokeWidth=1.0;arcSize=12;dashed=0;dashPattern=7 5;shadow=1;shadowColor=#C4D2E6;shadowOpacity=28;shadowOffsetX=2;shadowOffsetY=2;" vertex="1" parent="1">
+          <mxGeometry x="22" y="274" width="181" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" value="Example:" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=12.5;fontColor=#073E8C;fontStyle=1;align=left;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="34" y="285" width="157" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" value="I need a distributed chance-&lt;br&gt;constrained OPF model with&lt;br&gt;confidentiality preservation&lt;br&gt;for wind uncertainty." style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=10.5;fontColor=#101828;fontStyle=0;align=left;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="34" y="315" width="157" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cellipse%20cx%3D%2239%22%20cy%3D%2215%22%20rx%3D%2221%22%20ry%3D%228%22%2F%3E%3Cpath%20d%3D%22M18%2015v31c0%205%209%208%2021%208%205%200%209-1%2013-2%22%2F%3E%3Cpath%20d%3D%22M18%2029c0%205%209%208%2021%208%204%200%208-1%2011-2M18%2043c0%205%209%208%2021%208%22%2F%3E%3Ccircle%20cx%3D%2266%22%20cy%3D%2244%22%20r%3D%2212%22%2F%3E%3Cpath%20d%3D%22M75%2053l10%2010%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" vertex="1" parent="1">
+          <mxGeometry x="306" y="79" width="68" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" value="2. LLM Reads OPFModel&lt;br&gt;Instances in Groups and&lt;br&gt;Pre-Screens" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=13.5;fontColor=#101828;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="252" y="146" width="175" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" value="LLM reads the data properties of&lt;br&gt;OPFModel instances and identifies&lt;br&gt;candidate models by groups." style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=11.2;fontColor=#101828;fontStyle=0;align=center;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="252" y="216" width="175" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7FAFF;strokeColor=#A9C8F3;strokeWidth=1.0;arcSize=12;dashed=0;dashPattern=7 5;shadow=1;shadowColor=#C4D2E6;shadowOpacity=28;shadowOffsetX=2;shadowOffsetY=2;" vertex="1" parent="1">
+          <mxGeometry x="239" y="280" width="201" height="149" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" value="Output for each candidate" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=12;fontColor=#073E8C;fontStyle=1;align=left;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="252" y="290" width="175" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c15" value="&lt;div style='text-align:left'&gt;•&amp;nbsp; candidate model&lt;br&gt;•&amp;nbsp; prefilter score&lt;br&gt;•&amp;nbsp; matched reason&lt;br&gt;•&amp;nbsp; supporting evidence&lt;br&gt;•&amp;nbsp; risk or limitation&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=11.5;fontColor=#101828;fontStyle=0;align=left;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="252" y="317" width="176" height="103" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M38%2016h39M38%2035h39M38%2054h39%22%2F%3E%3Cpath%20d%3D%22M18%2011h8v10h-8M18%2030h8v10h-8M18%2049h8v10h-8%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" vertex="1" parent="1">
+          <mxGeometry x="530" y="80" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c17" value="3. Merge Candidates&lt;br&gt;and Select Top-10" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=13.5;fontColor=#101828;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="488" y="147" width="152" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="c18" value="Merge all grouped&lt;br&gt;pre-screening results.&lt;br&gt;&lt;br&gt;Deduplicate and rank by&lt;br&gt;prefilter score.&lt;br&gt;&lt;br&gt;Select the Top-10&lt;br&gt;candidate models." style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=12.2;fontColor=#101828;fontStyle=0;align=center;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="490" y="218" width="148" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="c19" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M34%2053c-7%200-11-5-10-11-7-2-8-11-2-15-4-7%203-14%2010-12%202-7%2013-9%2017-2%207-4%2014%202%2013%209%207%201%2010%209%206%2014%204%206%200%2013-7%2014%22%2F%3E%3Cpath%20d%3D%22M39%2014v38M30%2024c5%200%209%204%209%209M49%2021c-5%200-10%204-10%209M29%2041c5%200%2010%202%2010%207%22%2F%3E%3Cpath%20d%3D%22M58%2061h7V48h-7zM70%2061h7V39h-7zM82%2061h7V29h-7zM59%2035l10-8%209%202%2010-12%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" vertex="1" parent="1">
+          <mxGeometry x="740" y="78" width="74" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="c20" value="4. LLM Performs&lt;br&gt;Detailed Ranking" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=13.5;fontColor=#101828;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="701" y="147" width="150" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="c21" value="LLM reads the complete&lt;br&gt;data properties of the&lt;br&gt;remaining candidate&lt;br&gt;OPFModels.&lt;br&gt;&lt;br&gt;Re-analyze, score, and&lt;br&gt;rank them based on the&lt;br&gt;original user requirement." style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=11.8;fontColor=#101828;fontStyle=0;align=center;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="703" y="218" width="146" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="c22" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M17%2058h22V39h18v19h22V46h12v18H5V46h12z%22%2F%3E%3Cpath%20d%3D%22M48%204l4%209%2010%201-7%207%202%2010-9-5-9%205%202-10-7-7%2010-1z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" vertex="1" parent="1">
+          <mxGeometry x="965" y="76" width="72" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="c23" value="5. Output Top-3&lt;br&gt;Recommended Models" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=13.5;fontColor=#101828;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="913" y="146" width="175" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="c24" value="Return the Top-3&lt;br&gt;knowledge-graph-based&lt;br&gt;OPFModel instances." style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=11.8;fontColor=#101828;fontStyle=0;align=center;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="916" y="214" width="169" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c25" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7FAFF;strokeColor=#A9C8F3;strokeWidth=1.0;arcSize=12;dashed=0;dashPattern=7 5;shadow=1;shadowColor=#C4D2E6;shadowOpacity=28;shadowOffsetX=2;shadowOffsetY=2;" vertex="1" parent="1">
+          <mxGeometry x="900" y="266" width="201" height="163" as="geometry" />
+        </mxCell>
+        <mxCell id="c26" value="Each recommendation includes" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=10.8;fontColor=#073E8C;fontStyle=1;align=left;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="913" y="276" width="175" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c27" value="&lt;div style='text-align:left'&gt;•&amp;nbsp; recommendation reason&lt;br&gt;•&amp;nbsp; matching points&lt;br&gt;•&amp;nbsp; limitations&lt;br&gt;•&amp;nbsp; applicable scenario&lt;br&gt;•&amp;nbsp; corresponding paper&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;model instance&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=10.8;fontColor=#101828;fontStyle=0;align=left;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="913" y="304" width="175" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="c28" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2218%22%20r%3D%2211%22%2F%3E%3Cpath%20d%3D%22M20%2058c0-16%208-26%2020-26%208%200%2014%204%2018%2011%22%2F%3E%3Ccircle%20cx%3D%2268%22%20cy%3D%2248%22%20r%3D%2215%22%2F%3E%3Cpath%20d%3D%22M61%2048l5%205%2010-12%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="79" width="70" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="c29" value="6. User Selects One&lt;br&gt;OPF Model" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=13.5;fontColor=#101828;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="1148" y="146" width="154" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c30" value="The user chooses one&lt;br&gt;recommended model&lt;br&gt;in the interface." style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=12.2;fontColor=#101828;fontStyle=0;align=center;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="218" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c31" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2072%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230751B2%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%2212%22%20y%3D%229%22%20width%3D%2272%22%20height%3D%2253%22%20rx%3D%224%22%2F%3E%3Cpath%20d%3D%22M12%2022h72%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2216%22%20r%3D%221%22%20fill%3D%22%230751B2%22%2F%3E%3Ccircle%20cx%3D%2227%22%20cy%3D%2216%22%20r%3D%221%22%20fill%3D%22%230751B2%22%2F%3E%3Cpath%20d%3D%22M40%2034l-9%208%209%208M56%2034l9%208-9%208M51%2031l-7%2022%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" vertex="1" parent="1">
+          <mxGeometry x="1429" y="79" width="70" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="c32" value="7. Enter Execution /&lt;br&gt;Implementation Stage" style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=13.5;fontColor=#101828;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="1362" y="146" width="203" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c33" value="Based on the selected&lt;br&gt;PaperModel, use the&lt;br&gt;objective function,&lt;br&gt;constraints, parameters,&lt;br&gt;mathematical problem type,&lt;br&gt;and solution method for&lt;br&gt;code-template matching,&lt;br&gt;model implementation, or&lt;br&gt;OPF execution." style="text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontSize=11.8;fontColor=#101828;fontStyle=0;align=center;verticalAlign=top;spacing=0;spacingLeft=2;spacingRight=2;" vertex="1" parent="1">
+          <mxGeometry x="1364" y="218" width="198" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="e34" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0751B2;strokeWidth=2.5;endArrow=classic;endFill=1;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-1" target="step-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e35" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0751B2;strokeWidth=2.5;endArrow=classic;endFill=1;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-2" target="step-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e36" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0751B2;strokeWidth=2.5;endArrow=classic;endFill=1;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-3" target="step-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e37" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0751B2;strokeWidth=2.5;endArrow=classic;endFill=1;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-4" target="step-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e38" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0751B2;strokeWidth=2.5;endArrow=classic;endFill=1;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-5" target="step-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e39" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0751B2;strokeWidth=2.5;endArrow=classic;endFill=1;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-6" target="step-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

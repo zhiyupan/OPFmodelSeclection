@@ -1,0 +1,872 @@
+﻿opf问题建模类型,模型特征,本质,缺点和限制,适用场景,具体求解数学方法和操作,引用的论文,用自己的话形容,运行偏好,python能否实现
+,,,,,,,,,
+经典ACopf,"物理精度高 不忽略电压和无功 ","
+最完整、最真实的经典 OPF 形式，显式考虑：
+有功 P
+无功 Q
+电压幅值 V
+电压相角 θ
+以及非线性 AC 潮流关系。
+
+",计算慢 非线性、非凸、不适合大规模、容易陷入局部最优、对初值、求解器设置、问题规模较敏感。,"电压控制
+
+无功优化
+
+配电网运行优化
+
+需要验证真实 AC 可行性的场景",pandapower.runopp()（内点法 ACOPF）Pyomo + IPOPT 非线性 ACOPF,"Yang, Z., Zhong, H., Xia, Q., & Kang, C. (2018). Fundamental Review of the OPF Problem: Challenges, Solutions, and State-of-the-Art Algorithms. Journal of Energy Engineering, 144(1), 04017075. https://doi.org/10.1061/(ASCE)EY.1943-7897.0000510",完整 AC 潮流物理模型,,可以 pandapower
+DCOPF,"快
+稳
+可大规模求解
+适合线性或近似线性框架
+适合反复重求解
+所以它本质偏好的是：计算效率、可扩展性、工程可算性。","
+AC 的简化线性近似版本，通常假设：
+电压幅值近似常数
+忽略无功
+小角度
+线路电阻影响简化。
+
+","电压幅值近似常数
+忽略无功
+AC 真实性不足
+可能给出“快但不安全”的结果
+不适合作为严格电压安全的最终运行依据","市场清算
+大规模调度
+规划中的快速近似
+需要很多样本时的数据生成","Linear Programming（LP）
+
+Quadratic Programming（QP）
+
+DCOPF（Pyomo + Gurobi）
+
+CVXPY DCOPF
+
+Fast DCOPF（matrix form）具体可执行解法
+• Pyomo + Gurobi
+• Pyomo + CPLEX
+• CVXPY + GUROBI / OSQP
+• 
+自己写矩阵形式的 scipy.optimize / cvxpy                        备注
+这个一般不是用 pandapower 直接一键做，而是从 pandapower 网络里拿参数，再自己建 DCOPF 模型。","Babiker, A., Ahmad, S. S., Ahmed, I., Khalid, M., Abido, M. A., & Saleh Al-Ismail, F. (2025). Optimal Power Flow: A Review of State-of-the-Art Techniques and Future Perspectives. IEEE Access, 13, 60012～60039. https://doi.org/10.1109/ACCESS.2025.3556168",AC 的线性近似,,可以
+"DistFlow OPF 中的DistFlow-based SOCP OPF
+中文：基于 DistFlow 的凸松弛配电网 OPF 
+也可归入：Distribution OPFSOCP-relaxed OPFBranch Flow OPFRadial Network OPFConvex Relaxed AC-OPF
+
+","
+适合径向配电网 / radial distribution network使用支路变量建模：pij、qij、lij、wi保留有功 P、无功 Q、电压幅值、电流平方、线路损耗比 DCOPF 更适合配电网，因为不忽略无功和电压可以写成 SOCP 凸松弛形式适合配电网电压控制、无功优化、网损最小化在扩展版本中可以考虑：线路充电电容、变压器、OLTC、离散电容/电抗器组、风机无功能力曲线常用于 radial feeder、wind farm collector grid、active distribution network
+
+","
+它的本质不是一种全新的 OPF 目标，而是：用 DistFlow / Branch Flow 方程来表达配电网 AC 潮流，然后通过 SOCP 松弛把原本非凸的潮流约束转成凸优化约束。普通 ACOPF 用节点电压幅值和相角直接写潮流方程；DistFlow OPF 用支路功率、电流平方和电压平方描述潮流。核心关系是：支路功率流 + 电压下降 + 电流平方损耗。非凸部分通常来自：pij² + qij² = wi lij凸松弛后变成：pij² + qij² ≤ wi lij所以它的本质可以概括为：适合径向配电网的 AC 潮流凸化表达。","
+主要适用于径向网络；如果是网状网络，角度恢复和松弛精确性会更复杂。SOCP 松弛不一定永远 exact；如果松弛不紧，可能得到物理上不完全准确的电流/损耗。当目标函数里存在冲突目标时，比如同时最小化有功损耗和惩罚无功设定点偏差，松弛可能变差；论文中指出，反应性设定点 mismatch 会导致电流取人为偏大的值，从而让 relaxation inexact。如果加入 OLTC、电容器组、开关状态等离散变量，会从 SOCP 变成 MISOCP 或 MILP 近似，计算复杂度上升。不适合直接作为输电网标准 OPF 大类；输电网通常更常用 AC polar formulation、DCOPF、SDP/QC/SOCP relaxations 等更一般形式。如果用线性外近似替代 SOC，速度可能提高，但精度依赖近似阶数 κ。κ 越大精度越高，但模型规模和计算时间也会上升。论文中 κ = 10、12 时计算时间会明显增加
+
+","
+径向配电网 OPF主动配电网电压/无功优化配电网网损最小化风电场集电网 collector grid 优化光伏/风机逆变器无功调度OLTC + 电容器组 + 无功资源协调控制中压配电网、工业园区、微电网、风电场内部网络需要比 DCOPF 更真实、但又不想直接求非凸 ACOPF 的场景适合固定拓扑的径向网络；如果还要做拓扑重构，则应归到 Feeder Reconfiguration OPF / Switching OPF
+
+","核心方法：DistFlow / Branch Flow Model + SOCP Relaxation基本操作：1. 建立径向配电网拓扑2. 定义支路变量 pij、qij、lij3. 定义节点电压平方变量 wi4. 写节点有功/无功平衡约束5. 写支路电压下降约束6. 写线路热稳定约束：pij² + qij² ≤ Sij,max²7. 写电压上下限：vi,min² ≤ wi ≤ vi,max²8. 写非凸电流-功率关系的 SOCP 松弛：pij² + qij² ≤ wi lij9. 加入目标函数：网损最小、购电成本最小、电压偏差最小或无功设定点偏差最小10. 用 SOCP/MISOCP 求解器求解如果是论文中的扩展 CDF-OPF：还要加入 OLTC 离散档位 τk、静态电容/电抗器状态 σk、PCC 无功设定点 mismatch、风机无功能力曲线、π 型线路模型和变压器模型。该论文把扩展模型写成 MISOCP，并进一步用 BTN linear outer approximation 把锥约束近似成 MILP，以降低计算负担。","Martin, B., Glineur, F., De Rua, P., & De Jaeger, E. (2018). Loss Reduction in a Windfarm Participating in Primary Voltage Control Using an Extension of the Convex DistFlow OPF. 2018 Power Systems Computation Conference (PSCC), 1～8. https://doi.org/10.23919/PSCC.2018.8442758",与AC DC 类似 本质上都是对潮流方程的建模方式的改变 不用节点相角作为核心变量，而用支路功率、电压平方、电流平方来写，特别适合径向配电网,"
+如果是纯 SOCP DistFlow：速度较快，精度较好。如果是 MISOCP DistFlow：能处理离散设备，但速度下降。如果是 MILP outer approximation：速度可能更好，但精度取决于近似阶数 κ。整体偏好：比 ACOPF 快，比 DCOPF 更适合配电网。","可以实现，而且很适合用 Python 做简化版。推荐工具：CVXPY + MOSEK / GUROBIPyomo + GurobiPyomo + CPLEXJuMP + Gurobi / Mosek，如果用 Julia如果只做连续 SOCP DistFlow OPF：CVXPY 很合适。如果加入 OLTC、电容器组、离散档位：更适合 Pyomo + Gurobi / CPLEX / Mosek。pandapower 可以用来生成网络、校验潮流结果，但 DistFlow-SOCP 约束通常要自己建模，不是 pandapower 一键完成。
+
+"
+线性化ACopf比如DLPF模型,"比 DC 更接近 AC、
+比 AC 更容易求、
+想保留电压/无功信息、
+愿意接受近似换速度",它不是纯 DC，也不是 full AC，而是保留更多 AC 物理信息的线性近似，例如 DLPF 把 P、Q、V、θ 都纳入线性关系。,"仍然是近似
+不是 full AC 可行性
+一旦网络工况强非线性，误差会放大","分布式 OPF
+保密分布式 CC-OPF
+中等精度、较高效率的工程近似框架
+大规模近似协调","Linearized ACOPF（DLPF）
+
+SOCP relaxation（CVXPY）
+
+Linear OPF with voltage constraints                                          具体可执行解法
+• Pyomo + Gurobi 线性化 ACOPF
+• CVXPY + SOCP relaxation
+• 
+基于 pandapower 提取网络参数后自建 DLPF 线性约束
+备注
+这类不是 pandapower 现成主打功能，要自己建近似模型。","Jia, M., Hug, G., Su, Y., & Shen, C. (2023). Chance-Constrained OPF: A Distributed Method With Confidentiality Preservation. IEEE Transactions on Power Systems, 38(4), 3373～3387. https://doi.org/10.1109/TPWRS.2022.3200941",,,可以
+Unbalanced Three-Phase OPF,"
+面向配电网，而不是传统输电网显式建模 A/B/C 三相可以处理三相不平衡负荷可以处理单相分布式电源、单相负荷、单相微型发电机不再只使用正序分量基于 three-phase unbalanced distribution load flow适合 DMS / Advanced DMS可以用于有功负荷削减、无功重调度、电压控制、线路热约束控制、损耗最小化、相间不平衡缓解论文中控制变量包括：实际有功负荷需求、微型发电机无功出力、可控电容器组等
+
+","
+本质是：把传统单相/平衡 OPF 扩展成三相不平衡配电网 OPF。普通 OPF 常常假设系统近似三相平衡，只用正序模型。但是配电网天然不平衡，因为存在：单相负荷不均匀三相负荷未换位线路单相光伏 / 微型风机单相分布式电源所以三相不平衡 OPF 的核心不是新的目标函数，而是：潮流约束从单相正序模型变成完整三相多相潮流模型。论文明确说，TOPF 和经典单相 OPF 的数学结构相似，都是非线性优化；主要区别在于 steady-state grid equations，也就是稳态电网方程的表示方式不同。普通单相 OPF 通常只用正序模型，而 TOPF 可以采用 sequence 或 multiphase model。
+
+","
+模型规模比单相 OPF 大很多，因为每个节点可能有 A/B/C 三相变量。计算速度比单相 OPF 慢。论文也明确说，single-phase OPF 更快，因为 TOPF 需要处理更多方程和变量。是非线性优化问题，通常不能保证全局最优。依赖三相潮流求解器的稳定性，例如 OpenDSS。论文方法使用 penalty function 处理不等式约束，因此可能存在小的约束违反，需要设置容忍阈值。论文中提到，如果采用 penalty method，解可能有小的 constraint violations，并用约 1% 的 tolerance 判断可行。求解性能依赖 quasi-Newton 迭代、初值、步长、惩罚权重等设置。不是凸优化，不像 SOCP 那样有凸性优势。论文模型主要是 static / snapshot OPF，不是多时段动态 OPF。虽然论文说可以用于 extended real-time framework，但本质上仍然是每 15–30 分钟重复求解一次静态三相 OPF。
+
+","
+智能配电网 Smart Distribution GridAdvanced DMS / 配电管理系统三相不平衡严重的低压/中压配电网单相光伏、单相微型发电机、高渗透 DG 的配电网需要精确考虑每一相电流、电压的场景过电流缓解负荷削减 load curtailment无功优化 reactive redispatch配电网损耗最小化电压调节相间不平衡缓解需要用 AMI/AMR、智能电表、智能逆变器、可控电容器等执行控制动作的场景
+
+","核心方法：三相不平衡潮流 + quasi-Newton 优化。论文的数学形式：min Cobj(x,u)subject to f(x,u)=0g(x,u)≤0其中：x = 状态变量u = 控制变量f(x,u)=0 = 三相不平衡潮流方程g(x,u)≤0 = 热容量、电压、无功出力等约束论文进一步把不等式约束用 penalty function 加到目标函数里，变成：min C(x,u)subject to f(x,u)=0然后通过隐函数思想，把状态变量 x 看成控制变量 u 的函数，最后变成关于 u 的无约束优化问题。
+
+","Bruno, S., Lamonaca, S., Rotondo, G., Stecchi, U., & La Scala, M. (2011). Unbalanced Three-Phase Optimal Power Flow for Smart Grids. IEEE Transactions on Industrial Electronics, 58(10), 4504～4513. https://doi.org/10.1109/TIE.2011.2106099",在现实配电网里面，三相往往不对成不平衡。所以物理建模三相不平衡的潮流方程，本质还是潮流方程建模方式的改变,"
+相比单相 OPF：精度更高，速度更慢。相比 DCOPF：速度更慢，但可以处理电压、无功、三相不平衡。相比普通 ACOPF：更适合配电网真实不平衡运行。论文认为其计算性能可以满足 extended real-time 要求，即大约 15–30 分钟级别的配电网运行控制。
+
+",
+snapshot快照opf 基于ANM 每次也是传统opf,提高了DG接入容量                             配合闭合的ANM决策框架可以实现实时性                                                   每次只看当前 不考虑未来 不考虑状态演化  没有时间耦合,只优化单个时刻，不考虑时间耦合。,"不考虑时序依赖
+
+不能表达“未来几小时整体最优”","repeated snapshot ANM
+单场景快速决策","本质：不是新算法 → 只是单时刻
+推荐填：
+（直接用 AC 或 DC 方法）               具体可执行解法
+• pandapower.runopp()
+• Pyomo + IPOPT
+• Pyomo + Gurobi DCOPF         备注
+这个本质是“时间维度”，不是新求解器，所以你填常规单时刻求解即可。","Robertson, J. G., Harrison, G. P., & Wallace, A. R. (2017). OPF Techniques for Real-Time Active Management of Distribution Networks. IEEE Transactions on Power Systems, 32(5), 3529～3537. https://doi.org/10.1109/TPWRS.2016.2624985",,"preferAccuracy = 中
+preferSpeed = 中高
+preferSecurity = 中
+preferConservative = 低
+preferRealtimeOperation = 可",可
+static opf 传统opf,"静态 问题简单
+
+求解快
+
+易建模",只优化单个时刻，不考虑时间耦合。,,,"具体可执行解法
+• pandapower.runopp()
+• Pyomo + IPOPT
+• Pyomo + Gurobi DCOPF         备注
+这个本质是“时间维度”，不是新求解器，所以你填常规单时刻求解即可。","Robertson, J. G., Harrison, G. P., & Wallace, A. R. (2017). OPF Techniques for Real-Time Active Management of Distribution Networks. IEEE Transactions on Power Systems, 32(5), 3529～3537. https://doi.org/10.1109/TPWRS.2016.2624985",,,可
+Dynamic opf,"长时域调度
+
+时序一致性
+
+计划级优化
+
+储能/UC/备用显著参与","
+同时优化多个连续时段，考虑：
+爬坡
+储能 SOC
+最小开停机时间
+启停逻辑
+多时段能量约束。
+
+","变量规模爆炸
+
+常常混合整数
+
+全局最优难
+
+实时性差
+
+很快从“普通优化”变成“工业级大问题”","日前调度
+
+日内滚动调度
+
+多时段储能优化
+
+含机组启停的运行计划
+
+大规模安全约束多时段调度。","Multi-period OPF（Pyomo）
+
+Unit Commitment + OPF（MILP）
+
+Rolling horizon OPF
+
+Storage-constrained OPF                 具体可执行解法
+• Pyomo + IPOPT 多时段连续优化
+• Pyomo + Gurobi 多时段 MILP
+• rolling horizon + pandapower/Pyomo
+•
+储能 SOC 递推 + OPF 联立              备注
+这类不能只靠 pandapower 直接完成。
+
+pandapower可以做网络与单步潮流/OPF，但多时段耦合约束通常要你自己用 Pyomo 搭。","Yang, Z., Zhong, H., Xia, Q., & Kang, C. (2018). Fundamental Review of the OPF Problem: Challenges, Solutions, and State-of-the-Art Algorithms. Journal of Energy Engineering, 144(1), 04017075. https://doi.org/10.1061/(ASCE)EY.1943-7897.0000510",,"preferAccuracy = 中
+preferSpeed = 低
+preferSecurity = 中
+preferConservative = 中
+preferFlexibility = 高
+preferRealtimeOperation = 否（或弱）","能做简化版，完整复现高难论文通常不现实。
+你能做的是：
+• 
+小规模 multi-period OPF
+
+• 
+储能 SOC + ramping
+
+• 
+简化 UC
+
+• 
+小系统 multi-step SCOPF 思想验证"
+Multi-period opf,"长时域调度
+
+时序一致性
+
+计划级优化
+
+储能/UC/备用显著参与","本质上是 不是一个静态的单独时刻的opf问题求解 而是连续的多个时段之间 opf的运行求解
+比如 发电机爬坡限制 出力是一个连续多时段的 变化过程 比如t1=100MW，t2=150MW。所以在相邻俩个时间点之间的时间段中要持续可以最优运行 也就是连续的 多个时间段的 最有运行解","变量规模爆炸
+
+常常混合整数
+
+全局最优难
+
+实时性差
+
+很快从“普通优化”变成“工业级大问题”","日前调度
+
+日内滚动调度
+
+多时段储能优化
+
+含机组启停的运行计划
+
+大规模安全约束多时段调度。",,"Yang, Z., Zhong, H., Xia, Q., & Kang, C. (2018). Fundamental Review of the OPF Problem: Challenges, Solutions, and State-of-the-Art Algorithms. Journal of Energy Engineering, 144(1), 04017075. https://doi.org/10.1061/(ASCE)EY.1943-7897.0000510",,"preferAccuracy = 中
+preferSpeed = 低
+preferSecurity = 中
+preferConservative = 中
+preferFlexibility = 高
+preferRealtimeOperation = 否（或弱）","能做简化版，完整复现高难论文通常不现实。
+你能做的是：
+• 
+小规模 multi-period OPF
+
+• 
+储能 SOC + ramping
+
+• 
+简化 UC
+
+• 
+小系统 multi-step SCOPF 思想验证"
+SCOPF安全约束opf稳态约束,"安全优先
+
+contingency-aware
+
+调度前就把故障后果考虑进去",Security-Constrained OPF，不仅正常工况要可行，故障场景下也要满足安全要求，例如 N-1 contingency。,"场景数很多
+
+约束数量暴涨
+
+大规模下计算代价重
+
+若做 N-k，复杂度会非常高。Korompili, A., Pandis, P., & Monti, A. (2020). Distributed OPF Algorithm for System-Level Control of Active Multi-Terminal DC Distribution Grids. IEEE Access, 8, 136638～136654. https://doi.org/10.1109/ACCESS.2020.3010876","输电系统安全调度
+
+关键运行场景
+
+高可靠性系统
+
+事故后不能崩的场景。","Preventive SCOPF（N-1）
+
+DC SCOPF（scenario-based）
+
+Contingency screening + OPF
+
+Benders decomposition SCOPF（简化版）                                                   具体可执行解法
+• scenario-based DC SCOPF in Pyomo
+• preventive SCOPF with explicit N-1 constraints
+• contingency screening + repeated OPF
+• Pyomo 多场景约束模型                 备注
+
+如果你做小系统，也可以写：
+小规模 preventive AC SCOPF（自定义场景循环 + pandapower）
+
+但严格说，pandapower本身不是一键 SCOPF 平台，更多是你拿它循环跑 contingencies。","Babiker, A., Ahmad, S. S., Ahmed, I., Khalid, M., Abido, M. A., & Saleh Al-Ismail, F. (2025). Optimal Power Flow: A Review of State-of-the-Art Techniques and Future Perspectives. IEEE Access, 13, 60012～60039. https://doi.org/10.1109/ACCESS.2025.3556168Donti, P., Agarwal, A., Bedmutha, N. V., Pileggi, L., & Kolter, J. Z. (2021). Adversarially robust learning for security-constrained optimal power flow. Advances in Neural Information Processing Systems, 34, 28677～28689. https://proceedings.neurips.cc/paper_files/paper/2021/hash/f0f07e680de407b0f12abf15bd520097-Abstract.html",,"preferAccuracy = 中
+preferSpeed = 低
+preferSecurity = 高
+preferConservative = 中
+preferFlexibility = 中
+preferRealtimeOperation = 否","能做 N-1 或少量 contingency 的简化版。
+做 DC SCOPF
+做小系统 AC SCOPF
+做 preventive SCOPF
+做 candidate contingency 筛选实验"
+Dynamic Security-Constrained OPF/TSCOPF 故障后系统仍旧保持暂态稳定安全约束 而不是稳态安全约束,"真正严肃的系统安全
+
+故障后动态行为也必须安全
+
+不满足于“静态潮流不越限”",不仅看稳态约束，还把动态安全，例如小信号稳定、暂态稳定等也纳入,"建模极难
+
+动态安全约束通常很难直接塞进优化器
+
+通常需要仿真器、特征值分析或额外近似
+
+计算极重。","关键安全调度
+
+稳定性敏感系统
+
+动态安全研究","NN-based stability classifier + OPF（简化）Small-signal constraint approximation OPF
+（但你可以写：工程难以实现）      具体可执行解法
+严格完整版你现在不现实。
+
+能执行的简化版是：
+• NN stability classifier + OPF
+• small-signal surrogate constraint + Pyomo
+• 外部稳定性判别器 + OPF            你表里建议填
+不可作为标准 pandapower 直接实现；仅可做 surrogate-based 简化实现
+备注
+这一行你原来写“不可”是对的。","Murzakhanov, I., Venzke, A., Misyris, G. S., & Chatzivasileiadis, S. (2022). Neural Networks for Encoding Dynamic Security-Constrained Optimal Power Flow (arXiv:2003.07939). arXiv. https://doi.org/10.48550/arXiv.2003.07939",,"preferAccuracy = 高
+preferSpeed = 很低
+preferSecurity = 极高
+preferConservative = 高
+preferRealtimeOperation = 否",不可
+Deterministic确定性 OPF,"问题清晰
+
+数据明确
+
+求解快
+
+适合基线建模",假设输入确定,"不适合高比例风光、负荷波动、EV 等场景
+
+容易对真实波动不鲁棒","常规教学
+
+基础实验
+
+不确定性不强时的调度","ACOPF（IPOPT）
+DCOPF（LP/QP）                              具体可执行解法
+• pandapower.runopp()
+• Pyomo + IPOPT
+• Pyomo + Gurobi DCOPF",,,,可
+Stochastic / Probabilistic 随机/概率/不确定性OPF,"风光负荷不确定
+适合输入不确定性 可再生能源 电动车等
+想评估概率分布而非单点结果","
+承认输入随机。
+Stochastic 更强调把随机性纳入优化决策；
+Probabilistic 更强调状态变量和结果分布的刻画。
+Babiker, A., Ahmad, S. S., Ahmed, I., Khalid, M., Abido, M. A., & Saleh Al-Ismail, F. (2025). Optimal Power Flow: A Review of State-of-the-Art Techniques and Future Perspectives. IEEE Access, 13, 60012～60039. https://doi.org/10.1109/ACCESS.2025.3556168
+","依赖概率建模质量
+
+Monte Carlo 可能很慢
+
+场景数大","主动配电网
+
+RES 接入
+
+EV、DR、储能存在随机性
+
+风险评估与概率运行分析。","Monte Carlo OPF
+
+Scenario-based stochastic OPF
+
+Point Estimation Method（PEM）
+
+Sample Average Approximation（SAA）                                               具体可执行解法
+• Monte Carlo + pandapower/Pyomo
+• scenario-based stochastic OPF in Pyomo
+• SAA (Sample Average Approximation)
+• PEM + OPF                    备注
+这个 pandapower 可以参与，但通常是作为每个样本场景的潮流/OPF执行器，不是它本身提供“随机OPF”功能。","Ullah, Z., Wang, S., Wu, G., Hasanien, H. M., Jabbar, M. W., Qazi, H. S., Tostado-Véliz, M., Turky, R. A., & Elkadeem, M. R. (2022). Advanced studies for probabilistic optimal power flow in active distribution networks: A scientometric review. IET Generation, Transmission & Distribution, 16(18), 3579～3604. https://doi.org/10.1049/gtd2.12555Evangelopoulos, V. A., Georgilakis, P. S., & Hatziargyriou, N. D. (2016). Optimal operation of smart distribution networks: A review of models, methods and future research. Electric Power Systems Research, 140, 95～106. https://doi.org/10.1016/j.epsr.2016.06.035Investigation of optimal power flow solution techniques considering stochastic renewable energy sources: Review and analysis. (不详). https://doi.org/10.1177/0309524X221124000",,,"能，而且很适合。
+你可以做：
+Monte Carlo + OPF
+PEM / scenario sampling
+随机负荷/风光注入实验"
+Chance-Constrained OPF（CC-OPF）,"处理不确定性
+
+在安全与经济间折中
+
+风险可调
+
+比 robust 更不保守。",约束不是要求 100% 必满足，而是要求以高概率满足，比如违规概率不超过 ε。,"需要分布信息或近似假设
+
+机会约束转化有时依赖近似
+允许小概率违反约束
+问题：
+数学上很难解（概率积分）Chamanbaz, M., Dabbene, F., & Lagoa, C. M. (2019). Probabilistically Robust AC Optimal Power Flow. IEEE Transactions on Control of Network Systems, 6(3), 1135～1147. https://doi.org/10.1109/TCNS.2019.2921300
+复杂版本计算不轻
+
+某些论文还叠加分布式、保密等特殊条件。Jia, M., Hug, G., Su, Y., & Shen, C. (2023). Chance-Constrained OPF: A Distributed Method With Confidentiality Preservation. IEEE Transactions on Power Systems, 38(4), 3373～3387. https://doi.org/10.1109/TPWRS.2022.3200941","风电
+
+光伏
+
+波动负荷
+
+想“既考虑随机性，又不想太保守”的系统。","Gaussian CCOPF（解析形式）
+
+Scenario approximation CCOPF
+
+Quantile-based CCOPF                        具体可执行解法
+• Gaussian approximation CCOPF in Pyomo
+• sample-based chance constraints
+• scenario approximation + CVXPY/Pyomo
+• quantile-based approximation  备注
+这个一般不是 pandapower 一键做，而是你自己建机会约束，再调用优化器。","Jia, M., Hug, G., Su, Y., & Shen, C. (2023). Chance-Constrained OPF: A Distributed Method With Confidentiality Preservation. IEEE Transactions on Power Systems, 38(4), 3373～3387. https://doi.org/10.1109/TPWRS.2022.3200941",,,"能做基础版，较适合。
+
+你可以做：
+• 
+高斯假设下的解析 CC-OPF
+
+• 
+sample-based chance constraints
+
+• 
+小规模分位数近似"
+Robust OPF,"最坏情况安全
+
+不想依赖精确概率分布
+
+高可靠性优先于经济性",不是按概率，而是要求在最坏情况也安全可行。,"保守运行
+
+风险厌恶型系统","往往更保守
+
+成本更高
+
+容易牺牲经济性。","Box uncertainty robust OPF
+
+Polyhedral robust OPF
+
+Robust DCOPF（LP reformulation）                                 具体可执行解法
+• box-uncertainty robust DCOPF in Pyomo
+• polyhedral robust OPF
+• robust reformulation + Gurobi   备注
+这个你完全能做，而且比很多 fancy ML 论文更扎实。","Chamanbaz, M., Dabbene, F., & Lagoa, C. M. (2019). Probabilistically Robust AC Optimal Power Flow. IEEE Transactions on Control of Network Systems, 6(3), 1135～1147. https://doi.org/10.1109/TCNS.2019.2921300",,"preferAccuracy = 中
+preferSpeed = 中
+preferSecurity = 高
+preferConservative = 极高
+preferFlexibility = 低
+preferRealtimeOperation = 否","能。
+
+特别是：
+• 
+box uncertainty
+
+• 
+polyhedral uncertainty
+
+• 
+robust DCOPF
+
+• 
+robust linearized OPF"
+Distributionally Robust / DRCC / DRO / IGDT,"分布信息不完整
+
+不想完全相信训练数据统计分布
+
+希望比普通 chance constraint 更稳",再进一步，连分布本身都不完全信任，只知道部分信息或一个分布集合,"数据有限
+
+分布漂移
+
+高不确定性系统","数学更复杂
+
+保守程度和计算代价可能更高
+
+不太适合你现阶段做主实验主线","Moment-based DRO
+
+Wasserstein DRO（CVXPY）          具体可执行解法
+• moment-based DRO in CVXPY
+• Wasserstein DRO（简化版）
+• distributionally robust chance constraints（小规模）            备注
+这一行最好标注：
+仅小规模简化实现可行","Ullah, Z., Wang, S., Wu, G., Hasanien, H. M., Jabbar, M. W., Qazi, H. S., Tostado-Véliz, M., Turky, R. A., & Elkadeem, M. R. (2022). Advanced studies for probabilistic optimal power flow in active distribution networks: A scientometric review. IET Generation, Transmission & Distribution, 16(18), 3579～3604. https://doi.org/10.1049/gtd2.12555",,"preferAccuracy = 中
+preferSpeed = 低
+preferSecurity = 高
+preferConservative = 很高
+preferFlexibility = 中
+preferRealtimeOperation = 否",只能做简化版
+Multi-region / Distributed / Privacy-preserving OPF,"大规模
+
+多区域
+
+并行
+
+隐私
+
+减少中心依赖
+
+可部署性。",把一个大 OPF 拆成多个区域或节点子问题分布式求解，有时还要求不泄露本地成本、负荷、拓扑等敏感信息。,"强依赖通信
+
+收敛可能慢
+
+参数敏感（如 ADMM 的 ρ）
+
+常常不是严格全局最优
+
+通信网络常是瓶颈。","多区域互联
+
+DER 很多
+
+数据分散
+
+不适合完全中心化调度
+
+未来分布式能源系统。","ADMM OPF
+
+Consensus-based OPF
+
+Distributed DCOPF                           具体可执行解法
+• custom ADMM + Pyomo subproblems
+• consensus ADMM DCOPF
+• multi-area decomposition OPF
+• 
+子区域里用 pandapower 或 Pyomo  备注
+如果你一定要带 pandapower，可以写：
+ADMM + pandapower subproblem evaluation
+
+但核心仍然是你自己写 ADMM 外层协调。","Korompili, A., Pandis, P., & Monti, A. (2020). Distributed OPF Algorithm for System-Level Control of Active Multi-Terminal DC Distribution Grids. IEEE Access, 8, 136638～136654. https://doi.org/10.1109/ACCESS.2020.3010876",,"preferAccuracy = 中
+preferSpeed = 中
+preferSecurity = 中
+preferConservative = 中
+preferFlexibility = 高
+preferRealtimeOperation = 可","能做简化版。
+
+很适合你做：
+• 
+ADMM 分区 DCOPF"
+Mixed-Integer OPF / UC-OPF / Topology-Reconfiguration OPF,"更强控制自由度
+
+结构决策 + 数值决策一起优化
+
+能表达真实运行逻辑","
+当控制变量里有：
+机组开关
+变压器分接头
+开关状态
+网络重构
+线路投切
+就会进入混合整数世界。
+
+","组合爆炸
+
+商用求解器也可能很吃力
+
+很快变成大规模 MILP / MINLP
+
+工程落地比连续 OPF 更难。","Unit Commitment
+
+配电网重构
+
+OTS
+
+OLTC / 电容器离散控制
+
+多时段计划。","MILP OPF（Gurobi）
+
+Unit Commitment（UC）
+
+Topology reconfiguration OPF         具体可执行解法
+• Pyomo + Gurobi MILP
+• Pyomo + CPLEX
+• UC-DCOPF
+• topology reconfiguration MILP   备注
+这类绝大多数都不是 pandapower 一键搞定。","Evangelopoulos, V. A., Georgilakis, P. S., & Hatziargyriou, N. D. (2016). Optimal operation of smart distribution networks: A review of models, methods and future research. Electric Power Systems Research, 140, 95～106. https://doi.org/10.1016/j.epsr.2016.06.035Yang, Z., Zhong, H., Xia, Q., & Kang, C. (2018). Fundamental Review of the OPF Problem: Challenges, Solutions, and State-of-the-Art Algorithms. Journal of Energy Engineering, 144(1), 04017075. https://doi.org/10.1061/(ASCE)EY.1943-7897.0000510",,"preferAccuracy = 高
+preferSpeed = 很低
+preferSecurity = 中
+preferConservative = 中
+preferRealtimeOperation = 否","能做小到中等规模。
+
+你可以：
+• 
+Pyomo + Gurobi/CPLEX
+
+• 
+小规模 UC-DCOPF
+
+• 
+小规模 reconfiguration"
+Direct Mapping（DeepOPF）," 偏好
+• 极致速度（real-time）
+• 
+可接受轻微误差（<0.2%）
+• 
+同一个电网反复求解","
+1️⃣ 用传统OPF（Gurobi / IPOPT）生成数据
+2️⃣ 用神经网络拟合这个 mapping
+3️⃣ 推理阶段直接输出解（不求解）
+
+"," 一定有误差（不可避免）
+• 
+NN 是逼近，不是精确解
+
+2️⃣ 强依赖训练数据
+• 
+数据必须覆盖所有工况
+
+• 
+否则直接崩
+
+3️⃣ 强“场景绑定”
+• 
+一个模型 = 一个电网
+
+4️⃣ 可行性问题
+• 
+需要 post-processing 修正
+","✅ 适用场景
+• 
+实时调度（5分钟一次）
+
+• 
+EMS / AGC 快速决策
+
+• 
+大规模重复OPF","GridFM、PINN、GPT-opf                工具链
+• pandapower：生成电网、跑 ACOPF/DCOPF 标签
+
+• gurobi 或 ipopt：作为传统 OPF 标签求解器
+
+• pytorch：训练 MLP / DNN
+
+• numpy、pandas：数据处理
+
+• 
+可选：scikit-learn 做归一化
+
+DeepOPF 这类方法本质上是：先用传统求解器生成很多 “负荷 → 最优解” 样本，再训练 DNN 学这个映射；推理时直接输出发电，再按潮流方程重构其余变量，必要时再做 post-processing 保证可行。","Pan, X., Zhao, T., Chen, M., & Zhang, S. (2021). DeepOPF: A Deep Neural Network Approach for Security-Constrained DC Optimal Power Flow. IEEE Transactions on Power Systems, 36(3), 1725～1735. https://doi.org/10.1109/TPWRS.2020.3026379                                                  Jiang, B., Wang, Q., Wu, S., Wang, Y., & Lu, G. (2024). Advancements and Future Directions in the Application of Machine Learning to AC Optimal Power Flow: A Critical Review. Energies, 17(6), 1381. https://doi.org/10.3390/en17061381",,"preferAccuracy = 中（近似）
+preferSpeed = 极高
+preferSecurity = 低
+preferConservative = 低
+preferFlexibility = 低
+preferRealtimeOperation = 强",
+Warm-start,"偏好
+• 保证最优性（因为还在解OPF）
+• 
+同时提升速度
+","
+👉 还是在解 OPF，只是给一个好初值⚙️ 本质流程
+NN → 初值 → OPF solver（IPOPT / Gurobi）","1️⃣ 仍然慢（比DeepOPF慢很多）
+• 
+因为优化还在
+
+2️⃣ 对初值依赖有限
+• 
+如果问题复杂，提升有限
+
+3️⃣ 需要优化器
+• 
+不能完全替代","✅ 适用场景
+• 
+想加速但不能牺牲精度
+
+• 
+工业级系统（安全优先）","GridFM、GPT-opf                              工具链
+• pandapower：跑最终 ACOPF / PF
+
+• Pyomo + IPOPT 或 pandapower.runopp()：最终优化器
+
+• PyTorch 或 RandomForest：预测初值
+
+• numpy/pandas
+综述里把 warm-start 定义得很明确：先生成大量“状态–最优解”对，学出映射，但学出来的结果不是最终答案，而是作为 OPF 的初始点。","Jiang, B., Wang, Q., Wu, S., Wang, Y., & Lu, G. (2024). Advancements and Future Directions in the Application of Machine Learning to AC Optimal Power Flow: A Critical Review. Energies, 17(6), 1381. https://doi.org/10.3390/en17061381",,"preferAccuracy = 高
+preferSpeed = 中高
+preferSecurity = 中
+preferConservative = 中
+preferFlexibility = 中
+preferRealtimeOperation = 可",
+经典ACopf,"减少问题规模
+保持最优性（理论上）","👉 OPF难，是因为：
+约束太多
+👉 它做的事：
+预测哪些约束是“活跃的”","1️⃣ 分类错误 → 直接错解
+• 
+漏掉一个关键约束 = 灾难
+
+2️⃣ 依赖训练
+• 
+不同场景 active set 不同
+
+3️⃣ 复杂度仍存在
+• 
+只是变小","SCOPF（约束爆炸）
+
+大规模系统
+
+需要 exact 解","工具链
+• Pyomo + Gurobi/IPOPT：用于生成标签和求缩减 OPF
+
+• pandapower：做网络仿真 / 生成原始 OPF 数据
+
+• scikit-learn 或 PyTorch：做分类器
+
+• numpy/pandas
+综述里这类方法的标准模式是两阶段：先采样并标注 active/inactive constraints，再训练分类器；在线时先预测活跃约束，再求一个 reduced OPF。","Jiang, B., Wang, Q., Wu, S., Wang, Y., & Lu, G. (2024). Advancements and Future Directions in the Application of Machine Learning to AC Optimal Power Flow: A Critical Review. Energies, 17(6), 1381. https://doi.org/10.3390/en17061381",,"preferAccuracy = 高（目标是保持）
+preferSpeed = 中高
+preferSecurity = 中
+preferConservative = 中
+preferRealtimeOperation = 可",
+GNN OPF,"
+• 大规模系统
+• 
+分布式计算
+
+• 
+拓扑结构重要
+","👉 和 DeepOPF一样：
+学 mapping
+但：
+👉 利用“电网拓扑结构”                      GNN 是一种“local & scalable”模型，利用电网图结构来近似OPF解","1️⃣ 精度仍然不保证
+• 
+和 DeepOPF一样
+
+2️⃣ 训练复杂
+• 
+图结构复杂
+
+3️⃣ 泛化仍有限
+• 
+topology变了 → 可能失效","大电网（1000+ bus）
+
+分布式控制
+
+多区域系统","工具链
+• pandapower：生成网络和 OPF 标签
+
+• torch_geometric 或 DGL：GNN 框架
+
+• PyTorch
+• networkx：辅助图构造
+
+• 
+可选 IPOPT/pandapower 做 warm-start 后端
+
+GNN 的核心不是“又一个神经网络”，而是把电网当图来处理，让模型在节点和线路结构上传播信息。GNN 能更自然地编码拓扑，在拓扑变化时通常比 FCNN 更有优势。","Liao, W., Bak-Jensen, B., Pillai, J. R., Wang, Y., & Wang, Y. (2022). A Review of Graph Neural Networks and Their Applications in Power Systems. Journal of Modern Power Systems and Clean Energy, 10(2), 345～360. https://doi.org/10.35833/MPCE.2021.000058",,"preferAccuracy = 中
+preferSpeed = 高
+preferSecurity = 低
+preferConservative = 低
+preferRealtimeOperation = 强",
+RL OPF,"连续决策
+不需要明确模型
+
+可以处理动态系统","👉 不再“解OPF”
+👉 而是：
+学一个决策策略 π(s)","1️⃣ 没有最优性保证
+2️⃣ 训练极其困难
+• 
+reward设计难
+
+• 
+收敛慢
+
+3️⃣ 安全性差
+• 
+可能输出不可行解
+
+4️⃣ 可解释性极差","实时控制
+
+不确定环境
+
+动态系统（如微电网）","工具链
+• pandapower：做环境里的潮流/约束检查
+
+• gymnasium 或自定义 Gym Env
+• stable-baselines3 或 Ray RLlib
+• PyTorch
+• 
+可选：Pyomo / IPOPT 做 safety layer 或后验修正
+
+综述里把 RL 对应成“把 OPF 变成 MDP”：状态是电网状态，动作是调度动作，奖励由成本、约束等组成，然后 agent 在环境交互中学策略。","Steven, R., Klymenko, O. V., & Short, M. (2026). Machine learning-accelerated distributed optimisation methods for optimal power flow: A review. Renewable and Sustainable Energy Reviews, 226, 116190. https://doi.org/10.1016/j.rser.2025.116190",,"preferAccuracy = 低
+preferSpeed = 高
+preferSecurity = 低
+preferConservative = 低
+preferFlexibility = 极高
+preferRealtimeOperation = 强",
+RL-based Realtime-OPF 基于某个具体论文的模型,强偏好实时性、高频重复决策和快速响应能力，适用于可再生能源和负荷快速波动场景，更重视在线计算速度与可操作性，而不是严格最优。,基于拉格朗日约束处理和深度强化学习的实时OPF模型，通过学习“状态到控制”的映射，在在线运行时直接输出发电功率和电压控制决策，而不是每次完整迭代求解传统OPF。,不保证严格全局最优；训练成本较高；对训练样本和具体系统场景依赖较强；跨网络泛化能力有限；约束满足效果依赖模型设计质量。,实时调度、近实时控制、高比例可再生能源系统、负荷快速波动系统、需要快速近似OPF决策的场景。,,"Yan, Z., & Xu, Y. (2020). Real-Time Optimal Power Flow: A Lagrangian Based Deep Reinforcement Learning Approach. IEEE Transactions on Power Systems, 35(4), 3270～3273. https://doi.org/10.1109/TPWRS.2020.2987292",,,
+PINN,"- 强物理一致性（自动满足约束）- 数据需求低（physics regularization）- 可处理非线性ACOPF- 可做 forward + inverse problem- 泛化能力优于纯NN
+
+",用神经网络逼近解，同时把电网物理方程直接写进loss函数,"- 维度灾难（高维系统难扩展）- 训练成本高（自动微分）- 收敛无保证- 需要大量collocation points- 对网络结构敏感
+
+","- 小/中规模电网- 数据缺失OPF- 参数辨识 / 系统建模- 物理一致性要求高的预测- 研究型/方法验证
+
+",,"Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2019). Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. Journal of Computational Physics, 378, 686～707. https://doi.org/10.1016/j.jcp.2018.10.045",,,
+GridFM,"- 极快推理（real-time级别）- 偏好重复场景（same grid）- 可接受小误差（近似解）- 可结合物理约束提高可行性- 可作为 warm-start 或 surrogate
+速度优先固定网络大量重复OPF场景
+",学习“电网状态 → OPF解”的映射，并结合物理/OPF结构进行修正或约束,"- 强依赖训练数据（覆盖不全直接崩）- 强场景绑定（一个模型=一个电网）- 不保证可行性（需要post-processing）- 不保证最优性（只是逼近）- 泛化能力有限（换拓扑/分布就失效）
+
+","- 实时调度（EMS / AGC）- 高频重复OPF（每5分钟）- 大规模样本生成（加速仿真）- 已知电网结构且变化小
+
+",,"Hamann, H. F., Gjorgiev, B., Brunschwiler, T., Martins, L. S. A., Puech, A., Varbella, A., Weiss, J., Bernabe-Moreno, J., Massé, A. B., Choi, S. L., Foster, I., Hodge, B.-M., Jain, R., Kim, K., Mai, V., Mirallès, F., Montigny, M. D., Ramos-Leaños, O., Suprême, H., … Sobolevsky, S. (2024). Foundation models for the electric power grid. Joule, 8(12), 3245～3258. https://doi.org/10.1016/j.joule.2024.11.002",,,
+SOCP / SDP / QC Relaxed OPF中的SOCP-relaxed Feeder Reconfiguration OPF,"
+使用 Branch Flow Model使用 SOCP convex relaxation避免直接求解完整 MINLPAlgorithm 3 精度高，Algorithm 4 速度更快不需要初始拓扑，不需要参数调节
+
+","
+原始馈线重构问题本质上是：离散开关状态 + 非线性潮流方程 的混合整数非线性问题。这篇论文的核心是：不直接求解完整 MINLP，而是先假设所有线路闭合，解 SOCP 松弛 OPF，再根据支路潮流大小逐步打开冗余线路，直到形成径向配电网拓扑。本质可以概括为：用连续凸优化结果指导离散拓扑选择。","
+理论最优性不是无条件成立，只在特定假设下证明。对于一般多冗余线路网络，本质仍是 heuristic，不是严格全局最优算法。依赖 SOCP relaxation 是否 exact。主要适用于径向配电网，不适合直接用于网状输电网。不考虑多时段、储能 SOC、UC、风光不确定性、机会约束、鲁棒约束、N-1 安全约束。Algorithm 4 牺牲部分精度换速度。
+
+","
+配电网馈线重构配电网开关优化配电网网损降低正常运行拓扑控制有 sectionalizing switches / tie switches 的中压配电网需要保持径向运行的配电系统有少量 redundant lines 的网络需要快速近似最优拓扑的在线/准在线配电网重构场景
+
+","核心方法：Branch Flow Model + SOCP Relaxation + Successive Branch Reduction Heuristic具体操作：1. 建立配电网图 G(N,E)2. 初始假设所有线路闭合3. 建立 Branch Flow OPF4. 将非凸等式 lij =Sij
+
+","Peng, Q., Tang, Y., & Low, S. H. (2015). Feeder Reconfiguration in Distribution Networks Based on Convex Relaxation of OPF. IEEE Transactions on Power Systems, 30(4), 1793～1804. https://doi.org/10.1109/TPWRS.2014.2356513",所谓的socp凸松弛松弛的是什么？是opf问题，也就是那个满足各项约束下的，最优目标函数的解 所以socpcopf是一种求解方式 是一种求解最优opf的方式,,"可以，而且适合做小到中等规模复现。推荐用：Python + CVXPY + ECOS/MOSEK/Gurobi或：Python + Pyomo + Gurobi也可以用 pandapower 生成/读取配电网数据，但核心算法和 SOCP 约束一般要自己建。
+
+"
+MTDC-OPF 中的含 VSC-MTDC 的交直流混合电网 OPF,"
+同时包含 AC 电网和 DC 电网AC 侧使用传统 AC 潮流方程DC 侧使用直流节点电压和直流功率平衡方程通过 VSC 换流站连接 AC 与 DC 网络VSC 可以同时调节有功 Ps、无功 Qs、交流侧换流器电压 Vc、直流电压 Vdc考虑 VSC 换流器损耗考虑 MTDC 网络直流线路损耗考虑 AC 线路有功损耗可同时优化燃料成本、含阀点效应成本、排放碳税成本、电压偏差、有功网损可接入 RES，包括风电、光伏-小水电、风电-潮汐组合能源RES 不确定性通过概率分布和 reserve / penalty cost 间接体现在成本模型中
+
+","
+它的本质是：在传统 ACOPF 的基础上，把 VSC-MTDC 网络和换流站控制变量一起纳入 OPF 优化。普通 ACOPF 只优化 AC 网络中的发电机出力、电压、变压器分接头、线路潮流等。AC/MTDC OPF 额外优化：1. DC 母线电压 Vdc2. DC 网络功率流3. VSC 有功交换 Ps4. VSC 无功交换 Qs5. 换流器交流侧电压 Vc6. AC/DC 之间的功率交换所以它的核心不是“把 AC 改成 DC”，而是：AC 网和 DC 网耦合运行，VSC 换流站成为新的可控设备，帮助系统进行跨区域功率传输、电压调节、无功支撑和损耗优化。","
+建模比普通 ACOPF 更复杂，因为同时包含 AC 方程、DC 方程、VSC 方程和 AC/DC 耦合约束。整体问题仍然是非线性、非凸 OPF。如果再加入 RES 概率成本、阀点效应、排放成本，目标函数会更加非光滑或非凸。论文采用元启发式算法 FDB-SFS、SFS、AGDE、MPA、ASO，不保证严格全局最优，只能说在测试算例中表现更好。元启发式算法通常需要大量迭代和多次运行，工程实时性不一定强。该论文是 single-objective OPF，不是多目标 OPF；不同目标是分别单独优化，不是同时 Pareto 优化。主要在 modified IEEE 30-bus 系统上验证，真实大规模系统泛化性需要进一步测试。RES 不确定性主要通过概率分布和成本项处理，不是严格 chance-constrained OPF 或 robust OPF。
+
+","
+含 VSC-HVDC / VSC-MTDC 的交直流混合输电网多端直流输电接入 AC 系统的运行优化大规模可再生能源远距离并网海上风电、多区域互联、跨区输电需要 AC/DC 协同调度的系统需要 VSC 提供无功支撑和电压调节的系统需要降低 AC/DC 总网损的系统含风电、光伏、小水电、潮汐等 RES 的现代电网 OPF适合研究型仿真、规划评估、算法对比，不一定适合直接实时调度
+
+",核心方法：AC power flow + DC power flow + VSC converter model + metaheuristic optimization,"Bakır, H., Guvenc, U., Duman, S., & Kahraman, H. T. (2023). Optimal Power Flow for Hybrid AC/DC Electrical Networks Configured With VSC-MTDC Transmission Lines and Renewable Energy Sources. IEEE Systems Journal, 17(3), 3938～3949. https://doi.org/10.1109/JSYST.2023.3248658",MTDC是指电网架构和设备结构的不同，来给opf带来了一部分新的设备约束和电网结构约束，的影响,"
+原因：模型表达能力强，可以同时处理 AC、DC、VSC、RES、损耗、电压偏差和排放成本。但是元启发式算法需要大量迭代，不适合严格实时。如果用 IPOPT 等确定性 NLP 求解器，速度可能更快，但容易受初值和非凸性影响。如果用元启发式，鲁棒性和全局搜索能力更强，但速度较慢、最优性没有严格数学保证。整体偏好：高灵活性、高建模能力、适合复杂混合 AC/DC 系统；速度不如 DCOPF 或凸松弛 OPF。",
+Real time opf,"
+面向实时运行调度通常每 5–15 分钟执行一次每次基于最新负荷、风电、光伏预测进行优化传统 RT-OPF 通常只看调度区间开始时的一个静态 snapshot本文提出的 RT-OPF 在一个 10 分钟调度区间内进一步考虑 1 分钟级别的负荷、风电、光伏变化通过 best-fit participation factors 协调 AGC / 调频机组分担功率不平衡在每个 1 分钟子区间内考虑电压约束、无功出力约束、线路潮流约束和爬坡约束考虑 voltage stability index / L-index，用于评估系统距离电压崩溃点的远近重点不是改变潮流方程，而是改变 OPF 的运行时间尺度和调度逻辑
+
+","
+本质是：把普通 OPF 放到实时调度框架中反复执行，并且用最新预测数据不断修正发电计划。传统 RT-OPF 的做法是：每 5–15 分钟跑一次 OPF，得到当前时刻的最优发电出力和 participation factors。之后在两个 OPF 调度时刻之间，负荷、风电、光伏的波动由 AGC 机组按照这些 participation factors 分摊。论文明确说，实际中 RT-OPF 通常每 5–15 分钟执行一次，而 DA-OPF 通常每 1 小时执行一次。本文的核心改进是：不是只用调度区间开始时的一个 snapshot，而是在一个 RT-OPF 调度区间内考虑 minute-to-minute variability，然后一次性求出 best-fit participation factors。所以它的本质可以概括为：实时滚动调度 + 可再生能源短时波动补偿 + AGC participation factor 优化。","
+不是新的物理潮流模型，本身仍然需要依赖 ACOPF / DCOPF / 线性化 OPF 等底层模型。如果每分钟都完整求解一次 OPF，计算量会很大，不现实。论文也指出，理想情况下每个 1 分钟子区间都单独优化会更细，但这不是实际可行的 RT-OPF 方案。高度依赖短时预测数据质量，例如 1 分钟负荷、风速、太阳辐照度预测。如果预测误差很大，实时 OPF 结果仍然可能偏离真实最优。本文主要考虑 variability，而不是完整 uncertainty；也就是说，它更多处理调度间隔内部的已知/预测波动，而不是概率不确定性或鲁棒最坏情况。本文模型假设风电和光伏是 non-schedulable，即系统必须接纳可用的可再生出力。如果要加入 N-1、三相不平衡、储能 SOC、离散开关、机组组合等，模型会明显变复杂。本文用 MATLAB FMINCON 求解，属于非线性优化，不能保证全局最优。
+
+","
+实时调度含高比例风电、光伏的系统风光出力在 5–15 分钟内波动明显的系统需要 AGC / regulation 参与平衡的系统实时经济调度 RTED实时安全约束经济调度 SCED实时电压安全监测需要每 5 分钟、10 分钟、15 分钟更新调度结果的 EMS / control center适合负荷、风电、光伏预测能达到分钟级的系统适合需要兼顾经济性和电压稳定性的短时运行优化
+
+","核心方法：Sequential RT-OPF + best-fit participation factors + sub-interval security constraints传统 RT-OPF 操作：1. 每 5–15 分钟取一个当前 snapshot2. 求解一次 OPF3. 得到基准发电出力 PGi4. 根据最优出力计算 participation factors5. 在下一个 OPF 执行前，由 AGC 按 participation factors 分担负荷、风电、光伏波动本文 proposed RT-OPF 操作：1. 设定一个实时调度区间，例如 T = 10 分钟2. 把 10 分钟再拆成 10 个 1 分钟子区间3. 输入每分钟的负荷、风电、光伏预测数据4. 只在调度区间开始时做一次优化5. 决策变量仍主要是 base point generation 和 best-fit participation factors6. 用 participation factors 计算每个 1 分钟子区间的机组出力变化7. 在每个子区间检查：有功/无功平衡、发电机上下限、爬坡约束、电压约束、无功约束、线路潮流约束8. 计算 L-index / VSEI 作为电压稳定性指标9. 进入下一个 10 分钟调度区间，重复上述流程本文结果中，proposed RT-OPF 的 60 分钟总成本为 2321.82 $/hr，传统 RT-OPF 为 2365.3078 $/hr，降低约 1.84%；同时 VSEI 从传统方法中最高 0.9403 降到 proposed 方法中最高 0.6652，说明电压稳定性改善。
+
+","Surender Reddy, S., & Bijwe, P. R. (2016). Day-Ahead and Real Time Optimal Power Flow considering Renewable Energy Resources. International Journal of Electrical Power & Energy Systems, 82, 400～408. https://doi.org/10.1016/j.ijepes.2016.03.033",,"
+相比普通 static OPF：更适合实时运行，但需要反复求解。相比 full multi-period OPF：速度更快，工程更实用，但前瞻性弱。相比每分钟完整 OPF：计算负担小很多，但精度略低。相比传统 snapshot RT-OPF：更能处理风电、光伏和负荷在调度间隔内部的波动。本文结果说明，proposed RT-OPF 的效果几乎接近“每分钟都重新优化”的方案，但计算量更低。
+
+",
+Reserve-Constrained OPF 备用约束 AC 最优潮流,"
+在 ACOPF 中同时优化：有功/无功发电调度有功/无功备用分配线路潮流节点电压功率平衡分区备用需求备用类型很细，包括：regulation up/down reservecontingency reservesynchronous reservenon-synchronous reserveramping up/down reservereactive power up/down reserve同时考虑 producing devices 和 consuming devices 提供备用考虑 device-level reserve capability考虑 energy-reserve joint constraints，也就是发电出力和备用能力共享同一个设备容量 headroom考虑 zonal reserve requirement，不只是全系统备用使用完整 AC network constraints，而不是只用 ED 或 DC 近似论文中是 single-period RCOPF，设备 on/off 状态给定，变压器 tap、相移角、shunt step 被建模为连续变量
+
+","
+本质是：把普通 ACOPF 从“只优化能量调度”扩展为“能量 + 备用容量联合优化”。普通 ACOPF 主要决定：发电机发多少 P/Q节点电压是多少线路潮流是多少RCOPF 进一步决定：每台设备还要预留多少备用容量哪些设备提供 regulation reserve哪些设备提供 contingency reserve哪些设备提供 ramping reserve每个备用区域是否满足备用需求所以它不是新的潮流方程形式，而是：在 ACOPF 上增加备用调度变量、备用成本、备用能力约束和区域备用需求约束。论文明确说，RCOPF integrates operating reserves with system operation scheduling，用来同时获得 optimal power generation、delivery 和 reserve allocation；能量和备用联合优化可以提高运行效率和可靠性。
+
+","
+模型规模明显变大，因为引入大量备用变量和备用约束。非线性仍然来自 AC power flow，所以本质仍是非凸 NLP。如果备用种类非常细，约束数量会快速增加。比普通 ACOPF 更难求解，尤其是大系统。论文明确说 RCOPF 的复杂性来自 additional reserve scheduling 扩展模型规模，以及 power system 本身的 nonlinear nature。如果再加入 unit commitment、N-k contingency、多时段、随机性，会变成更大的工业级问题。论文当前重点是 single-period RCOPF，没有完整处理 UC、N-k contingency、多时段调度。本文模型假设设备 on/off 状态已知，不直接优化机组启停。A-PDIPM 是专门定制算法，实现难度比直接调用 IPOPT/Gurobi 高。
+
+","
+电力市场能量-辅助服务联合出清实时调度 / 实时 look-ahead OPF日前调度中需要同时安排 energy 和 reserve 的场景高比例可再生能源系统，需要 ramping reserve 应对风光波动需要 regulation reserve 处理快速供需波动需要 contingency reserve 应对机组或线路故障需要 reactive reserve 保证电压安全ISO/RTO 市场运行大型输电系统安全经济运行需要兼顾经济性和可靠性的 OPF
+
+","核心数学方法：ACOPF + reserve constraints + primal-dual interior point method基本建模步骤：1. 建立普通 ACOPF：节点电压幅值 vi、相角 θi、支路有功/无功潮流 pij/qij、设备有功/无功 pj/qj2. 增加备用变量：psup、qsup，以及不同类型 reserve 变量3. 增加设备备用能力约束：每台设备能提供多少 regulation、ramping、contingency、reactive reserve4. 增加 energy-reserve joint constraints：发电出力和备用共同占用设备容量 headroom5. 增加 zonal reserve requirement：每个备用区域的总备用必须满足需求，允许 reserve shortfall 但有高罚成本6. 目标函数最大化 market surplus，或等价最小化负成本；包括发电成本、负荷收益、备用成本、功率不平衡罚项、线路过载罚项、备用不足罚项7. 用 NLP 方法求解论文的求解方法：A-PDIPM，Accelerated Primal-Dual Interior Point Method。
+
+","Peng, Y., & Fu, Y. (2026). Reserve Constrained AC Optimal Power Flow Using Accelerated Primal-Dual Interior Point Method. IEEE Transactions on Power Systems, 41(3), 1717～1730. https://doi.org/10.1109/TPWRS.2025.3626450","Reserve-Constrained OPF 的本质是：在普通 ACOPF 的能量调度基础上，把备用容量作为新的决策变量和约束一起优化，从而实现能量与备用的联合调度。
+备用 reserve 最核心就是“系统还保留着的、可以在需要时快速调用的调节能力”。
+但它不只等于“还可以发的有功出力裕度”，也不只等于“储能 SOC 水平”。更准确地说：
+备用 = 为了应对负荷波动、可再生能源波动、设备故障、预测误差等情况，提前预留出来的可调节能力。","
+相比普通 ACOPF：安全性和可靠性更强，但计算更重。相比 ED + reserve 后处理：更准确、更安全，因为同时考虑网络约束和备用约束。相比 DC reserve co-optimization：物理精度更高，可以考虑电压、无功、线路 AC 约束，但速度更慢。论文中 A-PDIPM 在带备用约束情况下相比 IPOPT 节省 36.36% 到 88.81% 的求解时间，并且大系统中 IPOPT 出现不收敛，而 A-PDIPM 仍能得到稳定结果。
+
+",
+"Frequency-Constrained Optimal Power Flow中的DNN-based Frequency-Constrained OPF
+中文：基于深度神经网络频率预测器的频率约束 OPF。
+
+","
+在传统 OPF 中加入频率安全约束核心频率指标：RoCoF，频率变化率frequency nadir，故障后的频率最低点面向低惯量电力系统关注发电机跳闸后的初始频率响应 IR 和一次调频 PR传统 L-FCOPF 只加入线性 RoCoF 约束DNN-FCOPF 同时预测 RoCoF 和 frequency nadirDNN 输入：各发电机有功出力、各负荷有功功率、跳闸发电机位置DNN 输出：RoCoF 和 frequency nadirDNN 用 PSCAD/EMTDC 时域仿真数据训练DNN 通过 ReLU 线性化转成 mixed-integer linear constraints 嵌入 OPF论文中用 Python 3.9 + Gurobi 求解
+
+","
+它的本质不是一种新的潮流方程，也不是 AC/DC/DistFlow 那种物理潮流建模形式。它的本质是：在经济调度 / OPF 的静态优化框架上，加入故障后频率动态安全约束，让调度结果不仅潮流可行、经济可行，还能在发电机跳闸后保持频率稳定。普通 OPF 只关心：发电成本、功率平衡、线路容量、发电机上下限。FCOPF 额外关心：某个发电机突然跳闸后，系统频率下降得快不快，最低点会不会低于安全阈值。所以它本质上是：把动态频率稳定性要求转化成 OPF 中的可计算约束。这篇论文的 DNN-FCOPF 进一步把复杂的频率动态方程用 DNN surrogate 代替，然后把 DNN 转成 MILP 约束嵌入 OPF。
+
+","
+频率响应本质上是动态过程，真实计算需要求解大量微分-代数方程 DAE，直接放入 OPF 非常复杂。线性 RoCoF 约束过于简化，可能误差很大。论文中 L-FCOPF 的 RoCoF 误差在某些场景下达到 45.11% 或 56.68%。DNN-FCOPF 依赖训练数据质量。如果 PSCAD/EMTDC 训练样本不能覆盖真实运行工况，预测可能失准。DNN 嵌入 OPF 后会引入二进制变量，因此问题从普通连续 OPF 变成 MILP / MIQP 类模型，规模大时求解时间会上升。DNN 是 surrogate，不是严格物理方程，因此仍然需要 EMT 仿真或动态仿真验证。论文测试的是 modified IEEE 9-bus 系统，规模较小；大规模系统、可再生能源并网、grid-forming / grid-following 控制还需要进一步扩展。它主要保证 RoCoF 和 frequency nadir，并不等于完整暂态稳定 OPF。
+
+","
+低惯量电力系统高比例新能源系统同步机减少、逆变器资源增加的系统需要考虑发电机跳闸后频率安全的实时调度需要防止 RoCoF 过大导致保护误动或机组跳闸需要保证 frequency nadir 不低于安全阈值的系统实时经济调度 / real-time OPF5 分钟级滚动调度含大扰动 N-1 发电机跳闸频率安全评估的系统适合安全性要求高、但又不能直接把完整动态方程塞进 OPF 的场景
+
+","核心方法：OPF + frequency security constraints + DNN surrogate + MILP embedding具体操作：1. 建立传统 OPF。论文中 T-OPF 使用二次发电成本目标函数。2. 写普通潮流约束。该论文中使用 DC power flow 形式：线路功率由相角差和电抗决定。3. 加入普通 OPF 约束：节点功率平衡、线路热容量约束、发电机出力上下限。4. 生成频率动态训练数据：在 PSCAD/EMTDC 中模拟不同负荷、不同发电机出力、不同跳闸位置。5. 从时域仿真中提取标签：RoCoF 和 frequency nadir。论文用 10 cycles，即 0.167 s 的测量窗口计算 RoCoF。6. 训练 DNN frequency predictor。输入为发电机有功、负荷有功、跳闸机组位置；输出为 RoCoF 和 frequency nadir。7. 将 ReLU DNN 线性化：用 big-M / binary variables 表达 ReLU 激活函数。8. 把 DNN 预测输出作为 OPF 约束：RoCoF_DNN ≥ RoCoF_thresholdf_nadir_DNN ≥ f_threshold9. 用 Gurobi 求解 DNN-FCOPF。10. 最后用 PSCAD/EMTDC 时域仿真验证 OPF 调度结果的真实频率响应。论文对比了三类模型：T-OPF：无频率约束L-FCOPF：只加线性 RoCoF 约束DNN-FCOPF：加 DNN 预测的 RoCoF 和 frequency nadir 约束
+
+","Jiang, F., Li, X., & Van Hentenryck, P. (2025). A Deep Neural Network-based Frequency Predictor for Frequency-Constrained Optimal Power Flow. 2025 IEEE Industry Applications Society Annual Meeting (IAS), 1～5. https://doi.org/10.1109/IAS62731.2025.11061730",,"
+相比 T-OPF：成本略高，但频率安全显著更好。相比 L-FCOPF：DNN-FCOPF 更准确，因为它同时考虑 RoCoF 和 frequency nadir，并从 EMT 仿真学习非线性频率响应。相比完整动态 OPF：速度更快，因为没有直接求解完整 DAE。相比普通 ML 直接预测 OPF 解：安全性更好，因为 DNN 只是替代频率约束，OPF 主体仍然由优化器求解。论文中 G21 outage 场景下，DNN-FCOPF 的求解时间是 2.07 s，T-OPF 是 0.27 s，L-FCOPF 是 0.36 s；DNN-FCOPF 成本略高，但 RoCoF 和频率最低点误差明显更低。
+
+",
+"这个是opf的应用目的或者说功能任务 而不是一个模型的类别Market Clearing opf 中的
+具体论文模型：Multi-period Hybrid AC/DC-OPF for Flexibility Market Clearing","
+面向市场出清，而不是单纯物理调度目标是用最低成本采购灵活性资源，同时满足输电网和配电网约束适合 TSO-DSO 协调输电网使用 DC-OPF配电网使用 SOC-ACOPF，即二阶锥松弛 ACOPF通过连接约束把输电网和配电网耦合起来配电网在输电网视角下表现为一个负荷支持多时段优化支持 15 分钟级 rolling horizon / 滚动运行考虑 flexibility assets：灵活发电、灵活负荷、负荷转移、电池储能、负荷削减目标函数包括发电成本、灵活性成本、电池充放电成本、负荷削减成本可用于解决配电网电压问题、配电网拥塞、输电网拥塞
+
+","
+它的本质是：把市场出清问题写成一个带电网物理约束的 OPF。普通市场出清可能只看报价排序和供需平衡；Market Clearing OPF 不只是按价格选便宜资源，还要检查这些灵活性资源被激活后，输电网和配电网是否仍然潮流可行、电压可行、线路不过载。所以它本质上是：经济市场机制 + 电网安全约束 + 灵活性资源调度 的联合优化。在这篇论文中，它不是单一区域 OPF，而是 TSO-DSO 联合模型：输电网用 DC-OPF 简化建模；配电网用 SOC-ACOPF 保留电压和无功特性；二者通过 TSO-DSO 连接点约束耦合。所以这个模型的核心不是“换一种潮流方程”，而是：用 OPF 作为灵活性市场出清引擎，决定哪些分布式灵活性资源应该被采购和激活。","
+市场模型相对简化，主要以成本最小化为主，没有完整刻画真实市场中的报价策略、博弈行为、市场力、结算规则等。输电网使用 DC-OPF，会忽略输电网无功、电压幅值和有功损耗。配电网使用 SOC-ACOPF，虽然比 DC-OPF 更适合配电网，但仍然是凸松弛/近似形式，精度依赖松弛质量。如果扩展到一个 TSO 协调多个 DSO，单一优化问题的规模会明显增大。论文结论也提到，未来需要用 ADMM 把大规模 TSO-DSO 问题分解成更小的子问题。测试系统主要是 proof of concept：33 节点配电网 + 9 节点输电网，不是大规模真实系统。文中主要考虑有功灵活性，未来还需要进一步考虑 TSO-DSO 之间的无功灵活性交换。论文结论中也明确把 reactive power flexibility exchange 作为未来工作。场景概率和真实市场不确定性建模不是本文重点；论文说明 probabilistic scenarios 很重要，但本文主要聚焦 AC/DC-OPF 模型本身。
+
+","
+灵活性市场出清Local Flexibility Market, LFMTSO-DSO 协调聚合商 aggregator 参与的分布式灵活性交易配电网拥塞管理配电网电压问题缓解输电网拥塞通过配电侧灵活性支撑解决电池、需求响应、负荷转移、分布式发电参与市场日前市场之后、日内市场/平衡市场之前的灵活性采购15 分钟时间粒度的滚动优化适合研究未来灵活性市场机制、局部市场设计、TSO-DSO 协调机制
+
+","核心方法：Market Clearing Objective + Multi-period Hybrid AC/DC-OPF + Flexibility Constraints具体操作：1. 建立输电网 DC-OPF。变量包括：PG,DC、线路潮流 Pfl、相角 θ。2. 建立配电网 SOC-ACOPF。变量包括：um、Rmj、Imj、PG,AC、QG,AC。3. 用连接约束把输电网和配电网耦合。配电网 feeder/slack node 的供电量等于输电网对应节点看到的负荷。4. 建立多时段索引。论文中有 hour 级 t 和 quarter-hour 级 u，用于 24 小时和 15 分钟时段建模。5. 在配电网功率平衡中加入灵活性资源：灵活发电 PG,Flex灵活负荷 PL,Flex电池充电 Pch电池放电 Pdisch负荷削减 PLS6. 建立灵活性资源上下限约束。包括灵活发电上下限、灵活负荷上下限、负荷转移总量平衡、电池 SOC 上下限、电池充放电功率上下限。7. 加入电池 SOC 跨时段约束。当前时段 SOC 由上一时段 SOC、充电、放电和效率决定。最后时段 SOC 回到初始 SOC。8. 建立目标函数。最小化：输电网发电成本 + 配电网发电成本 + 灵活性成本 + 电池成本 + 负荷削减成本。9. 求解市场出清结果。输出每个时段、每个节点需要激活多少灵活性资源。10. 用结果检查是否解决电压越限、线路拥塞、输电网拥塞等问题。
+
+论文还设计了两阶段流程：第一阶段模拟 day-ahead dispatch；第二阶段把日前结果作为 LFM 优化参数，执行 flexibility market clearing。","Sieraszewsk, D., Olsen, O. K., Ivanko, D., Oleinikova, I., & Farahmand, H. (2023). Multi-Period Hybrid AC/DC-OPF Model for Flexibility Market Clearing With Seamless TSO-DSO Coordination. IEEE Access, 11, 40093～40106. https://doi.org/10.1109/ACCESS.2023.3269423","普通 OPF 的变量是运行控制量；Market Clearing OPF 的变量是带市场含义的运行控制量。
+平时市场出清本来就可能用 OPF。
+所谓 Market Clearing OPF 的特殊性不在于它创造了新的潮流方程，也不是多了一个叫“市场出清”的约束，而是：
+把市场报价、资源中标量、灵活性激活量、结算意义和电网安全约束放进同一个 OPF 优化问题里。
+所以你说得基本对：
+核心差别确实主要体现在决策变量、输入变量、目标函数经济含义、输出结果用途上。","
+它偏向：市场经济性 + 电网安全性 + 灵活性利用。相比普通 OPF：更适合市场出清，因为目标函数里包含灵活性资源成本和负荷削减成本。相比普通市场出清：更安全，因为它显式检查潮流、电压、线路约束。相比纯 ACOPF：速度更好，因为输电网使用 DC-OPF，配电网使用 SOC-ACOPF。相比全 AC TSO-DSO OPF：精度略低，但计算压力小很多。适合 15–30 分钟级调度和滚动优化，不一定适合秒级实时控制。
+
+",

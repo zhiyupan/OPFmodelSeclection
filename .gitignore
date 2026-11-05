@@ -1,0 +1,46 @@
+.venv*/
+.vscode/
+.agents/
+.idea/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.drawio.bkp
+*.log
+.DS_Store
+Thumbs.db
+data/03_validation/02_intermediate/02_semantic_embedding_model_cache/*
+!data/03_validation/02_intermediate/02_semantic_embedding_model_cache/README.md
+
+# Local credentials and private keys must never enter the repository.
+.env
+.env.*
+!.env.example
+.envrc
+.streamlit/secrets.toml
+secrets.toml
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+*credentials*.json
+*service-account*.json
+
+# Third-party paper PDFs stay in the owner's local Desktop archive.
+# Public clones keep this local-staging folder's README and the canonical
+# 36-paper bibliography. Workflow 02 keeps a checked, byte-identical mirror.
+data/01_paper_ingestion_workflow/01_input/01_source_papers/*
+!data/01_paper_ingestion_workflow/01_input/01_source_papers/README.md
+!data/01_paper_ingestion_workflow/01_input/01_source_papers/paper_corpus_manifest.csv
+
+# Personal local documentation: never upload to Git/GitLab.
+个人项目说明_中文版_仅本地.md

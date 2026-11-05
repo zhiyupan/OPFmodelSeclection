@@ -1,0 +1,5 @@
+# Paper-Processing Intermediate Results (Generated at Runtime)
+
+The tracked contents of this directory consist of this README. A newly generated DeepOPF-V processing subdirectory for P036 currently exists only as an untracked local artifact; it is not part of the public project unless it is separately reviewed and deliberately added. PaperModel writes for the original 35 papers were completed earlier, and their parsed text, images, tables, OCR data, and multi-pass JSON are no longer runtime inputs for online recommendation, knowledge-graph reads, or Validation, so those historical artifacts were removed.
+
+When a user ingests a new paper through the GUI or Notebook, the program automatically creates a subdirectory named after the PDF file and writes the intermediate results from that run; no manual setup is required. These generated artifacts are not currently covered by `.gitignore` and can be included in local Git commits. Before publishing them, verify the licensing restrictions that apply to the paper text and images.
