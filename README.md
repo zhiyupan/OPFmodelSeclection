@@ -1,6 +1,5 @@
 # OntologyOPF
 
-English | [简体中文](README_zh-CN.md)
 
 OntologyOPF turns optimal power flow (OPF) research papers into structured knowledge-graph records, recommends three relevant models for a natural-language requirement, and validates both workflows.
 
